@@ -1,0 +1,13 @@
+LIST of buffers and bookmarks -which are filled, which not
+
+Search text and search specified lines, search-and-replace.
+
+Automatic wrap-margins.
+
+Abbreviations?  Can I rig that?  Other kinds of shortcuts for HTML and stuff?
+
+Move by tokens -words.
+
+Networked?  Later.
+
+Semi-vi syntax

@@ -1,0 +1,65 @@
+EDGE OF INFINITY
+
+INSPIRATIONS:
+Timewarp
+Inner Space
+Tyrian
+
+
+OVERALL:
+Starfield --multilayered?  Check out Timewarp...
+
+No limits to speed, no relativity.  Leave in the number wrap-around, it'll be
+a bit more surreal... though I'll be really impressed if you can wrap around a
+32-bit float.
+
+Do collisions do damage?  Only some collisions?  Timewarp vs Inner Space.
+
+Resources?
+
+
+SHIP:
+Called the Shattered Water.  Look at Timewarp and/or Tyrian for picture ideas.
+Tau, baby.
+
+1 beamer, 1 missile-rack, 2 specials
+
+Single and dual beamer, torpedo launcher, flamers, shields, boosters, tractors
+and grapples, claws, drones, scouts, interceptors, sidekicks, mags, pusher
+missiles (Tau storm).  Short-range warps (Tau hunter).  Missile swarms,
+missile lock, targeting beacons, gunner platforms, starclusters, streamer
+missiles, Lightning!, beamlance, Noble Weapons!  Blinder missiles, reflectors,
+Harbenger missiles.  Tracers!  Beamholms!
+
+Auto-repair
+
+Limited fuel and ammo?  Limited recharge a la TW.  
+
+Nebula and gas-giant scoops!
+
+Upgrades?  Sensors, shields, targeters, etc.
+
+Drones, rear turrets...
+
+
+PEOPLE:
+Friends?  Sidekicks.  Explorers, raiders, corsairs, corperations, traders, privateers.  Teams.  Police.  Denizens!
+
+Rescue service, like Inner Space hospital.  
+
+Juno and Lynn, heh.  Medusa Kestrel.
+
+
+SPACE:
+Top-down view.
+Web-patterns.  Shifting fractals.  Planets, stations, asteroids, platforms,
+islands, nebulae.  Color-streaks.  Trees, graphs.  Speed-gates.  Teleporters.
+Bouncers, pinball flippers, spiral screws, gear-crushers.  Ghosts.  Complexes,
+caves, stars, volcanos, gravity-wells, black holes, novae, star-crushers and
+eaters.  Atomos!  Carbunkle, Ramuh, lava-lamps, angels, magma chambers.
+Transmats.  Madness Machines.  Amoebae, airships, tunnelers, pillows,
+popsicles, TEA!, punch and nibbles...  Straightline warp, circle-vortices,
+webspinners.  Hazard blocks, fireworks.
+Fog --semitransparent layer??
+Certain things /drift/.
+Switches an' things that break walls, a la Sonic the Hedgehog.

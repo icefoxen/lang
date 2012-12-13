@@ -1,0 +1,35 @@
+% test2.tex
+% Everything after a % is a comment.  Yay!
+% Simon Heath
+% 25/09/2002
+% These chars are special: &$#%_{}^~\ 
+
+\documentclass{article}
+\begin{document}
+% Input file MUST have these two lines, plus \end{document} at the end.
+% No spaces in the {} are allowed!
+
+\section{Simple Text}  % Makes a section title.
+Words are seperated by one or more space.  Paragraphs are seperated by
+one or more blank lines.
+
+The output is not affected by extra spaces or blank lines.
+
+Double quotes are typed like this: ``Quoted text''.
+Single quotes like this: `single-quoted text'.
+Long dashes are typed as three dash chars ---like this.
+Emphasized text is typed like this: \emph{this is emphasized}.
+Bold text is typed like this: \textbf{this is bold}.
+
+\subsection{A Warning or Two}  % This makes a subsection title.
+If you get too much space after a mid-sentence period ---abbreviations
+like etc.\ are the common culprits--- then type a backslash followed by a 
+space after the period, as in this sentence.
+
+Remember, don't type the 10 special characters except as directed!  The 
+following seven are printed escaped by a backslash: 
+\$ \& \# \% \_ \{ and \}.
+
+The manual tells you how to make other symbols.
+
+\end{document}  % ends input file.

@@ -1,0 +1,234 @@
+Renderer
+ Particles
+ Vector graphics
+ Sprites
+ Effects (fog, lights, scrolling, flashes, anim)
+ Starfield
+
+Physics
+ Collision detection
+ Vectors and reflection
+
+Realms
+ Diff. physics laws?
+ Contents/object definitions
+ Events and triggers
+ Configuration
+
+Gameworld
+ Ships --movement, AI, life, death
+ Inanimate objects
+ Sound and music
+ Conversations
+ Triggers and switches implementation
+
+Interface
+ GUI
+ Script and config system
+ Keybindings
+ Title screen
+ Game saving and loading
+
+Layers:
+BOTTOM
+Starfield 1
+Starfield 2
+Starfield 3?/planet/etc
+Actors
+Shields, Engine and Weapon Effects
+Light/Mist
+Heads-up display and GUI
+TOP
+
+
+XXX: The canonical transparent-background color is RGB:(255, 0, 255)
+
+
+Directory structure:
+config
+ realms
+ ships
+ ai
+ conversations
+ objects
+ items
+ keyboard
+
+each realm has:
+events
+triggers
+ships
+objects
+
+
+
+CONFIG READER
+Scheme?  I could write Scheme wrappers for Ocaml functions to create and
+manipulate a hashtable.  Closures, baby.  That'd result in a different
+hashtable for each config file, but...  Conditional and random stuff would be
+very do-able, if you like that sort of thing.  There may be an advantage in
+the type-matching stuff though.
+Make a standard interface to this stuff...
+The alternative is a regular config file of name-value pairs, which could be parsed directly.  Values would probably still be gotten from a hashtable
+though...
+
+
+CONVERSATION ENGINE
+Scheme.  Conversations need variables, checking and modifying triggers,
+conditional replies, starting points, and forks...  So I use Scheme.
+Conversations are graphs.  Each node has a bunch of text, a bunch of possible
+responses, and optionally an event.
+The text is a single big Scheme form, probably (string-append text ...
+(conditional text) more text ...) or thereabouts.  It is evaluated EACH
+TIME that node is entered, which lets it check flags and random elements.
+Each conversation path (a la edges in the graph (hey, that rhymes!)) is also a
+Scheme form, which can be as simple as a string, or can also be nice things
+like flag-checks to see if you can take a certain path.  If it returns #f or
+"", then you can't do that node; it doesn't show up on the screen.
+Then there's a third optional form, possibly prepended with > or something,
+that lets you call functions and manipulate flags and such as a side-effect of
+entering the node.  Actually, that can be done just by making the text-form a
+(begin) and sticking all the extra stuff at the beginning, so that's good.
+^_^
+CAUTION: every node must be able to be re-entered with no bad effects!
+Functional programming y'all; it doesn't change much state (flags are an
+exception, 'cause that's what they're there for).
+
+
+TRIGGER SYSTEM
+Triggers are an array of true/false flags, or possibly a hashtable to
+make life easier.  Though actually the representation doesn't matter much.
+What really matters is that there are functions to either check or set flags.
+Flags are persistant, and are generally used to check whether or not a certain event has taken place.
+There must be Scheme bindings to this!  Scripts and conversations, not to
+mention internal game logic, generally know whether things have happened by
+setting flags.  Each flag is referred to by a string.
+
+
+GRAPHICS SYSTEM
+The graphics system consists of the GUI system, and seven layers (a la a
+seven-element array).  Each layer is a linked list of objects.  Each object
+has a location and a #drawSelf method or some such thing.  The graphics system
+just goes through each of the lists in order and calls each object's drawSelf
+method.  The object is then responsible for figuring out whether it's on the
+screen and drawing the appropriate graphics if it is.  To assist this, there
+will be animated Sprite objects that contain all the necessary base code.
+The layers allow explicitly telling the system in which order to draw things.
+Naturally, you want to draw the background first, then the midground, then the
+foreground.  However, life needs to be simple, so only things in the midground
+(the Actor layer) are actually /tangible/ (have collision detection performed
+on them).  This means that if there is some invisible object that still has
+presence (such as a switch activated by moving into a certain area), it must
+be in the Actor layer!
+Technically, no two objects in the same layer may overlap, since then the
+drawing order is unspecified.  Practically, it's probably not worth checking
+for.
+Layers:
+BOTTOM
+Starfield 1
+Starfield 2
+Starfield 3?/planet/etc
+Actors
+Shields, Engine and Weapon Effects
+Light/Mist
+Heads-up display and GUI
+TOP
+That's about it; it's pretty simple.  Go through each object and draw it.
+Do NOT use different surfaces for the game-graphics and the GUI.  It only
+makes more blitting.  Scale each off, set the cliprects, and blit each
+directly to the screen surface.  It may not be as tidy, but it'll be FASTER.
+Note: The GUI is really a subsystem of this system; it's represented as just
+another object with a drawSelf method.  However, this system needs to know how
+big the game screen is, and how big the GUI is.  None of the game layers
+should blit out of the gamescreen, since they'll just be overwritten by the
+GUI and the blit-time will be wasted!!!
+
+PHYSICS SYSTEM
+Pretty much the same as the graphics system, but instead of calling drawSelf
+it just calls calculate instead.  The layers don't matter, either.  The
+calculate method figures out where an object is, where it's going, and
+performs the necessary collision detection and handling and such.
+There is probably a config file/script that sets up certain global physical
+constants.  Elasticity of impacts, drag of nebulae, damage from impacts,
+toughness of asteroids, accelleration coefficient, all that good stuff.
+Note: Bounding boxes and such are defined per-object in the appropriate config
+file; have a default of 80% of the sprite-size though.
+Note: Make sure you move things based on TIME, NOT FRAMERATE!
+Collision detection can be done with a simple brute-force algorithm, which is
+just fine for fewer than 200 objects and ocamlopt.  Above that it balloons 
+DRASTICALLY, so be careful!  Think O( N^2 ).  Try to find something better.
+
+
+AI SYSTEM
+An AI is basically a Scheme script that takes some data from the attached ship
+object as input (location, direction, velocity, weapons, actions, etc) and
+returns a value that tells it what to do (1 = turn left, 2 = turn right, 3 =
+fire, etc).  The actual decision-making is something I know freakin' nothing
+about.  Efficiency may actually be a problem in the scripts, since they may be
+doing a lot of tricky semi-random decision making.  It may be
+possible/advisable to re-write certain AI's in (faster) Ocaml and only use
+Scheme for prototyping.  We'll see.
+
+GUI SYSTEM
+Fairly straight-forward, but big..  Builds and maintains the sidebar.  This is
+NOT the part that displays the actual game action; that's the graphics system.
+Use dirtyrecting here, since most of it will be fairly static.  The GUI has
+several parts:
+*MENU SCREEN -New, save, load games, options, quit
+*HELP SCREEN -F1, baby.
+*CONVERSATION SCREEN -Conversation interaction; does all the font rendering and
+such
+*PAUSE SCREEN -Guess
+*SIDEBAR -Displays ship and game stats
+*MAP SCREEN -Shows mapped space.  This is important!
+*STATBAR -Bar at the bottom that displays quickie messages, status notes, area
+names, etc.
+*SHIP SCREEN -View and/or change ship configuration
+The sidebar must have the following information:
+*Shield strengths (front and rear)
+*engine, sensor, weapon, armor, and life-support strength
+*Velocity, direction and location
+*Energy, cargo/mass, fuel/ammo(?)
+*Weapon displays
+*Special device displays
+*Scanner display (enemy ship details)
+*Radar display
+Note: also make a FPS counter that can be toggled on and off!
+
+AUTOPILOT SYSTEM
+Straightforward.  You set the destination, you set the max speed, you set the
+min distance you want to be from objects before the autopilot cuts off (it's a
+function of speed, or maybe relative speed!), and it just draws a line from
+point a to point b and slings you along it.  Evasion may or may not be an
+issue.  Be careful going fast, or else you may slam through an object before
+you even see it!
+
+REALM SYSTEM
+A realm is basically a certain collection of objects and triggers and flags
+and such within a certain area.  It's purpose is to make sure things stay
+fast: only relatively nearby things are calculated and rendered.  Realms are
+just specified in config files.
+
+INPUT SYSTEM
+Keyboard, basically.  Keys are specified in a config file.  They should be
+kept in an indexed array for fast access.
+
+
+FILES
+.shp    ship
+.wep    weapon
+.itm    item
+.scm    Scheme
+.con    conversation
+.rlm    realm
+.cfg    general config
+.phy    physics
+
+
+
+XXX:
+
+spaceobj.ml: Make it so vector, size, etc can be randomized to a given degree!  Make this standard amoung config files!
+
+realms.ml: Collision detection, grafix layers, etc.
+Realms may also be be modified a bit... constant gravitic forces, etc.

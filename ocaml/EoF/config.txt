@@ -1,0 +1,19 @@
+Scheme?  I could write Scheme wrappers for Ocaml functions to create and
+manipulate a hashtable.  Closures, baby.  That'd result in a different
+hashtable for each config file, but...  Conditional and random stuff would be
+very do-able, if you like that sort of thing.  There may be an advantage in
+the type-matching stuff though.
+Make a standard interface to this stuff...
+The alternative is a regular config file of name-value pairs, which could be
+parsed directly.  Values would probably still be gotten from a hashtable
+though...
+
+
+Kay.  The format is "key=value" where there must be NO spaces between the key, the = and the value.  The value must be a bool, int, float, or string.
+The values for each file will be read and stored as a union type in a hashtable, which is then returned by the file-reading function.  This offers fast lookup, efficient memory usage, and good flexible and error-checking; invalid values will be ignored, the hashtable can be discarded once the values have been read from, or kept by the object it is passed to.
+
+ConfigVal: string | int | float | bool
+Config object:
+constructor string
+get string -> ConfigVal
+set string ConfigVal

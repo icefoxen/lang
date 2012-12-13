@@ -1,0 +1,432 @@
+<HTML>
+
+<center><H1>CS101 Lab 7: Data Structures in ADTs</H1>
+<small>
+<table>
+<TR><TD>Assigned:</TD><TD>Monday, October 20</TD></TR>
+<TR><TD>Quiz:</TD><TD>Tuesday, October 28</TD></TR>
+<TR><TD>Due:</TD><TD>Friday, October 31</TD></TR>
+<TR><TD>Grace Period Ends:</TD><TD>in your first lab section following the due date</TD></TR>
+</table>
+</small>
+
+<!--
+<BR><B>CAUTION: THIS IS A DRAFT VERSION OF THE LAB</B>
+-->
+<BR>
+
+</center>
+<P>
+<B>Goals:</B>
+By the end of this lab, you should...
+<UL>
+<LI> be comfortable working with ADTs that encapsulate linked lists.
+<LI> have experience using linked lists to represent polynomials
+(and polylines).
+<LI> understand Horner's algorithm for polynomial evaluation.
+</UL>
+
+
+<HR><P>
+
+<H3>Part I. Practice Exercises:</H3>
+Expect exercises like these on the quiz.
+You will benefit most by doing the exercises before you
+<A HREF="solutions.html">look at the solutions</A> or attend
+the help session on Wednesday Oct. 17
+when they will be discussed.
+<P>
+
+<b>Directions:</b>
+Consider Java's built in <A href="http://www.cs.wustl.edu/~kjg/jdk1.2.1/docs/api/java/util/LinkedList.html">LinkedList</A>
+class, which is an implementation of a list abstraction
+similar to the one presented in lecture.
+Note that the value contained in
+each list item in a LinkedList is simply an Object reference, so
+when we get the data out using any of the accessors or an iterator,
+an Object reference is returned.  Therefore, it is often
+necessary to <b>cast</b> to the appropriate type before calling a method
+on the object itself.  (This can result in a ClassCastException
+when the actual object's type doesn't match the type of the cast.)
+<P>
+Primitives like <tt>int</tt> and <tt>double</tt> are not classes,
+so their values are not Objects.  However, sometimes we want to be able
+to put a primitive value in a data structure where an Object is required.
+Therefore, as a convenience, Java provides classes that correspond to
+each of the primitive types.  For example, the <tt>Integer</tt> class provides
+a constructor whose parameter is the <tt>int</tt> value that should be
+held inside the object, and provides an accessor <tt>intValue</tt> that
+returns the <tt>int</tt> value that was stored in the <tt>Integer</tt> object.
+
+<OL>
+
+<P><LI>Study the following procedures and then write
+specifications of what they do.  If in doubt, try hand simulating the
+execution of the procedure on some small test cases.  In these
+exercises, assume that all of the casts are legal.
+<P>
+
+<PRE>
+LinkedList foo(int n) {
+  LinkedList result = new LinkedList();
+  while (n >= 0) {
+     result.addFirst(new Integer(n));
+     n--;
+  }
+  return result;
+}
+
+
+double bar(LinkedList numbers) { // numbers is not null
+  Iterator it = numbers.iterator();
+  double result = 0;
+  while (it.hasNext())
+    result += Math.pow(((Integer) it.next()).intValue(), 0.5);
+  return result;
+}
+
+
+LinkedList baz(LinkedList a, LinkedList b) { // a and b are not null
+  Iterator ls1 = a.iterator();
+  Iterator ls2 = b.iterator();
+  LinkedList result = new LinkedList();
+  while (ls1.hasNext() && ls2.hasNext()) {
+    String aString = (String) ls1.next();
+    String bString = (String) ls2.next();
+    result.addLast(aString + " " + bString);
+  }
+  return result;
+}
+</PRE>
+
+<LI> Write a procedure <TT>pairwiseSum</TT> that takes as its parameters
+two LinkedList objects and returns a new LinkedList that is
+the pairwise sum of the list.
+You may assume that all objects in both lists are of type Integer.
+The objects in the resulting list should be Integer as well. If the lists
+are of different lengths, do the computation as if
+the shorter list has zeros at the end.  For example, if the given
+lists are (1 2 3 4) and (4 5), the resulting list would be (5 7 3 4).
+<P>
+
+<LI> Write a procedure <TT>reverse</TT> that takes as its parameter
+a LinkedList and returns a new LinkedList with
+the same data, but in the reverse order.
+<P>
+
+<LI> Write a procedure <TT>multiplyPosition</TT> that takes as its parameter
+a LinkedList containing Double objects as data, and returns another
+LinkedList in which each of the original values was multiplied by its
+position (index) in the list.  For example, if the input was (2 2 2 1 9),
+the result would be (0 2 4 3 36), computed as follows: (2*0 2*1 2*2 1*3 9*4).
+</OL>
+
+<P><HR><P>
+
+<H3>Part II. A Polynomial ADT</H3>
+
+In this lab, you will write a program that creates, manipulates, and
+evaluates polynomials of arbitrary degree.  You will begin by creating
+a Polynomial class that, among other things, is capable of evaluating
+itself at points along the x axis.  Then you will create a
+ListOfPoints class that you will use
+to keep track of a list of points along the curve of the polynomial.
+If you do the extra credit part, you'll use the ListOfPoints to help
+you graph polynomials on the screen.
+<P>
+
+Note: In the text of the lab, and in the output you generate, we'll use
+the caret (^) symbol to denote exponentiation.  However, you should
+keep in maind that this is <b>not</b> Java
+syntax.  (In fact, you may recall that the symbol is used for the
+boolean operator xor in Java.)
+<P>
+
+<OL>
+<LI>There are no provided files for this lab.
+Create a new Eclipse project called Lab7.
+In the project, create a class called Lab7.java and create a "main" method
+in that file to use as the starting point for your program.
+(You can look at one of the earlier projects for an example.)
+
+<P><LI>In a new file called <B>Polynomial.java</B>, define a class
+called <code>Polynomial</code> that satisfies
+the following specification.
+Your Polynomial class will be
+a "wrapper" that uses a LinkedList as its
+internal representation.
+Be sure to test thoroughly and provide your test cases when
+you turn in the assignment.
+<!--
+The CS101Canvas provided with this assignment has
+a method <tt>showData</tt> that draws box-and-arrow diagrams
+for data structures.   Using this feature may help you
+understand the data structures better.
+For each Polynomial instance,
+you'll see the ListOfObjects, its head and tail list items, and
+the list items for each coefficient with references to their
+data values.
+Since each Polynomial involves so many objects, small examples will be
+easier to understand.  Moving the objects around on the screen
+may help.
+Also, well-placed "sleep" calls in your program
+can be used to slow things down so you can see the data structures
+change as the program runs. 
+-->
+<P>
+
+<OL>
+<LI>The constructor creates a polynomial with no terms.
+
+<P><LI>The method <code>toString</code> takes no parameters and
+returns a String representation of the polynomial.  For example,
+you might return something like
+"4 + -7x + 0x^2 + 11x^3" as the result.
+
+(Note: If you want to be more clever about <code>toString</code>, you can
+watch the signs and omit terms with a zero coefficient, returning
+something like  "4 - 7x + 11x^3" instead.  Still better, show the high-order
+terms first, as in "11x^3 - 7x + 4".)
+
+<P><LI>The method <code>addTerm</code>
+takes a double as its parameter and creates
+a new high-order term of the polynomial with that coefficient.
+For convenience, let
+your method return "this" so you can make subsequent calls on the same
+line.  For example,
+<PRE>
+Polynomial foo = new Polynomial();
+foo.addTerm(4).addTerm(-7).addTerm(0).addTerm(11);
+</PRE>
+could be used as a shorthand for
+<PRE>
+Polynomial foo = new Polynomial();
+foo.addTerm(4);
+foo.addTerm(-7);
+foo.addTerm(0);
+foo.addTerm(11);
+</PRE>
+to create the polynomial 4 + -7x + 0x^2 + 11x^3.
+
+
+<P><LI>The method <code>evaluate</code> takes a double value <em>x</em> as its
+parameter, and returns the double value of the polynomial at point <em>x</em>.
+For example, if the polynomial is
+7 + 5x - 2x^2 + 5x^3, then <code>evaluate(2.0)</code> would return 49.0.
+Use a recursive implementation of
+<A href="../../Notes/DataStructures/structures.html#horner">Horner's method</A>
+as the algorithm for evaluation.
+For example,
+<P>
+<center> 7 + 5x - 2x^2 + 5x^3 = 7 + x(5 + x(-2 + x(5))). </center>
+<P>
+(Hint: Pass an iterator as one parameter to
+a recursive helper procedure.)
+
+<P><LI>The method <code>derivative</code> takes no parameters and
+returns a <B>new</B> Polynomial that is the first derivative of this
+polynomial.  For example, if this polynomial is 7 + 5x - 2x^2 + 5x^3,
+you would return a Polynomial object 
+representing the polynomial 5 - 4x + 15x^2.
+
+<P><LI>The method
+<code>sum</code> takes another Polynomial as its parameter and returns
+a <B>new</B> Polynomial that is the result of adding together the two
+polynomials.  It should return the correct result
+even if the two polynomials are of different degree.
+
+
+<!--
+<P><LI><b>(Extra credit)</b> The method <code>product</code> takes
+another Polynomial as its parameter and returns a new Polynomial that
+is the result of multiplying the two polynomials. 
+This is very tricky!  Attempt this only after you have
+completed the rest of the lab.
+-->
+</OL>
+
+<P><LI>In a new file called <B>ListOfPoints.java</B>, define a class called
+<code>ListOfPoints</code> that
+holds a list of <A href="http://www.cs.wustl.edu/~kjg/jdk1.2.1/docs/api/java/awt/Point.html">Point</a> objects according to
+the following specification.  Again, use a LinkedList for your
+internal representation.
+<B>Be sure to test all methods thoroughly.</B><P>
+<P>
+
+<OL>
+<LI>The ListOfPoints constructor takes no parameters and creates an empty list of points.
+
+<P><LI>The method <code>toString</code> takes no parameters returns a String
+representation of the list of points.  For example, you might return
+something like "( (0,4) (25,0) (50,8) )" as your result. 
+
+<P><LI>The method <code>isEmpty</code> returns <code>true</code>
+if and only if the list contains no points.
+
+<P><LI>The method <code>append</code> takes a Point as its parameter
+and inserts the point at the end of the list.
+
+<P><LI>The method <code>listIterator</code> returns an Iterator for
+the list of points.
+
+<P><LI>The method <code>minX</code> returns the least value of x in the
+list.
+
+<P><LI>The method <code>maxX</code> returns the greatest value of x in the
+list. 
+
+<P><LI>The method <code>minY</code> returns the least value of y in the
+list. 
+
+<P><LI>The method <code>maxY</code> returns the greatest value of y in the
+list.
+
+<!--
+<P><LI>The method <code>clip</code> takes four integers <code>(minX,
+minY, maxX, maxY)</code> and returns a <b>new</b> ListOfPoints that
+contains only those points in this list that fall within the rectangle
+defined by the given parameters.
+-->
+
+<P><LI>The method <code>rescale</code> takes four doubles <code>(x1,
+y1, width, height)</code>.
+The method should not modify the existing list, but instead
+should create and return a <b>new</b>
+ListOfPoints that results from rescaling all of the points in this
+list so that they fit exactly within
+the rectangle defined by the parameters to the method.
+(If you do the extra-credit graphing option,
+you will use this method to rescale the points to "fit" the size of
+the canvas for graphing.)  Create new rescaled points.
+Don't modify the original points.
+<P>
+Hint: To find the x coordinates in the new list,
+first subtract minX from the x value in the old list,
+then multiply by the ratio (width / (maxX - minX)), and finally
+add x1.
+Treat each y coordinate similarly.
+For example, suppose the list is
+<center>( (3,8) (4,5) (5,11) ).</center>
+Then <code>rescale(0.0, 0.0, 50.0, 8.0)</code> would return the list
+<center>( (0,4) (25,0) (50,8) ).</center>
+What will happen in your implementation of this method
+if the minimum and maximum x are equal?
+
+</OL>
+
+<P><LI>Now, go back to your Polynomial class, and create a method
+called <code>sample</code> that takes three double parameters
+<code>(xlow, xhigh, interval)</code> and returns a ListOfPoints that
+results from evaluating the polynomial in the range between
+xlow and xhigh with the given interval.  For example, if the polynomial
+is x^2 + 2x - 3, then <code>sample(-4, 4, 2)</code> would return the list
+( (-4,5) (-2,-3) (0,-3) (2,5) (4,21) ).
+Test this thoroughly.
+
+
+<P><LI>Finally, put it all together.  In your file <b>Lab7.java</b>,
+modify the <code>main</code> method to
+create several different Polynomial objects with different coefficients.
+For each polynomial, 
+<OL>
+<LI> Print both the polynomial
+and its derivative to the terminal.
+<LI> Sample the polynomial at approximately 10 different x values,
+evenly spaced in an interesting region of the curve,
+creating a ListOfPoints.  (For example, if the polynomial
+is 2x^2 + 3, then it is "interesting" around the y-axis, so you
+might sample points in the range x=-5 to x=5 with an
+interval of 1.)
+<LI> Print the resulting ListOfPoints to the terminal. <B>Use a
+calculator to verify that the results are correct.</B>
+<LI>Rescale the points in the rectangle (25,50,200,100), and print out
+the resulting rescaled list of points to the terminal.  Again, verify
+that the numbers are right.
+</OL>
+</OL>
+
+<B>Implementation Notes: </B>
+So the compiler finds the LinkedList class and the
+Iterator interface, be sure that
+the line <TT>import java.util.*;</TT> appears near the top of the files
+that use them.
+Similarly,
+to use Java's Point class, be sure that
+the line <TT>import java.awt.*;</TT> appears near the top of the file.
+If you want to allow non-integer coordinates, you can use the
+<A href="http://www.cs.wustl.edu/~kjg/jdk1.2.1/docs/api/java/awt/geom/Point2D.Double.html">Point2D.Double class</a> instead of the Point class, in which case you will need to
+<TT>import java.awt.geom.*</TT> in each file that uses it.
+<P>
+
+<P><HR><P>
+
+<B>Extra credit option:</B>
+(2 points)
+The extra credit option for this assignment is to graph each of your
+polynomials on a CS101Canvas, as follows.  Items 1-4 must be
+entirely implemented in order for any extra credit to be awarded.
+(If you are working with a lab partner, the "extra credit" option is
+required for full credit on the assignment.)
+To use the canvas, you can import it from one of your earlier projects.
+
+<OL>
+<P><LI>In the ListOfPoints class, add a method <tt>getShape</tt>
+that takes no parameters and returns a 
+<a href="http://www.cs.wustl.edu/~kjg/jdk1.2.1/docs/api/java/awt/geom/GeneralPath.html">GeneralPath</a> whose shape is defined by the points in the list.
+That is, your shape will have a line from the first point to the second, a
+line from the second to the third, and so on.
+After calling the GeneralPath constructor,
+call the methods <b>moveTo</b> and <b>lineTo</b> to create
+the shape of the curve.
+
+<P><LI>For each ListOfPoints you create in your test program, rescale the
+points to fit on a CS101Canvas, call the getShape method on the rescaled
+ListOfPoints, and display the shape on the canvas.  
+
+<P><LI>
+Recall that
+in computer graphics, the coordinate (0,0) is at
+the upper left, and y increases down the screen.
+Therefore, after you rescale the points, you'll need to
+"flip over" the graph so that it doesn't look upside down to a
+mathemetician.  Write a separate method in ListOfPoints to flip over
+the points.  In your test cases, be sure to print out the flipped over
+points and verify that they are correct.
+
+<P><LI>Show the x and y axis on your graphs, with
+appropriate labels and tick marks.
+(If the the origin (0,0) is not part of the region that you are graphing,
+you can show the two axes as perpendicular non-intersecting line segments.)
+
+</OL>
+
+<P><HR><P>
+
+<H3>What To Turn In:</H3>
+
+<b>Part I:</b> You do not need to turn anything in for Part I, but
+should work the practice problems carefully and check your answers.
+
+<P>
+<b>Part II:</b> Turn in a completed <a
+href="../cover-sheet.html">cover sheet</A> with printouts of all of
+the code you have written and a printout of the output from your test
+cases.  </OL>
+
+<p><b>Demo:</b> Bring your lab packet to a TA and demonstrate what your
+program does.
+The TA may ask you to modify your test cases and to demonstrate
+that the results are correct.
+The TA will record a demo grade on your cover sheet
+and will keep the packet so the code can be graded.
+Complete
+your demo no later than your next lab section immediately following
+the due date. If you do the demo in lab section, you must turn in
+your lab packet within the first 15 minutes.
+
+
+<HR size=7>
+<ADDRESS><A HREF ="http://www.cs.wustl.edu/~kjg/">Kenneth J. Goldman
+(kjg@cs.wustl.edu)</A> </ADDRESS>
+</HTML>
+

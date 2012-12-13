@@ -1,0 +1,109 @@
+\documentclass[10pt,letterpaper,notitlepage,oneside]{article}
+% The [] options are the LaTeX defaults for 'article' classes.
+% other docclasses are report and book.  They have different defaults.
+
+\usepackage{verbatim}  % lets you use \begin{comment} and \end{comment}
+% Other significant packages include doc, excale, fontenc, ifthen, latexsym, 
+% makeidx, syntonly, inputenc
+
+\pagestyle{plain}
+% plain prints page numbers in the middle-bottom of the page.
+% headings prints the current chapter heading and page number on top, while
+% the footer is empty.
+% empty sets both header and footer to empty.
+
+\usepackage{syntonly}
+%\syntaxonly
+% Uncomment the above line to tell it not to produce actual output, just check
+% the file.
+
+\hyphenation{FORTRAN hy-phen-a-tion}
+% Forces hyphenation behavior.  Makes it so it only hyphenates the listed
+% words at the selected points.  In this instance, it will not hyphenate
+% FORTRAN, Fortran or fortran at all.
+
+
+\author{Simon N. Heath}
+\title{Example 4ish}
+
+\begin{document}
+
+\maketitle 
+
+\emph{This file is meant to be read while looking at the source!}
+\emph{Lotsa handy comments there.}
+
+% You can put {} after a command to keep it from eating up whitespace
+% You can also put a \ after it, id est \TeX\
+I read that Knuth divides the people working with \TeX{} into
+\TeX{}nicians and \TeX perts
+
+You can \textsl{lean} on me!  Is this the same as \emph{emphasis}?  Nope!
+
+Please start a newline here--\newline
+Thank you!  One more please?\\
+Thanx! Today is \today{}, by the way.
+
+This is another
+\begin{comment}
+Other than %, you can insert long comments like this.
+You have to add \usepackage{verbatim} to the doc preamble,
+though.
+\end{comment}
+example of adding comments to the source file.
+
+\include{test4b}
+% Includes another file.  Starts a new page before including.
+
+FOOBAR!
+
+\input{test4c}
+% This does the exact same, but doesn't start a new page.
+% ...or it does, but it shouldn't.  Ah well.
+% Doesn't need the .tex at the end!
+
+You can force new lines!\\
+
+You can force new pages!\newpage
+
+You can force linebreaks!\linebreak[4]  % Arg can be a number 0-4... how hard
+% you want to force the linebreak.  LaTeX will try to ignore it if it'll
+% look reely bad, 4 forces it to obey.
+
+You can force nolinebreaks\nolinebreak[4]
+% Can also do \nopagebreak[]   ...Args are optional on all of these.
+% The '...break' commands make LaTeX still try to justify the text.
+
+% You can give the commands \sloppy and \fussy to make LaTeX less
+% stringent about justifying words.  Default is \fussy.  \sloppy just turns
+% it off.
+
+Several words can be kept together on one line like this: \mbox{What a 
+wonderful weird world this is...} \\
+There should be a \fbox{box} drawn \fbox{here}.
+
+Hey, there are FOUR types of dashes...
+daughter-in-law, Q-tip\\
+pages 14--41\\
+yes---or no?\\
+$0$, $1$, and $-1$\\
+% I think the $...$ show it's an equation.
+
+There's two kinds of tildes:\\
+http://www.rich.edu/\~{}bush \\  % little tilde
+http://www.rich.edu/$\sim$demo \\  % Big tilde
+
+You can add a degree symbol, even.  It is now $20,^{\circ}\mathrm{C}$ and
+I like air-conditioning.
+
+Ellipsis\ldots
+
+Time for accents!\\
+H\^o{}tel, na\"\i ve, \'el\`eve, sm\o rrebr\o d, !`Se\~norita!,
+Sch\"onbrunner Schlo\ss{} Stra\ss e
+
+
+
+
+
+\end{document}

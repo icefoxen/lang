@@ -1,0 +1,326 @@
+<HTML>
+<TITLE>CS101 Lab 8</TITLE>
+
+<center><H1>CS101 Lab 8: Multiple Representations</H1>
+<small>
+<table>
+<TR><TD>Assigned:</TD><TD>Monday, November 3</TD></TR>
+<TR><TD>Quiz:</TD><TD>Tuesday, November 11</TD></TR>
+<TR><TD>Due:</TD><TD>Friday, November 14</TD></TR>
+<TR><TD>Grace period ends:</TD><TD>in your first lab section after the due date</TD></TR>
+</table>
+</small>
+
+<!--
+<BR><B>CAUTION: THIS IS A DRAFT VERSION OF THE LAB</B>
+<BR>
+-->
+</center>
+
+<P>
+
+<H3>Goals:</H3>
+By the end of this lab, you should...
+<UL>
+<LI> appreciate the flexibility of representing the same
+data in different ways.
+<LI> know how to convert numbers to different bases.
+<LI> understand that the internal representation of an ADT
+can be changed without changing the interface.
+<LI> know how to create different classes that implement the same
+interface.
+<LI> have experience implementing ordered lists, binary search trees,
+and arrays.
+</UL>
+<P>
+<B>This is a long assignment.  We strongly suggest
+starting early.</B>
+
+<P>
+<HR>
+<P>
+
+<H3>
+Part I: Practice Problems
+</H3>
+
+Read about
+<A HREF="../../Notes/Representations/representations.html#BaseNumber">converting numbers between different bases</A>.
+Then complete the following table.  Do all the calculations by hand.
+Calculators will <b>not</b> be allowed for the quiz.
+Be sure to double-check your calculations before you
+<A HREF="solutions.html">look at the solutions</A>.
+The first one has been done for you.  The last one is a little tricky.
+<P>
+
+<TABLE BORDER=1>
+<TR><TH>The number...</TH><TH>in base...</TH><TH>equals the number...</TH><TH>in base...</TH></TR>
+<TR><TD>101</TD><TD>2</TD><TD>5</TD><TD>10</TD></TR>
+<TR><TD>1110</TD><TD>2</TD><TD> </TD><TD>10</TD></TR>
+<TR><TD>290</TD><TD>10</TD><TD> </TD><TD>2</TD></TR>
+<TR><TD>255</TD><TD>10 </TD><TD> </TD><TD>2</TD></TR>
+<TR><TD>255 </TD><TD>10</TD><TD> </TD><TD>4</TD></TR>
+<TR><TD>210</TD><TD>3</TD><TD> </TD><TD>8</TD></TR>
+<TR><TD>63</TD><TD>7</TD><TD> </TD><TD>2</TD></TR>
+<TR><TD>10000000</TD><TD>2</TD><TD> </TD><TD>10</TD></TR>
+<TR><TD>128</TD><TD>10</TD><TD>242</TD><TD> </TD></TR>
+</TABLE>
+
+<P><HR><P>
+
+</H3>
+
+<H3>
+Part II: Three implementations of the Mapping interface
+</H3>
+
+In this lab, you will implement a "mapping" abstract data type
+three different ways.  All of the implementations will provide the
+same functionality (same interface) but may differ in their
+efficiency.
+
+Think of a "mapping" ADT as a relation between a <em>domain</em>
+and a <em>range</em>.  For example, a telephone directory is a mapping
+from names to telephone numbers.  The domain is all possible names,
+and the range is all possible phone numbers.  Each entry in the
+mapping is a pair of elements, one from the domain and one from the
+range.  Usually, the domain and range are different, but that is not a
+requirement.  In this lab, your mapping will be from item names
+(represented as String objects) to numerical values (represented as
+doubles).  This kind of data structure could be useful, for example,
+to map stock names to their current prices in a stock market program.
+For now, though, you can just think about the mapping as a relation
+between string values and numerical values.
+
+<P> Read over the entire lab before you start.  Also, review your
+lecture notes on implementing sets using ordered lists and binary
+search trees.  Also, review your notes on arrays.  The on-line lecture
+summaries of these topics may also help you.  <P>
+
+
+<B>Implementation notes:</B>
+<UL>
+<LI>One purpose of this lab is for you to learn how
+to design and implement the various data structures.  Therefore,
+<b>do not</b> use any of the data structures that are already
+provided by Java in the <tt>java.util</tt> package.  Build your data
+structures from scratch.
+<P>
+<LI>To compare String values, use the <b>provided</b>
+<code>compareTo</code> method of the String class that compares
+strings  based on lexicographic ordering (dictionary ordering).
+The <code>compareTo</code> method takes as its parameter another String,
+and returns an integer whose value is:
+<UL>
+<LI>negative if this string is less than the parameter,
+<LI>zero if this string is equal to the parameter, or
+<LI>positive if this string is greater than the parameter.
+</UL>
+
+<P><LI>
+<B>Do not use the <code>==</code> operator to compare String values for
+equality.</B>
+When <code>==</code> is used on objects, it evaluates to true if both
+sides of the comparison refer to the same exact memory location (i.e.,
+it's the exact same object).  Therefore, even if two String objects
+contain the same text, the <code>==</code> test for equality on the
+two objects would return <code>false</code> if they are not
+the same object.
+</UL>
+
+
+<B>Directions:</B>
+<OL>
+<LI>Download <a href="lab8.zip">lab8.zip</a> 
+into your cs101 folder and create an Eclipse project for it.
+<P>
+
+<LI>Open the provided file <b>Mapping.java</b> and study the provided
+code in that file.  Notice that the file does not contain a class
+definition, but instead contains something called an
+<em>interface</em>.  An interface is just a collection of method names
+with parameter types and return types.  It cannot be instantiated,
+because it doesn't actually contain implementations of any of the
+methods.  That is, the methods have no bodies.
+
+<P>
+<LI>Open the provided file <b>OrderedMapping.java</b> and
+read the provided code.  Notice the line
+<pre>
+public class OrderedMapping implements Mapping
+</pre>
+near the top of the file.  The phrase "implements Mapping" means that
+this class conforms to the Mapping interface.  In other words,
+this class must define all of the methods contained in the
+Mapping interface, and the compiler will check that this is indeed
+the case.
+
+<P><LI>Look at the test procedure
+in the provided file <b>Lab8.java</b>.
+Notice that the parameter to this procedure has type
+Mapping.  This means that any object passed to this procedure must
+implement the Mapping interface, and so the procedure may call any of
+the methods in that interface on the object.  In this program, three
+different objects will be created and passed to the test procedure.  <b>All
+three are instantiations of different classes, but all three classes
+implement the Mapping interface.</b>  Therefore, Java's support for
+interfaces provides
+the power to define the interface of an ADT and write programs in
+terms of that interface.  Then, you can implement the ADT in different
+ways and use them in the program, provided that you conform to the
+defined interface.
+
+<P><LI>Study again the interface definition in the file <b>Mapping.java</b>,
+paying attention to the documentation for each method.
+Complete the implementation in the file <b>OrderedMapping.java</b>,
+being sure to satisfy the specification given in the interface file.
+For your internal representation, use a
+linked list, where each list item contains a domain element (a String), a range
+element (a double), and a next pointer (to another list item).  If you
+like, you can use dummy nodes at the beginning and end of the list.
+Also, feel free to create a doubly linked list (with previous pointers) if you
+find that easier.
+<P>
+One of the representation invariants for your OrderedMapping
+implementation should be that the list is kept in alphabetically
+sorted order according to the domain element.
+Use the fact that the list is kept in sorted order
+in order to improve the efficiency of the <code>put</code> and
+<code>get</code> methods.
+
+<P><LI>In the file <b>Lab8.java</b>, create an instance of an OrderedMapping,
+and pass it to the test procedure.  Verify that the output is correct.
+Look at printed values on the terminal to be sure that your list
+contains the data you expect.
+Verify that your list is being kept in sorted order.
+<P>
+
+<P><LI> Complete the implementation in the file <b>TreeMapping.java</b>,
+being sure to satisfy the specification given in the interface file.
+To do this, you'll need to define a <tt>TreeNode</tt> class.
+Each node in the tree will have a domain element (a String),
+a range element (a double), a
+(possibly null) left subtree and
+a (possibly null) right subtree.
+Your implementation should satisfy the representation invariant that
+for each node, all strings in the left subtree are alphabetically less,
+and all strings in the right subtree are alphabetically greater.
+Make use of this invariant
+to improve the efficiency of the <code>put</code> and
+<code>get</code> methods.
+<B>As a simplification, when implementing the <tt>remove</tt> method,
+just set the range value to zero.</B>  Physically removing the node
+from the tree would be the correct thing to do,
+but it's a bit involved, so we're leaving that as an extra credit option.
+<P>
+Implement the <code>toString</code> method so that it returns
+a readable representation of the tree.
+Display the tree sideways, with the root of
+the tree at the left edge of the page.
+Your return String should have one node
+per line, something like this:
+<pre>
+
+                        (quack,4)
+            (oink,5)
+                        (moo,7)
+(meow,2)
+                        ()
+            (bow wow,8)
+                        (baa,5)
+
+</pre>
+This is called an <em> in-order traversal</em> of the tree, since
+one subtree is traversed first, then the node itself, and then
+the other subtree.
+You can use the special
+character <code>'\n'</code> in a String to cause the terminal to advance
+to a new line as it prints the string.
+<P>
+Hint: 
+The depth of the node in the tree determines how much to indent.
+So, use a helper procedure with a String parameter
+that keeps track of the leading spaces
+for each line of output.  Start it out with the value <code>""</code>
+and then concatenate a String of spaces to create
+the indentation String parameter for the recursive calls on both subtrees.
+If you want, you can use the special tab character <code>'\t'</code>
+instead of multiple spaces.
+
+<P><LI>
+In the file <b>Lab8.java</b>, create an instance of a TreeMapping,
+and pass it to the test procedure.  Verify that the output is correct.
+Look at the printed values on the terminal to be sure that the
+representation invariant is being preserved by your implementation.
+<P>
+
+<LI>In the file <b>ArrayMapping.java</b> complete the implementation of the
+class <tt>ArrayMapping</tt> to implement the
+Mapping interface.
+For your internal representation, create an array of references to
+<code>Pair</code> objects, where each pair contains a domain element (a String) and a range element (a double).
+Create the array to allow enough space for 100 pairs.
+One of your representation invariants should be that the array is kept in
+sorted order according to the values of the String in each pair.
+Use <b>binary search</b> on the array
+as discussed in class to improve the efficiency of the
+<code>get</code> method.
+Note that when you insert an item that belongs somewhere in the middle
+of the array, you'll have to bump all the items after it down by one to
+make room for it in the array.
+<P>
+
+<LI>In the file <b>Lab8.java</b>, create an instance of an ArrayMapping,
+and pass it to the test procedure.  Again, notice that the test
+procedure only cares that the object's type implements the mapping
+interface.  Verify that the output is correct.
+Look at the printed values of the mapping to be sure that your array
+is being kept in sorted order.
+</OL>
+
+<P><HR><P>
+
+<B>Extra Credit Option: (2 points)</B>
+In the implementation above, we "cheated" by letting the remove method
+for binary tree deletion simply set the range value in the mapping to zero.
+In a real binary tree implementation, you'd want to actually remove the
+node from the tree. 
+For extra credit, modify your binary tree implementation so that
+when a domain element is removed, its node is taken out of the tree.
+Remember that the difficult case is when the node has two children (both
+left and right), in which case you'll move the right-most node of the
+left subtree up to the position of the node being deleted.
+Review your class notes and ask if you have any questions.
+</H3>
+
+<P><HR><P>
+
+<H3>What To Turn In:</H3>
+
+The following items should be stapled together (in order)
+by the due date.
+<OL>
+<LI> a completed <a href="../cover-sheet.html">cover sheet</a>,
+<LI> a paper printout of all of the code you have written, and
+<LI> a paper printout of terminal output from your testing.
+</OL>
+
+<p><b>Demo:</b> Bring your lab packet to a TA and demonstrate what your
+program does and to show the data structures it creates.
+<b>The TA may ask you to modify the test cases and/or the code and to
+predict what will happen when the program runs.</b>
+The TA will record a demo grade on your cover sheet
+and will keep the packet so the code can be graded.
+Be sure to complete
+your demo no later than your next lab section immediately following
+the due date. 
+If you do the demo in lab section, you must turn in
+your lab packet within the first 15 minutes.
+
+<HR size=7>
+<ADDRESS><A HREF ="http://www.cs.wustl.edu/~kjg/">Kenneth J. Goldman
+(kjg@cs.wustl.edu)</A> </ADDRESS>
+</HTML>
+
+
+

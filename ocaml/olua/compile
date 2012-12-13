@@ -1,0 +1,13 @@
+#!/bin/sh
+CC="gcc"
+OCAMLC="ocamlc"
+OCAMLOPT="ocamlopt"
+
+INCLUDE="-I/usr/local/lib/ocaml"
+
+FILES="lua.ml lualib.ml lauxlib.ml olua_rep.ml"
+CFILES="olua_luac.c olua_lualibc.c olua_lauxlibc.c"
+
+$OCAMLC -c $FILES
+$OCAMLOPT -c $FILES
+$CC -c $INCLUDE $CFILES

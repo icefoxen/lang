@@ -1,0 +1,14 @@
+ Proxying FTP
+Scott D. Taylor sent in the magic incantation to deal with proxying the FTP protocol:
+
+
+defaultProperties.put( "ftpProxySet", "true" );
+defaultProperties.put( "ftpProxyHost", "proxy-host-name" );
+defaultProperties.put( "ftpProxyPort", "85" );
+
+You can then access the files URLs using the "ftp" protocol via something like:
+
+
+URL url = new URL("ftp://ftp.netscape.com/pub/navigator/3.04/windows/readme.txt" );
+
+If anybody has examples of using a proxy with other Internet protocols, I'd love to see them.

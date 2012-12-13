@@ -1,0 +1,27 @@
+# Project: Opengl1
+# Makefile created by Dev-C++ 4.9.7.0
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = opengl1.o $(RES)
+LIBS =  -L"D:/SYS/DEV/DEV-CPP/lib" -mwindows 
+INCS =  -I"D:/SYS/DEV/DEV-CPP/include" 
+BIN  = OpenGL1.exe
+CXXFLAGS = $(INCS)  -Wall
+CFLAGS = $(INCS)  -Wall
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before OpenGL1.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CC) $(OBJ) -o "OpenGL1.exe" $(LIBS) $(CFLAGS)
+
+opengl1.o: opengl1.c 
+	$(CC) -c opengl1.c -o opengl1.o $(CFLAGS)

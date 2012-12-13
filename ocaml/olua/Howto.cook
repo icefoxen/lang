@@ -1,0 +1,11 @@
+
+
+files = lua.cmo lualib.cmo lauxlib.cmo olua_rep.cmo olua_luac.o olua_lualibc.o
+olua_lauxlib.o;
+
+all: olua;
+
+olua: [files]
+{
+   echo Foo!;
+}

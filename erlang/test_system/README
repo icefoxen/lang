@@ -1,0 +1,4 @@
+Attempt at doin the steps outlined in the docs, System Principles -> Creating a First Target SYstem
+
+The function they say to call the system does not appear to exist.  The
+closest I can find is reltool:create_target().

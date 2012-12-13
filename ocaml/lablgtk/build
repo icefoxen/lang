@@ -1,0 +1,8 @@
+#!/bin/sh
+# A quick build script for lablgtk2 projects.
+# Just say "build whatever" where the file is whatever.ml
+# and it'll produce a binary called whatever.
+
+OC=ocamlopt.opt
+
+$OC -I +lablgtk2 -o $1 lablgtk.cmxa gtkInit.cmx ${1}.ml

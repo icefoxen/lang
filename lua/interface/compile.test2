@@ -1,0 +1,2 @@
+#!/bin/sh
+gcc test2.c -o test2 -lm -llualib -llua -ldl

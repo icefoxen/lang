@@ -1,0 +1,6 @@
+/* Howto.list, /home/icefox/my.src/ocaml/olua, Thu Mar 10 11:54 2005 */
+cook: the "lua.cmo" file could not be derived, no relevant recipes were found
+cook: Howto.cook: 8: the "olua" file was not derived due to errors deriving the
+	"lua.cmo" file
+cook: Howto.cook: 6: the "all" file was not derived due to errors deriving the
+	"olua" file

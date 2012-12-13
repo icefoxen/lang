@@ -1,0 +1,444 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<HTML><HEAD><TITLE>Ncurses programming guide</TITLE>
+<META content="text/html; charset=iso-8859-1" http-equiv=Content-Type>
+<STYLE type=text/css>
+   body {
+         color: #000; background: #FFF; margin-left: 3%; margin-right: 3%;
+   }
+   H1, H2 {color: #00F;}
+   code {color: #095D0F;}
+   #code {color: #000099;}
+   #ptype {color: #995D99;}
+   #vim {color: #095D0F;}
+   </STYLE>
+
+<META content="Microsoft FrontPage 4.0" name=GENERATOR></HEAD>
+<BODY>
+<H1>Ncurses Programming Guide</H1><IMG src="solid.gif" width="100%"> 
+<P>If you have some beginning experience in Unix programming, you may have felt 
+the need of some text user interface operations, such as moving the cursor on 
+the screen, editing user input, using colors, ... Such terminal IO related 
+operations are not portable and not defined in C language. You need to either 
+use the low-level termcap library or the curses library. Using curses/ncurses 
+library is much easier and more portable. 
+<H2>Contents</H2>
+<DL>
+  <DT>
+  <H4><A href="#using">Using the library</A></H4>
+  <DD>Installations, header inclusions and link options. 
+  <DT>
+  <H4><A href="#init">Before and after using ncurses function</A></H4>
+  <DD>Thing you need to do before calling curses functions 
+  <DT>
+  <H4><A href="#window">Creating windows</A></H4>
+  <DD>Creating windows 
+  <DT>
+  <H4><A href="#cursor">Moving the cursor</A></H4>
+  <DD>Move the cursor around the window 
+  <DT>
+  <H4><A href="#input">Input</A></H4>
+  <DD>Read user input from keyboard 
+  <DT>
+  <H4><A href="#output">Output</A></H4>
+  <DD>Write text to the window 
+  <DT>
+  <H4><A href="#attribute">Using colors and other text attributes</A></H4>
+  <DD>Text colors, highlighting, blinking, ... 
+  <DT>
+  <H4><A href="#xterm">Using curses in Xterm</A></H4>
+  <DD>How to cope window resizing by user 
+  <DT>
+  <H4><A href="#example">An example of complete programs</A></H4>
+  <DD>A typing speed test program by me </DD></DL>
+<P align=center><IMG height=7 src="slim.gif" width="100%"> </P><A name=using>
+<H2>Using ncurses library</H2>To compile your C/C++ programs using  
+ncurses/curses library you need to include the curses header file  
+<TT>&lt;curses.h&gt;</TT>. For ncurses, you may include either  
+<TT>&lt;curses.h&gt; or &lt;ncurses.h&gt;</TT>. In some systems, you must  
+include <TT>&lt;ncurses.h&gt;</TT>.  
+<BLOCKQUOTE><CODE id=code>#include &lt;curses.h&gt;</CODE> </BLOCKQUOTE>To link  
+the programs you need to use the <TT><B>-lcurses</B></TT> or  
+<TT><B>-lncurses</B></TT> option, like  
+<BLOCKQUOTE><CODE id=code>gcc -lncurses prog.c</CODE> </BLOCKQUOTE>This way the  
+program is dynamically linked to the ncurses library. To run it in another  
+computer, the system must have the ncurses library installed. If you want to  
+avoid the trouble, you may have it statically linked. To do that, find the file  
+<TT><B>libncurses.a</B></TT> in <TT><B>/usr/lib</B></TT> and do  
+<BLOCKQUOTE><CODE id=code><B>gcc prog.c libncurses.a</B></CODE> </BLOCKQUOTE> 
+<P>Most Unix systems have curses or ncurses installed as a default option. To  
+find out if it's installed, you can try man ncurses man curses or go to /usr/lib  
+and /usr/include to list the files.  
+<P>If you're installing Linux or FreeBSD on your own machine, be sure to install  
+the <TT><B>ncurses-development</B></TT> package in order to do ncurses  
+programming.  
+<P align=center><IMG height=7 src="slim.gif" width="100%"> </P></a><A name=init> 
+<H2>Initialization</H2><B>The very first thing to do:</B> Before you use any  
+other <I><B>curses</B></I> routines, the <TT>initscr()</TT> routine must be  
+called first.  
+<BLOCKQUOTE><CODE id=code><B>initscr();</B></CODE> </BLOCKQUOTE>If your program  
+is going to write to several terminals, you should call <TT>newterm</TT> instead,  
+which is another story.  
+<P><B>One-character-a-time.</B> To disable the buffering of typed characters by  
+the TTY driver and get a character-at-a-time input, you need to call  
+<BLOCKQUOTE><CODE id=code><B>cbreak();</B></CODE> </BLOCKQUOTE> 
+<P><B>No echo.</B> To suppress the automatic echoing of typed characters, you  
+need to call  
+<BLOCKQUOTE><CODE id=code><B>noecho();</B></CODE> </BLOCKQUOTE> 
+<P><B>Special keys.</B> In order to capture special keystrokes like  
+<TT><B>Backspace</B></TT>, <TT><B>Delete</B></TT> and the four arrow keys by  
+<CODE><B>getch()</B></CODE>, you need to call  
+<BLOCKQUOTE><CODE id=code><B>keypad(stdscr, TRUE);</B></CODE> </BLOCKQUOTE> 
+<P><B>Before exiting.</B> Before the program is terminated,  
+<TT><B>endwin()</B></TT> must be called to restore the terminal settings.  
+<P align=center><IMG height=7 src="slim.gif" width="100%"> </P></a><A name=window> 
+<H2>Windows</H2>A window is a 2-dimensional array of characters representing all  
+or part of a CRT screen. Character input and output should pertain to a specific  
+window.  
+<P><B>The default window.</B> A default window called <TT><B>stdscr</B></TT>,  
+which is the size of the terminal screen, is supplied. To use the  
+<TT><B>stdscr</B></TT> window, you don't need to do any initializations. You can  
+also divide the screen to several parts and create a window to represent each  
+part.  
+<P><B>Create a new window.</B> The data structure of window is WINDOW, defined  
+in ncurses.h. To declare and create a new window, do  
+<BLOCKQUOTE><CODE id=code><B>WINDOW * win = newwin(nlines, ncols, y0,  
+  x0);</B></CODE> </BLOCKQUOTE><PRE>                        The screen (stdscr)
+        (0,0)*----------------------------------* (0, COLUMNS-1)
+             |                                  |
+             |                                  |
+             |    (y0,x0)                       |
+             |      ---------------             |
+             |      |             |             |
+             |      |             |             |
+             |      |     win     |nlines       |
+             |      |             |             |
+             |      |             |             |
+             |      |             |             |
+             |      ---------------             |
+             |          ncols                   |
+             |                                  |
+             *----------------------------------*
+       (LINES-1, 0)                              (LINES-1, COLUMNS-1) 
+</PRE>All the 4 parameters are <TT id=code><B>int</B></TT>s. Here nline is the  
+height of the window -- number of lines, ncols is the width -- number of columns  
+of the window. y0 and x0 are the coordinates of the upper left corner of win on  
+the screen -- line y0 and columns x0. You should make sure that the area of the  
+new window is inside the screen.  
+<P><B>Height and width of the window.</B> The size of the whole screen can be  
+determined by the two global variables <TT><B>COLUMNS</B></TT> and  
+<TT><B>LINES</B></TT>. <TT><B>y0</B></TT> and <TT><B>x0</B></TT> should satisfy <PRE><CODE id=code><B>
+   0 &lt;= y0 &lt; LINES;
+   0 &lt;= x0 &lt; COLUMNS;
+</B></CODE>
+</PRE> 
+<P>In X window system, the actual xterm size might be changed leaving these two  
+variables obslete. In this case you should use the macro <TT id=ptype>void  
+getmaxyx(WINDOW *, int y, int x)</TT> to get the size of the screen. <PRE><CODE id=code><B>
+   int h, w;
+   getmaxyx(stdscr, h, w);
+</B></CODE>
+</PRE> 
+<P><B>No overlapping.</B> Windows cannot overlap with each other. Therefore you  
+have two options: only use stdscr and no other windows, or create several  
+non-overlapping windows but do not use stdscr.  
+<P><B>Refresh.</B> If you make some change to a window, such as printing  
+something or moving the cursor, the effect is not shown on the screen until you  
+call the wrefresh() function <PRE><CODE id=code><B>
+   wrefresh(win);
+</B></CODE>
+</PRE> 
+<P><B>Clear window.</B> To erase everything written in the window  
+<TT><B>win</B></TT>, call <TT><B>wrefresh(win)</B></TT>.  
+<TT><B>refresh()</B></TT> is equivalent to <TT><B>wrefresh(stdscr)</B></TT>.  
+<P><B>Delete window.</B> If a window <TT><B>win</B></TT> is no longer needed,  
+and you're going to create new windows to overlap it, you should call  
+<TT><B>delwin(win)</B></TT> to delete the window (release the memory it is  
+using).  
+<P align=center><IMG height=7 src="slim.gif" width="100%"> </P></a><A name=cursor> 
+<H2>Moving the cursor</H2>The position of the cursor on the screen is important  
+because it is default beginning place for most output functions. The cursor also  
+shows the user where the input is expected.  
+<P>To move the cursor to a new position on a window, use the function <CODE  
+id=code><B>int wmove(WINDOW *win, int y, int x)</B></CODE>  
+<BLOCKQUOTE><CODE id=code><B>wmove(win, y, x);</B></CODE> </BLOCKQUOTE>where  
+<TT><B>(x, y)</B></TT> are the coordinates of the new position in the window. If  
+the window has <TT><B>nlines</B></TT> lines and <TT><B>ncolumns</B></TT>  
+columns, then <PRE><B>
+      0 &lt;= y &lt; nlines
+      0 &lt;= x &lt; ncolumns
+</B></PRE> 
+<P><B>Refresh.</B> The actual cursor motion is not shown on the screen untill  
+you do a <TT><B>wrefresh(win)</B></TT>.  
+<P><TT><B>move(y, x)</B></TT> is equivalent to the <TT><B>wmove(stdscr, y,  
+x)</B></TT>.  
+<P align=center><IMG height=7 src="slim.gif" width="100%"> </P></a><A name=input> 
+<H2>Input</H2>To read a character from stdscr, use the function <CODE  
+id=code><B>int getch(void)</B></CODE>. <PRE id=code><B>
+    int ch = getch();
+</B></PRE><B>No echoing.</B> If you have called <CODE  
+id=code><B>noecho()</B></CODE>, the character <CODE id=code><B>ch</B></CODE>  
+will not be printed on the screen, otherwise it will. Disabling automatic  
+echoing gives you more control over the user interface.  
+<P><B>No buffering.</B> If you have called <CODE  
+id=code><B>cbreak(void)</B></CODE> each key the user hits is returned  
+immediately by <CODE id=code><B>getch()</B></CODE>. Otherwise the keys hit by  
+the user are queued until a newline is read. Then calls to <CODE  
+id=code><B>getch()</B></CODE> take characters from the queue in FIFO manner until 
+the queue is empty and the next whole line is read.  
+<P><B>No delaying.</B> Usually a call to <CODE id=code><B>getch()</B></CODE>  
+waits until a key is hit. If you have called <CODE id=code><B>nodelay(stdscr,  
+TRUE)</B></CODE>, then <CODE id=code><B>getch()</B></CODE> will work in a  
+non-blocking manner -- it will return <TT><B>ERR</B></TT> if the key input is  
+not ready. This is usually useful for writing game-like programs, where the  
+promptness of user response matters. For example <PRE id=code><B>
+     int ch;
+     nodelay(stdscr, TRUE);
+     for (;;) {
+          if ((ch = getch()) == ERR) {
+              /* user hasn't responded
+               ...
+              */
+          }
+          else {
+              /* user has pressed a key ch
+               ...
+              */
+          }
+     }
+</B></PRE> 
+<P><B>Special keys.</B> If you have called <CODE id=code><B>keypad(stdstr,  
+TRUE)</B></CODE>, then if the user hits a special key such as the <TT><B  
+id=spk>Delete</B></TT> key, the arrow keys, <TT><B>Ctrl</B></TT> combined keys  
+and function keys, a single int value will be returned. Here is the definition  
+of several special keys <PRE><B id=code>
+           key code        description
+
+           KEY_DOWN        The four arrow keys ...
+           KEY_UP
+           KEY_LEFT
+           KEY_RIGHT
+           KEY_HOME        Home key 
+           KEY_BACKSPACE   Backspace
+           KEY_F(n)        Function keys, for 0 &lt;= n &gt;= 63
+           KEY_DC          Delete character
+           KEY_IC          Insert char or enter insert mode
+           KEY_ENTER       Enter or send
+</B></PRE>For a complete list read the man page of <CODE><B>getch()</B></CODE>.  
+<P><B>Catch special keys.</B> To use these keys, you need to check the return  
+value of <CODE><B>getch()</B></CODE>. For example <PRE><B id=code>
+     int ch = getch();
+     switch (ch) {
+          case KEY_BACKSPACE: /* user pressed backspace */ 
+             ...
+          case KEY_UP:  /* user pressed up arrow key */
+             ...
+          case KEY_DOWN:  /* user pressed up arrow key */
+             ...
+          case 'A' ....   /* user pressed key 'A' */
+             ...
+     }
+</B></PRE><B>Read character from a window.</B> The function <CODE id=code><B>int  
+wgetch(WINDOW *win)</B></CODE>. reads a key from a window. The user input of  
+course comes from the keyboard and not the screen window. But the different  
+windows on the screen might have different delay modes and other properties,  
+therefore affect the behavior of <CODE id=code><B>wgetch()</B></CODE>.  
+<P><B>Moving the cursor and read a character.</B> There are also functions which  
+combine cursor moving and character reading together <PRE><B id=code>
+       int mvgetch(int y, int x);
+       int mvwgetch(WINDOW *win, int y, int x);
+</B></PRE> 
+<P align=center><IMG height=7 src="slim.gif" width="100%"> </P></a><A name=output> 
+<H2>Output</H2>The function <CODE id=code><B>int waddch(WINDOW * win, chtype  
+ch)</B></CODE> adds a character on the window at the current cursor position,  
+and the cursor position is advanced then.  
+<P><B>Wrap.</B> If the new position of the cursor is out of the window, it wraps  
+to the beginning of the next line.  
+<P><B>Scroll.</B> If the next line is out of the window, and you have called  
+<CODE id=code><B>scrollok(win, TRUE)</B></CODE> when the window was created, the  
+stuff in the window is scrolled up one line.  
+<P><B>Character attribute.</B> The parameter <CODE id=code><B>ch</B></CODE> is  
+of type <CODE id=code><B>chtype()</B></CODE>, which is the ASCII value of the  
+character combined with some video attributes such as colors. The combination is  
+through the logical <TT><B>OR</B></TT> of the character value and the attribute,  
+which I will talk about in the section.  
+<P><B>Refresh.</B> After a call to <CODE id=code><B>waddch</B></CODE>, the  
+screen is not updated until you call <CODE id=code><B>wrefresh(win)</B></CODE>.  
+ 
+<H4>Ohter output functions</H4> 
+<P><CODE id=code><B>mvwaddch(win, y, x, ch);</B></CODE> is equivalent to <CODE  
+id=code><B>wmove(win, y, x); waddch(win, ch);</B></CODE>  
+<P><CODE id=code><B>addch(ch);</B></CODE> is equivalent to <CODE  
+id=code><B>waddch(stdscr, ch);</B></CODE>.  
+<P><CODE><B id=code>wechochar(win, ch);</B></CODE> function and <CODE><B  
+id=code>echochar(ch)</B></CODE> are equivalent to <CODE id=code><B>waddch(win,  
+ch); wrefresh(win);</B></CODE> and <CODE id=code><B>addch(ch);  
+refresh();</B></CODE> respectively. But <CODE id=code><B>echochar</B></CODE> and  
+<CODE id=code><B>wechochar</B></CODE> may be more efficient.  
+<P><CODE id=code><B>int waddstr(WINDOW *win, const char *str)</B></CODE> and  
+<CODE id=code><B>int addstr(const char *str)</B></CODE> prints a null-terminated  
+string at the cursor position of the window, and advance the cursor position  
+accordingly.  
+<P>The functions <CODE id=code><B>int wprintw(WINDOW *win, char *fmt  
+...)</B></CODE> and <CODE id=code><B>int printw(char *fmt ...)</B></CODE> do  
+formatted output in the same fashion as the analogous standard library function  
+<CODE id=code><B>printf</B></CODE>.  
+<P align=center><IMG height=7 src="slim.gif" width="100%"> </P></a><A  
+name=attribute> 
+<H2>Attribute</H2>When characters are drawn on the screen some special video  
+effects, like <I>foreground and background </I><i>color</i>, <i>highlight</i>,  
+<I>underline</I>, <I>blinking</I>, ..., can be shown. Such video effects are  
+represented by integers called text attributes. Each significant bit of the  
+attribute corresponds to one video effect.  
+<H4>Using attribute</H4>There are two ways to use attribute. One is by passing  
+<CODE id=code><B>waddch(win, ch)</B></CODE> a character value combined with  
+attribute. The other is setting the global window attribute.  
+<P><B>Character type.</B> When calling <CODE id=code><B>waddch(win,  
+ch)</B></CODE> or <CODE id=code><B>addch(ch)</B></CODE>, logical  
+<TT><B>OR</B></TT> the character value with the attribute. For example, <CODE  
+id=code><B>A_UNDERLINE</B></CODE> is the predefined attribute for underlining.  
+To print the character <B>'X'</B> with underlining, do <PRE><B id=code>
+     waddch(win, 'X' | A_UNDERLINE);
+</B></PRE>Using several attributes is of course possible. For example, to To  
+print the character <B>'X'</B> with highlight in color pair 3 <PRE><B id=code>
+     waddch(win, 'X' | A_UNDERLINE | COLOR_PAIR(3));
+</B></PRE> 
+<P><B>Setting window attribute.</B> <CODE id=code><B>int wattron(WINDOW *win,  
+int attr)</B></CODE> function to turn on an attribute <CODE  
+id=code><B>attr</B></CODE>. Then anything printed by subsequent calls to <CODE  
+id=code><B>waddch</B></CODE>, <CODE id=code><B>addstr</B></CODE> and <CODE  
+id=code><B>waddstr</B></CODE> will have the attribute <CODE  
+id=code><B>attr</B></CODE>, For example, to print a highlighted message on the  
+screen <PRE><B id=code>
+     attron(A_STANDOUT);
+     addstr(&quot;I am highlighted!\n&quot;);
+</B></PRE><B>Predefined attributes.</B> Here is some attributes defined in  
+ncurses.h <PRE><B id=code>
+        A_NORMAL        Normal display (no highlight)
+        A_STANDOUT      Best highlighting mode of the terminal.
+        A_UNDERLINE     Underlining
+        A_REVERSE       Reverse video
+        A_BLINK         Blinking
+        A_DIM           Half bright
+        A_BOLD          Extra bright or bold
+        A_PROTECT       Protected mode
+        A_INVIS         Invisible or blank mode
+        A_ALTCHARSET    Alternate character set
+        A_CHARTEXT      Bit-mask to extract a character
+        COLOR_PAIR(n)   Color-pair number n
+</B></PRE> 
+<H4>Using colors</H4>The combination of foreground and background color is an  
+attribute. Unlike other attributes, before using colors, you must call <CODE  
+id=code><B>start_color()</B></CODE>.  
+<P>When <CODE id=code><B>start_color()</B></CODE> is called, a set of  
+<I>colors</I> and <I>color pairs</I> are created which you can use. The number  
+of available colors and the number of the color pairs are stored in two global  
+variables <CODE id=code><B>COLORS</B></CODE> and <CODE  
+id=code><B>COLOR_PAIRS</B></CODE>. To use an predefined color pair as an  
+attribute, you need to cal the macro <CODE id=code><B>COLOR_PAIR(n)</B></CODE>,  
+where <TT><B>n</B></TT> must satisfy <PRE><B>
+     0 &lt;= n &lt; COLORS
+</B></PRE><B>Example.</B> To give a window the color attribute defined by color  
+pair #2, so that each subsequent character printed in this window has the foreground 
+and background color defined by color pair #2 <PRE><B id=code>
+    wattron(win, COLOR_PAIR(2));
+</B></PRE>The meaning of a color pair can be redefined. For example <PRE><B id=code>
+     init_pair(1,2,0);
+</B></PRE>redefine the color pair #1 with foreground color #2 and background  
+color #0. In the function <CODE><B id=code>int init_pair(short n, short f, short  
+b)</B></CODE> the parameters must satisfy <PRE><B id=code>
+    0 &lt;= n &lt; COLORS  
+    0 &lt;= f &lt; COLOR_PAIRS  
+    0 &lt;= b &lt; COLOR_PAIRS  
+</B></PRE> 
+<P>When <CODE><B id=code>start_color()</B></CODE> is called, 8 basic colors are  
+initialized <PRE><B id=code>
+        COLOR_BLACK
+        COLOR_RED
+        COLOR_GREEN
+        COLOR_YELLOW
+        COLOR_BLUE
+        COLOR_MAGENTA
+        COLOR_CYAN
+        COLOR_WHITE
+</B></PRE>You can use these names in <CODE><B id=code>init_pair()</B></CODE> for  
+specifying foreground and background color.  
+<P>To find out what foreground color and background color is used by a color  
+pair, use the function <CODE><B id=code>int pair_content(short pair, short *f,  
+short *b)</B></CODE>. To find out the definition of a color use the function  
+<CODE><B id=code>int color_content(short color, short *r, short *g, short  
+*b)</B></CODE>  
+<P>Color can also be redefined by <CODE><B id=code>int init_color(short n, short  
+r, short g, short b)</B></CODE>, where n is the index of color, must be less  
+than COLORS. r, g, and b represent the intensity of red, green and blue. Each  
+value of r, g and b must be less than 1000.  
+<H4>Line graphics</H4>Line graphics. Here are some special characters which can  
+be used in addch and addstr routines as the chtype. <PRE>       ACS_BLOCK               solid square block
+       ACS_BOARD               board of squares
+       ACS_BTEE                bottom tee
+       ACS_BULLET              bullet
+       ACS_CKBOARD             checker board (stipple)
+       ACS_DARROW              arrow pointing down
+       ACS_DEGREE              degree symbol
+       ACS_DIAMOND             diamond
+       ACS_GEQUAL              greater-than-or-equal-to
+       ACS_HLINE               horizontal line
+       ACS_LANTERN             lantern symbol
+       ACS_LARROW              arrow pointing left
+       ACS_LEQUAL              less-than-or-equal-to
+       ACS_LLCORNER            lower left-hand corner
+       ACS_LRCORNER            lower right-hand corner
+       ACS_LTEE                left tee
+       ACS_NEQUAL              not-equal
+       ACS_PI                  greek pi
+       ACS_PLMINUS             plus/minus
+       ACS_PLUS                plus
+       ACS_RARROW              arrow pointing right
+       ACS_RTEE                right tee
+       ACS_S1                  scan line 1
+       ACS_S3                  scan line 3
+       ACS_S7                  scan line 7
+       ACS_S9                  scan line 9
+       ACS_STERLING            pound-sterling symbol
+       ACS_TTEE                top tee
+       ACS_UARROW              arrow pointing up
+       ACS_ULCORNER            upper left-hand corner
+       ACS_URCORNER            upper right-hand corner
+       ACS_VLINE               vertical line
+</PRE>Usually on terminals using these symbols can draw pretty windows and  
+shapes. One place to use this is the <CODE><B id=code>wborder</B></CODE>  
+function, which draws borders for a window. See the man page for details about  
+the parameters, but usually do it the following way <PRE><B id=code>
+     wborder(win, 0, 0, 0, 0, 0, 0, 0, 0);
+</B></PRE>will make a good looking window.  
+<P>To draw a horizontal line across the window, do <PRE><B id=code>
+     whline(win, ACS_HLINE, ncolumns);
+</B></PRE> 
+<P align=center><IMG height=7 src="slim.gif" width="100%"> </P></a><A name=xterm> 
+<H2>X window</H2>If an xterm is resized the contents on your text windows might  
+be messed up. To handle this gracefully you should redraw all the stuff based on  
+the new height and width of the screen. When resizing happens, your program is  
+sent a <TT><B>SIGWINCH</B></TT> signal. You should catch this signal and do  
+redrawing accordingly. Here is some hint. <PRE><B><CODE>
+     #include &lt;signal.h&gt;
+     void* resizeHandler(int);
+
+     int main(void) {
+          ...
+          signal(SIGWINCH, resizeHandler);
+          ...
+     }
+
+     void* resizeHandler(int sig)
+     {
+          int nh, nw;
+          getmaxyx(stdscr, nh, nw);  /* get the new screen size */
+          ...
+     }
+</CODE></B></PRE> 
+<P align=center><IMG height=7 src="slim.gif" width="100%"> </P></a><A name=example> 
+<H1>Examples</H1></a><A href="tst">This</A> is a program for testing typing speed,  
+which I wrote a long time ago, but never finished, and may never have time on  
+it. It's usable but may need some refinement.  
+<P align=center><IMG src="solid.gif" width="100%"> </P> 
+<P align=center><A href="http://publish.uwo.ca/~xli5/">X. Li's Homepage  
+</A></P></BODY></HTML> 

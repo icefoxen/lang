@@ -1,0 +1,40 @@
+Javapost:
+
+Figure out the string to send --puzzle through that parser code in EasyPost.
+
+Fiddle with cookies, if it sends the string but says your not logged in.  You can find info here:
+
+http://www.javaworld.com/javaworld/jw-04-2002/jw-0426-cookie-p3.html
+http://jcookie.sourceforge.net/
+
+Also check java.sun.com for info; there might be official stuff out.
+
+
+EASYPOST PARSER
+
+    temptext = frmMain.txtPost.SelText 
+// tempText is the text of themessage
+
+    temptext2 = Asc(temptext)
+// temptext2 is temptext converted to ASCII!
+
+        If 
+(temptext2 >= 48 && temptext2 <= 57) ||  (Between 0 and 9)
+(temptext2 >= 64 && temptext2 <= 90) ||  (Between A and Z)
+(temptext2 = 95) ||                      (_)
+(temptext2 >= 97 && temptext2 <= 122) || (Between a and z)
+(temptext2 = 160)                        (???????????????)
+        Then
+            temptext3 = temptext3 & temptext
+        Else
+            If temptext2 = 13 Then       (Carrage return)
+                temptext2 = "%0D%0A"
+            ElseIf temptext2 = 10 Then   (Linefeed)
+                temptext2 = ""
+            ElseIf temptext2 = 32 Then   (Space)
+                temptext2 = "+"
+            Else
+                temptext2 = "%" & Hex$(temptext2) // Then to hex?
+            End If
+            temptext3 = temptext3 & temptext2
+        End If

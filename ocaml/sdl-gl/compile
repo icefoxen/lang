@@ -1,0 +1,16 @@
+#!/bin/sh
+
+#FILES="sdl-gl.ml"
+
+LIBS="str.cmxa unix.cmxa nums.cmxa bigarray.cmxa sdl.cmxa sdlloader.cmxa sdlttf.cmxa 
+      sdlmixer.cmxa lablgl.cmxa"
+
+OCAMLC=ocamlc.opt
+OCAMLOPT=ocamlopt.opt
+
+OCAMLSDLLIB=`ocamlfind query sdl`
+
+
+#$OCAMLC -c -g -I $OCAMLSDLLIB $LIBS $FILES
+$OCAMLOPT -c -I $OCAMLSDLLIB -I +lablGL $LIBS $1
+

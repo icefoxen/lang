@@ -1,0 +1,4 @@
+#!d:/sys/djgpp/bin/sh
+rm -vf *.o
+rm -vf *.cm?
+rm -vf *~

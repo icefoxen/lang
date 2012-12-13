@@ -1,0 +1,17 @@
+Next to do:
+
+Add HTML parser  --HARD.  Java ain't good for text, no built-in search-and-replace.  Maybe find someone else's Java web browser and take a look?
+
+*Change the input method to PrintWriter or writeChars or something, or maybe have a choice.  That will prevent it from transferring binary characters.*
+
+Add source viewer
+
+Add picture viewer?
+
+Add a window that lists the pictures/hyperlinks?
+
+Make a program/method that snaffles all webpages attached to a page --recursion, baby.
+
+Try to download a file?
+
+Proxy support.  I know how, now.  Figure out how to define local pages.

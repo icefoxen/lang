@@ -1,0 +1,2 @@
+#!d:/sys/djgpp/bin/sh
+ocamlc -cc gcc -i -verbose -w A -c items.ml node.ml nodereader.ml flags.ml

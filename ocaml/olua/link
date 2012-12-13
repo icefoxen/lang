@@ -1,0 +1,34 @@
+#!/bin/sh
+CC="gcc"
+OCAMLC="ocamlc"
+OCAMLOPT="ocamlopt"
+OCAMLMKTOP="ocamlmktop"
+AR='ar'
+
+LIBDIR="/usr/local/lib/ocaml"
+CLIBDIR="/usr/local/lib"
+
+FILES="lua.cmo lualib.cmo lauxlib.cmo"
+OPTFILES="lua.cmx lualib.cmx lauxlib.cmx"
+OBJFILES="olua_luac.o olua_lualibc.o olua_lauxlibc.o"
+# TO USER: Modify the -L directive to point to your Ocaml lib directory!
+CLIBS="-cclib -lolua -cclib -llua -cclib -llualib -ccopt \
+       -L/usr/local/lib/ocaml/"
+
+# This gets a bit convoluted to build the library correctly...
+# We want to build olua.a with everything we need, including the C files,
+# but ocamlopt clobbers olua.a only including the compiled ocaml.
+# So we build olua.a with everything, compile to native code under the name
+# of oluaopt, and copy oluaopt.cmxa to olua.cmxa
+# I THINK everything works fine then.
+# Well, it would, if it would FIND olua.a after you install it!
+
+$AR r libolua.a *.o
+
+# Build the Ocaml archives with olua.a
+$OCAMLOPT -a -o olua.cmxa $OPTFILES $CLIBS
+$OCAMLC -a -o olua.cma $FILES $CLIBS
+$OCAMLMKTOP -custom -o oluatop olua.cma
+
+$OCAMLC -custom -o olua olua.cma olua_rep.cmo
+$OCAMLOPT -o olua.opt olua.cmxa olua_rep.cmx

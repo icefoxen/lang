@@ -1,0 +1,354 @@
+<html><head><!-- #include virtual="/project/www-cs/archive/courses/CS101_FL95/labbar.html"--><title>CS101 Lab 6: Linked Lists</title></head>
+
+
+<body><center><h3>CS101 Lab 6: Linked Lists</h3>
+<small>
+<table>
+<tbody><tr><td>Assigned:</td><td>Friday, October 3</td></tr>
+<tr><td>Quiz:</td><td>Tuesday, October 14</td></tr>
+<tr><td>Due:</td><td>Friday, October 17</td></tr>
+<tr><td>Grace period ends:</td><td>in your first lab section following the due date</td></tr>
+</tbody></table>
+</small>
+
+<!--
+<BR><B>CAUTION: THIS IS A DRAFT VERSION OF THE LAB</B>
+<BR>
+-->
+
+</center>
+
+<p>
+<!--
+<B>
+Start early:
+</B>
+Students often find that their first exposure to linked list structures is
+a challenging experience.
+Be sure to start Part II early
+so you have an opportunity to get all of your questions answered.
+-->
+
+<b>Goals:</b>
+By the end of this lab, you should...
+</p><ul>
+<li> be comfortable using instance variables that are object references.
+</li><li> understand how linked lists are represented in memory.
+</li><li> be able to write methods to manipulate linked lists.
+</li><li> be more comfortable with recursion and iteration,
+as applied to linked list traversal.
+</li></ul>
+
+<hr>
+
+<p>
+
+</p><h3>Part I. Practice Exercises</h3>
+Expect questions like these on the quiz.
+You will benefit most by doing the exercises before you
+<a href="http://www.cse.wustl.edu/%7Ekjg/cs101/Labs/lab6/solutions.html">look at the solutions</a>
+or attend the help session.
+<p>
+
+<b>Directions:</b>
+Consider the following class definition (as presented in lecture) and
+then answer the questions below.
+
+</p><pre>class ListItem {
+   public int number;
+   public ListItem next;
+
+   ListItem(int number, ListItem next) {
+      this.number = number;
+      this.next = next;
+   }
+
+   public String toString() {
+      if (next == null)
+         return "" + number;
+      else
+         return number + " " + next;
+   }
+}
+</pre>
+
+<ol>
+<p></p><li> Carefully draw an object and reference diagram corresponding to
+the result of executing the following code.
+<b>If an object is "shared" by two or more lists, draw it only once
+with multiple arrows pointing to it.</b>
+Remember that Java evaluates expressions left to right, but always
+evaluates parameters before making a procedure call.
+ 
+<pre>
+ListItem a, b, c, d;
+a = new ListItem(1,null);
+b = new ListItem(2,null);
+b.next = a;
+c = new ListItem(3,b);
+d = new ListItem(4, new ListItem(5, new ListItem(6, b)));
+c = c.next;
+
+Terminal.println("a = (" + a + ")");
+Terminal.println("b = (" + b + ")");
+Terminal.println("c = (" + c + ")");
+Terminal.println("d = (" + d + ")");
+
+</pre>
+
+<p></p></li><li>What output would be printed as the result of executing the
+code given in Problem 1?
+
+<p></p></li><li>A ListItem object (as defined above) is stored in memory as two
+contiguous memory cells (contiguous means that they are consecutive,
+one immediately following the other).
+The first cell of the object corresponds to the number being held by the
+ListItem, and the second cell contains the memory address of the next
+ListItem.  Draw an object and reference diagram for ListItems being
+held in the following memory.  There are two lists, one starting
+at memory location 112, and the other starting at memory location 104.
+In memory, the null value is represented as 0. 
+<p>
+
+<small>
+</small><table border="1">
+<tbody><tr><th>Memory Address</th><th>Memory Contents</th></tr>
+<tr><td>100</td><td>107</td></tr>
+<tr><td>101</td><td>0</td></tr>
+<tr><td>102</td><td>112</td></tr>
+<tr><td>103</td><td>116</td></tr>
+<tr><td>104</td><td>134</td></tr>
+<tr><td>105</td><td>118</td></tr>
+<tr><td>106</td><td>109</td></tr>
+<tr><td>107</td><td>100</td></tr>
+<tr><td>108</td><td>103</td></tr>
+<tr><td>109</td><td>114</td></tr>
+<tr><td>110</td><td>116</td></tr>
+<tr><td>111</td><td>106</td></tr>
+<tr><td>112</td><td>111</td></tr>
+<tr><td>113</td><td>102</td></tr>
+<tr><td>114</td><td>116</td></tr>
+<tr><td>115</td><td>0</td></tr>
+<tr><td>116</td><td>122</td></tr>
+<tr><td>117</td><td>114</td></tr>
+<tr><td>118</td><td>0</td></tr>
+<tr><td>119</td><td>110</td></tr>
+</tbody></table>
+
+
+</p><p></p></li><li>In problem 3, which memory locations are not used
+in either list?
+
+<p></p></li><li>Suppose we store the value 118 into memory location 117.
+Now what would the object and reference diagram look like?
+Now which memory locations are not used in either list? 
+
+<p></p></li><li>Assuming that memory locations are allocated in order starting
+from address 200, draw a memory table like the one in Problem 3
+that would result at the end of the execution of the code in Problem
+1.  Which memory locations are not used in any of the lists?
+
+</li></ol>
+
+<p></p><hr><p>
+
+</p><h3>Part II. Linked List Manipulation</h3>
+
+In this lab, you will be working with list structures.
+Download 
+<a href="http://www.cse.wustl.edu/%7Ekjg/cs101/Labs/lab6/lab6.zip">lab6.zip</a> and import it into a new Eclipse project.
+In some parts of this lab, you'll
+be asked to write <b>new methods for the ListItem class</b>.  Those
+will go in the provided file ListItem.java.  In other parts of the lab, you'll
+be asked to write procedures that <b>create and use ListItem
+objects</b>, but are not methods of the ListItem class.  Those
+procedures, as well as all of your tests, belong in the file
+Lab6.java. Be sure to test all of them thoroughly.
+<p>
+
+<b>Seeing your data structures on the canvas:</b> The CS101Canvas
+provided with this assignment has a method <tt>showData</tt> that
+draws box-and-arrow diagrams for data structures.  A reference to any
+object can be passed as a parameter to the <tt>showData</tt> method.
+For example, if you pass a ListItem, you'll see the its number and its
+reference to the next item, which in turn will contain a number and a
+next, and so on.  (For long lists, the layout may not be the best, but
+dragging the objects around with the mouse may help.)
+
+</p><p>
+In this lab, the ListItem constructor is written to show
+every ListItem on the canvas.  If the ListItem changes later,
+the display will update accordingly.
+Well-placed "sleep" calls in your program can be used to
+slow things down so you can see the data structures change as they are
+being built or modified.
+(Note that <tt>showData</tt> will only show
+the values of the public instance variables.  It does not show private
+instance variables, and it does not show local variables.)
+If the canvas becomes cluttered with too many different lists,
+you may want to create a fresh canvas on at different points in your
+test program.  To do this, call
+the method ListItem.startNewDisplay().
+</p><ol>
+
+<li>In the file <b>ListItem.java</b>, write methods for the ListItem
+class that satisfy the following specifications.  <b>Test each
+thoroughly.</b>
+In each case, be sure to use recursion or iteration as specified.
+Where not indicated, you may choose either approach.
+<p>
+
+</p><ol>
+<li>A <b>recursive</b> method <code>length</code>
+that takes no parameters and returns the number of elements in the list.
+For example, the list (3 5 9 3 2 4) would have length 6.
+<p>
+
+</p></li><li>A <b>recursive</b> method <code>duplicate</code>
+that takes no parameters and returns a new ListItem that begins a
+list containing the same numbers (but not the same ListItem objects)
+as the original list.
+<p>
+
+</p></li><li>A <b>recursive</b> method <code>reverseRecurse</code> that takes no
+parameters and returns a ListItem.  The return value should be
+a <b>new</b> list structure that contains the same numbers as this list, but
+in the reverse order.  (Hint: Use a helper procedure with an extra
+parameter that accumulates the reversed list.)  
+<p>
+
+</p></li><li>An <b>iterative</b> method <code>reverseLoop</code> that takes no
+parameters and returns a ListItem.  The return value should be
+a <b>new</b> list structure that contains the same numbers as this list, but
+in the reverse order. (Hint: Create a loop variable that's a ListItem reference
+to keep track of your current position in the list.)
+<p>
+
+</p></li><li>An <b>iterative</b> method <code>stretch</code> that takes a positive number <code>n</code>
+as a parameter and returns a new ListItem beginning a
+list in which each of the numbers in the original
+list is repeated <code>n</code>
+times.  For example, if the original
+list is ( 6 7 6 9 ) and the parameter value is
+2, then the new list returned is ( 6 6 7 7 6 6 9 9 ).
+<p>
+
+</p></li><li>A method <code>find</code> that takes an integer <code>target</code>
+and returns the first ListItem in the list that contains the given number.
+If the target does not occur in the list, then <code>null</code> is returned.
+<p>
+<!--
+<LI>A method <CODE>max</CODE> that
+returns the largest number in the list.
+Initialization must be done carefully.
+Hint: You know that the maximum
+value must be at least as large as the number in the first ListItem.
+-->
+</p></li></ol>
+<p>
+
+</p></li><li>In the file <b>Lab6.java</b>, write procedures
+that satisfy the following specifications.  <b>Test each
+thoroughly.</b>
+In each case, be sure to use recursion or iteration as indicated.
+Where not indicated, you may choose either approach.
+Be sure to handle the case where the input is null.
+
+<p>
+</p><ol>
+<li>A <b>recursive</b> procedure <code>evenElements</code>
+<pre>PARAMETERS:   a ListItem reference, ls
+RETURN VALUE: a ListItem at the beginning of a list structure
+              containing copies of the even numbers in given list.
+                 for example, given input list ( 3 2 6 9 ), the
+                 return value would be the list ( 2 6 )
+</pre>
+<p>
+
+</p></li><li>A <b>recursive</b> procedure <code>pairwiseSum</code>
+<pre>PARAMETERS:   two ListItem references, ls1 an ls2
+RETURN VALUE: a ListItem at the front of a new list containing the pairwise
+              sum of the elements in ls1 and ls2
+                 for example, given lists ( 3 2 6 ) and ( 1 4 2), 
+                 the return value would be the list ( 4 6 8 )
+</pre>
+You may assume that the given lists are the same length.
+<p>
+
+</p></li><li>An <b>iterative</b> procedure <code>smallElements</code>
+<pre>PARAMETERS:   a ListItem reference, ls
+              an integer n
+RETURN VALUE: a new list identical to the given list, except
+              that it contains no occurrences of numbers greater than n.
+              for example, given input list ( 3 2 6 3 4 ) and 3,
+                 the return value would be the list ( 3 2 3 )
+</pre>
+<p>
+
+</p></li><li>An <b>iterative</b> procedure <code>scale</code>
+<pre>PARAMETERS:   a ListItem reference, ls
+              an integer n
+RETURN VALUE: none (void)
+              the procedure <b>mutates</b> the list by multiplying
+              each number in the list by the given number n.
+                 for example, given input lists ( 3 2 6 3 4) and
+                 the number 3,
+                 the modified list would be ( 9 6 18 9 12 ).
+</pre>
+
+</li><li>A procedure <code>insertAfter</code>
+<pre>PARAMETERS:   a ListItem reference, ls
+              two integers i and j (not equal)
+RETURN VALUE: none (void)
+              the procedure <b>mutates</b> the list by inserting the
+              given number i after each occurrence of j.
+                 for example, given input lists ( 3 2 6 3 4) and
+                 the number 5 and 3,
+                 the modified list would be ( 3 5 2 6 3 5 4 ).
+</pre>
+Be sure to do this by creating new list items only for the inserted
+numbers.  Modifying the <code>next</code> references in the existing
+ListItem objects to insert the new items in the right places.
+Don't create a whole new list structure.
+<p>
+</p></li></ol>
+
+<p></p></li><li>In the <code>run</code> method in the file <b>Lab6.java</b>,
+make calls to all the methods and procedures
+you have written to demonstrate that they work properly.
+Be sure to test them on a variety of lists.
+
+</li></ol>
+
+<p></p><hr><p>
+
+</p><h3>What To Turn In:</h3>
+
+<b>Part I:</b> You do not need to turn anything in for Part I, but
+should work the practice problems carefully and check your answers as
+preparation for the quiz.
+
+<p>
+<b>Part II:</b> Staple together the following items
+by the due date:
+</p><ol>
+<li> a completed <a href="http://www.cse.wustl.edu/%7Ekjg/cs101/Labs/cover-sheet.html">cover sheet</a>,
+</li><li> a paper printout of all of the code you have written
+</li><li> a paper printout of terminal output from your test cases
+</li></ol>
+
+<p><b>Demo:</b> Bring your lab packet to a TA and demonstrate what
+your program does.  The TA will ask you to modify your
+program in a certain way and predict what will happen before you
+run it.  Your demo grade will be based on whether or not you are
+able to accurately predict what will be shown on the canvas and
+what will be output to the terminal.
+Be sure to complete your demo no later than your next lab section
+immediately following the due date.  If you plan to do your demo
+during lab section, your lab packet must be turned in to a TA
+<b>within the first 15 minutes of the lab section.</b>
+
+</p><hr size="7">
+<address><a href="http://www.cs.wustl.edu/%7Ekjg/">Kenneth J. Goldman
+(kjg@cs.wustl.edu)</a> </address>
+</body></html>

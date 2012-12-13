@@ -1,0 +1,13 @@
+; Hello World in Skribe.
+; Yay!
+;
+; At the moment, Skribe can output to html, LaTeX, and rather primative xml.
+; LaTeX is kinda neat, 'cause IT can output to DVI, PDF, PS, and more html.
+; And probably just about everything else in existance.  ^_^
+;
+; Simon Heath
+; 07/04/2004
+
+(document :title [Hello World!] 
+   [This is a very simple text.])
+

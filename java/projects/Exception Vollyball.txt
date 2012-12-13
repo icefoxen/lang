@@ -1,0 +1,1 @@
+hard, because exceptions break the control structure.

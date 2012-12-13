@@ -1,0 +1,30 @@
+OLUA 0.1
+
+This is OLua, an interface between Lua and Ocaml.  Basically, it takes most of
+the functions in lua.h and exposes them to Ocaml.  By itself, this really
+isn't too useful.  Eventually I hope to make it an effectively complete
+interface, including lualib.h and lauxlib.h.  Ocaml needs a Lua interface
+badly, and it's not exactly a terribly difficult thing to do, mainly thanks to
+Lua's simplicity.
+
+This is currently incomplete, mainly because there are parts of the Ocaml/C
+interface that I don't feel ready to play with.  These include anything with C
+void pointers or function pointers, so those are what I left out.  This mainly
+includes anything involving userdata or registering new C functions in Lua,
+loading and dumping, and exception handling.  There are also a few functions
+that aren't really necessary for Ocaml but make life easier for C, which I
+haven't bothered putting in.  I'm also missing the debug API, for much the
+same reason.  Also, I can't seem to get the Ocaml GC to finalize Lua states,
+so you have to do that manually.
+
+To compile this, edit the "compile" and "link" files to point the library and
+compiler paths to the right places, then run "build".  It will build an
+executable called oluatop, a toplevel with the Lua interface built in, and a
+bunch of libraries, libolua.a, olua.cma, and olua.cmxa.  They should be put in
+your Ocaml library dir, probably /usr/local/lib/ocaml or maybe /usr/lib/ocaml.
+It also includes a couple test files, as well as olua_rep.ml, which is a
+really simple Lua toplevel which doesn't exactly handle errors well, but seems
+to work okay otherwise.  Try './olua < hello.lua'.
+
+That's it!  Have fun, and please excuse my lack of comments and other stupid
+mistakes.  If something goes wrong, email me: snh1@cec.wustl.edu

@@ -1,0 +1,7 @@
+#!/bin/sh
+/bin/rm -rf *~
+/bin/rm -rf *.cm*
+/bin/rm -rf *.o
+/bin/rm -rf *.a
+/bin/rm -rf a.out
+/bin/rm -rf olua olua.opt oluatop

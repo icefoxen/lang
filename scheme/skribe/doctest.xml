@@ -1,0 +1,78 @@
+<document title="Test Document">
+<options>
+ <author>
+ <author name="Me" name="Me" title="Master" affiliation="Here" address="6515 Wydown Blvd.Box 3233St Louis, MO, 64105USA" phone="314-935-1166">
+ <options>
+  <align>
+  </align>
+  <url>
+  <url-ref url="http://www.me.com/~me">
+  </url-ref>
+  </url>
+  <email>
+  <mailto>
+me&#x40;me.com  </mailto>
+  </email>
+  <align>
+  </align>
+ </options>
+ </author>
+ <author name="Myself" name="Myself">
+ <options>
+  <align>
+  </align>
+  <email>
+  <mailto>
+myself&#x40;myself.com  </mailto>
+  </email>
+ </options>
+ </author>
+ <author name="I" name="I">
+ <options>
+  <align>
+  </align>
+  <email>
+  <mailto>
+i&#x40;i.com  </mailto>
+  </email>
+ </options>
+ </author>
+ </author>
+</options>
+<chapter toc="false" number="false" title="Table of Contents" number="false" toc="false">
+<toc chapter="true" section="true" subsection="false" chapter="true" section="true" subsection="false">
+</toc>
+</chapter>
+<chapter toc="true" number="1" title="This is a simple chapter" number="true" toc="true">
+<paragraph>
+This is a simple chapter.  Table of contents:<toc chapter="true" section="true" subsection="true" chapter="true" section="true" subsection="true">
+</toc>
+</paragraph>
+<section number="1" toc="true" title="Section 1" number="true" toc="true" file="false">
+A chapter section, yay!<subsection number="1" toc="true" title="Subsection 1">
+A subsection, yay!<subsubsection number="1" toc="false" title="Subsubsection 1">
+<paragraph>
+A sub-subsection, triple-yay!  This is as deep as we go though.
+I'm not sure whether to cry or cheer...  o_O</paragraph>
+<paragraph>
+More paragraphs are always good.  ^_^</paragraph>
+<paragraph>
+Oh whew, we can abbreviate (paragraph) with (p)</paragraph>
+<paragraph>
+We can do blockquotes, yay!<blockquote>
+<paragraph>
+&quot;Why do you like guys anyway?
+They can be so silly sometimes!&quot;</paragraph>
+<paragraph>
+&quot;On average,
+they are taller than the ladies.
+I have fewer neck problems when we kiss.&quot;</paragraph>
+<paragraph>
+-???</paragraph>
+</blockquote>
+</paragraph>
+</subsubsection>
+</subsection>
+</section>
+</chapter>
+</document>

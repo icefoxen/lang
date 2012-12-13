@@ -1,0 +1,3 @@
+libpng warning: Incomplete compressed datastream in iCCP chunk
+libpng warning: Profile size field missing from iCCP chunk
+Fatal signal: Segmentation Fault (SDL Parachute Deployed)

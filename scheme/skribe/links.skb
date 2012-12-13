@@ -1,0 +1,24 @@
+(document :title "Various links" 
+
+(section :title [First Section] [
+   The first link points to an external webpage.  Here we point to
+   ,(ref :url [http://www.slashdot.org/] [Slashdot]).
+   The second link points to the 
+   ,(ref :section "Second Section" [section])
+   of this document])
+
+(section :title "Second Section" [ 
+   Hmm...  Links are acting a bit wiggy.])
+   
+(section :title "More stuff" [
+   Ah well.  Document creation date: ,(date).  The value of ,(symbol "pi") is
+   ,(acos -1).
+   You can stick in all the Scheme you want, which is pretty cool.]
+   (itemize
+      (map (lambda (x) (item [The square of ,(bold x) is 
+                             ,(bold (* x x))]))
+      
+           '(1 2 3 4 5 6 7 8 9 10))))
+
+
+   )

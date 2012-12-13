@@ -1,0 +1,2 @@
+#!/bin/sh
+ocaml -I ./ocs-src str.cma unix.cma nums.cma ocs-src/ocs.cma src/util.cmo src/config.cmo src/flags.cmo

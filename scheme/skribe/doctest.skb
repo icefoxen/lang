@@ -1,0 +1,58 @@
+(document :title "Test Document"
+          :author (list (author :name "Me" 
+	                        :title "Master"
+				:affiliation "Here"
+				:url (ref :url "http://www.me.com/~me")
+				:address 
+				   `("6515 Wydown Blvd."
+				     "Box 3233"
+				     "St Louis, MO, 64105"
+				     "USA")
+				:phone "314-935-1166"
+	                        :email (mailto "me@me.com")
+				:align 'left)
+		 	(author :name "Myself"
+			        :email (mailto "myself@myself.com"))
+			(author :name "I"
+			        :email (mailto "i@i.com")))
+
+
+(chapter :title "Table of Contents" :number #f :toc #f
+(toc :chapter #t :section #t :subsection #f))
+
+(chapter :title "This is a simple chapter" :number #t :toc #t
+(paragraph
+[This is a simple chapter.  Table of contents:]
+(resolve (lambda (n e env)
+            (toc :chapter #t :section #t :subsection #t 
+                 (handle (ast-chapter n))))))
+
+
+; Chapter/section :toc options override toc :chapter/:section
+; options.  Reasonable.
+(section :title "Section 1" :number #t :toc #t :file #f
+[A chapter section, yay!]
+
+(subsection :title "Subsection 1"
+[A subsection, yay!]
+
+(subsubsection :title "Subsubsection 1"
+(paragraph 
+[A sub-subsection, triple-yay!  This is as deep as we go though.
+I'm not sure whether to cry or cheer...  o_O])
+(paragraph
+[More paragraphs are always good.  ^_^])
+(p
+[Oh whew, we can abbreviate (paragraph) with (p)])
+(paragraph
+[We can do blockquotes, yay!]
+(blockquote
+(paragraph ["Why do you like guys anyway?
+They can be so silly sometimes!"])
+(paragraph
+["On average,
+they are taller than the ladies.
+I have fewer neck problems when we kiss."])
+(paragraph
+[-???])))))))
+)

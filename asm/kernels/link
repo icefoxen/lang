@@ -1,0 +1,2 @@
+#!/bin/sh
+ld --oformat=elf32-i386 -Ttext 100000 -o kernel $@

@@ -1,0 +1,15 @@
+List of things that need to be added:
+*Do proper exception handling
+*Make it return proper error codes (C ints to Ocaml luaError or exception)
+*Making sure there's no memory-leaks when passing strings back and forth.
+*Figure out how to bind functions from Ocaml to Lua.
+(This last is kinda interesting; the "simplest" way I can figure out right now
+is a very Lispy bit of silliness: have an Ocaml function that takes a
+function, then writes out a C function that calls it into a file, then writes
+another C function that registers the first function with Lua.  The only
+problem is that, Ocaml and C both being compiled languages, this is slightly
+impossible.  Well, impossible without macros or some kind of kick-starter
+program that gets compiled and runs before everything else.  I want to find a
+better way because this is just a LITTLE BIT fragile (note sarcasm), but I'm
+not sure there is one, unless someone out there knows a LOT more about how
+Ocaml functions are represented and called from C.)

@@ -1,0 +1,11 @@
+Just an image-viewer...  You should be able to specify an image and view it.  
+
+Perhaps you can specify a series of images or a certain directory and flip back and forth through them, though that'll be much harder.  
+
+Maybe have equivilant versions/modes for sounds and movies.
+
+---
+
+Simple program that shows jpg and gifs.  Need to learn more about IO and the FileChooser first, but after that it should be dead easy.
+
+Maybe multimedia and soundplayer also?  Harder, because you need to make buttons to start/stop/pause/rewind and junk.

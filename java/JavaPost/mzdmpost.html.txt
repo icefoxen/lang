@@ -1,0 +1,1145 @@
+
+<html >
+<HEAD>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<script language="JavaScript1.1">
+<!--
+
+var session_cookie = getCookie('session2452040.2359');
+if (session_cookie == null) {
+	var session_dt = "0";
+	var session_j = "0";
+}  else {
+	var session_array = session_cookie.split("&");
+	var session_dt = session_array[0];
+	var session_j = session_array[1];
+}
+
+function getCookie(name) {
+     var cname = name + "=";
+        var dc = document.cookie;
+
+        if (dc.length > 0) {
+
+             begin = dc.indexOf(cname);
+
+        	 if (begin != -1) {
+                begin += cname.length;
+        		end = dc.indexOf(";", begin);
+
+                    if (end == -1) end = dc.length;
+
+                    return (dc.substring(begin, end));
+             }
+        }
+        return null;
+    }
+
+//-->
+</script>
+
+<TITLE>The Nice: L. Miners game: Don't feed the squirrels. </TITLE>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+
+	<base href="http://nice.purrsia.com/ubb/" />
+
+	<style type="text/css">
+
+<!--
+
+A:visited {text-decoration: none;}
+
+A:hover {text-decoration: underline;}
+
+A:link {text-decoration: none;}
+
+A:active {text-decoration: none;}
+
+-->
+
+</style>
+
+</HEAD>
+
+<BODY background="http://nice.purrsia.com/ubb/nice/zen-dao-bg-blk.jpg" BGCOLOR="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" text="#000000" link="#3366ff" vlink="#9a21e2" alink = "#33ccff" marginwidth="0" marginheight="0"  >
+
+
+
+
+
+<center>
+<TABLE border="0" width="85%">
+<TR>
+<TD valign="top" align="left">
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<A href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi"><IMG SRC="http://nice.purrsia.com/ubb/nice/mzdmforum-header-01.jpg" border="0"></A>
+
+</font>
+</TD>
+<TD valign="top" NOWRAP>
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<center>
+<BR><BR>
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=newtopic&f=23"><img src="http://nice.purrsia.com/ubb/nice/newtopic.gif" alt="Post New Topic" border="0"></a>&nbsp;&nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413"><img src="http://nice.purrsia.com/ubb/nice/reply.gif" BORDER="0" alt="Post A Reply"></a>
+<BR>
+
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=my_profile"><acronym title="View your profile.">my profile</acronym></a> | <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=agree"><acronym title="Registration is free!">register</acronym></a> | <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=search&search_forum=23"><acronym title="Search">search</acronym></a> | <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=faq"><acronym title="Frequently Asked Questions">faq</acronym></a> | <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi"><acronym title="Forum Home">forum home</acronym></a>
+
+</font>
+</center>
+</TD></TR>
+</TABLE>
+<TABLE border="0" width="85%">
+<TR>
+<TD valign="bottom" align="left">
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+ &nbsp;
+</FONT>
+</TD>
+<TD valign="bottom" align="right">
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<A HREF="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=next_topic&f=23&t=002413&go=older"><img src="http://nice.purrsia.com/ubb/prev_topic.gif" border="0" alt="next oldest topic"></A> &nbsp; <A HREF="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=next_topic&f=23&t=002413&go=newer"><img src="http://nice.purrsia.com/ubb/next_topic.gif" border="0" alt="next newest topic"></A>
+</FONT>
+</TD>
+
+</TR>
+</TABLE>
+
+<!-- Navigation/Login Table -->
+
+<center>
+<table border="0" cellpadding="2" cellspacing="0" width="85%">
+<tr bgcolor="#666666"><td>
+<table border="0" width="100%" cellpadding="4" cellspacing="1">
+
+
+<TR bgcolor="#CCCCCC">
+
+<TD align="left" valign="bottom" NOWRAP>
+<FONT SIZE="1"  FACE="Arial, Verdana, Helvetica, sans-serif">
+<B>&#187;
+
+<script language="JavaScript">
+<!--
+var user_cookie = getCookie('ubber2452040.2359');
+if(''==user_cookie ||  null==user_cookie) {
+document.writeln('You are not logged in.' , ' <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=login">Login</a> or <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=agree">register</a>')
+} else {
+
+var user_array=user_cookie.split("&");
+user_array[2] = unescape(user_array[2]);
+document.writeln('Hello, ', user_array[2]);
+document.writeln('[ <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=logoff">'
+,'<acronym title="Click here to log out.">'
+,'log out</acronym></a> ]');
+
+}
+//-->
+</script>
+
+</B>
+ </font>
+</TD>
+
+<TD align="right" valign="bottom">
+<FONT SIZE="1"  FACE="Arial, Verdana, Helvetica, sans-serif">
+<A href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi"><ACRONYM TITLE="Forum Home"><B>The Nice</B></ACRONYM></A>
+
+
+&nbsp;
+&#187;  <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?category=7">
+<b>Master Zen-Dao Meow</b></a>
+
+
+&nbsp;
+
+&#187;  <A HREF="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=forum&f=23"><B>MEET The Psychedelic Avatars</B></A>
+
+&nbsp;
+
+&#187;
+
+<B>L. Miners game: Don't feed the squirrels. </B>
+</font>
+</TD>
+</TR>
+
+
+</table></td></tr></table>
+</center>
+
+
+<!-- End Navigation/Login Table -->
+
+<BR>
+
+<!-- UBB Friend  -->
+
+<TABLE border="0" width="85%">
+<TR>
+<TD valign="bottom" align="left">
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=send_topic&t=002413&f=23"><img src="http://nice.purrsia.com/ubb/ubb_friend_mini.gif" border="0"></a> <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=send_topic&t=002413&f=23">UBBFriend: Email this page to someone!</a> &nbsp;
+</font>
+</TD>
+
+<TD align="right" valign="bottom">
+<FONT SIZE="1"  FACE="Arial, Verdana, Helvetica, sans-serif">
+<b></b> &nbsp;
+</FONT></TD>
+
+</TR>
+</TABLE>
+
+<!-- End UBB Friend  -->
+
+<center>
+<table border="0" cellpadding="2" cellspacing="0" width="85%">
+<tr bgcolor="#666666"><td>
+<table border="0" width="100%" cellpadding="4" cellspacing="1">
+
+
+<TR bgcolor="#000000">
+<TD valign="middle" width="18%">
+<FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif" color="#ffffff"><B>
+Author
+</B></FONT>
+</TD>
+<TD valign="middle">
+<FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif" color="#ffffff"><B>
+Topic: L. Miners game: Don't feed the squirrels.</B></FONT>
+</TD>
+</TR>
+
+
+<tr><td bgcolor="#CCCCCC" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#CCCCCC">
+<TD width="18%" valign="top"><a name="000000"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Jester Scythe
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 2097
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-03-2002 12:03 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00002097" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Jester Scythe"></a>&nbsp;
+ &nbsp;<a href="http://www.geocities.com/focus_dm/" target=_new><img src="http://nice.purrsia.com/ubb/homepage.gif" border="0" alt="Author's Homepage"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00002097" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Jester Scythe"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00002097"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000000&u=00002097"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000000"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+Continuing <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002361" target="_blank">the tradition</a> with all the madness and insanity you'd expect from the Dream! Fantasy, would you care to show our home viewers what they're in for?<p>--------------------</p><p><img src="http://www.masterzdm.com/pa-175-jesterscythe.jpg"> <a href="http://www.masterzdm.com/hosted/RolandScythe.jpg" target="_blank"><img src="http://www.masterzdm.com/hosted/RolandScythe2.jpg"></a><br /><i>Behold the spiffiness of MAJ!</i><br />   <br /><img src="http://eto.waha1.com/misc/journeybadge.jpg"><p><b>Trevor C Buettner</b><br /><a href="http://vcl.ctrl-c.liu.se/vcl/Artists/Trevor-Buettner/jes2002.jpg" target="_blank">What Jester looks like</a><br />                             <a href="mailto:Focus_DM@yahoo.com">Focus_DM@yahoo.com</a>                             <br /><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=001172&p=2&counterhit=no#Jester" target="_blank">Avatar Profile</a><br /><a href="http://www.yankovic.org/WeirdAl/i_Bad_Hair_Day/santa_alt.txt" target="_blank">I'm warning you...Do NOT read!!</a><p><b><i>"Expect the unexpected, and you will never suffer for the anticipation."</i></b><br />*PG grabs the nearest person*Hey! Wanna go watch Mike and the bots?<br /><i><b>"You want results, but you're not willing to take the risk? Then you will accomplish NOTHING!"</b></i></p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>2743</b> | From: <b>Cleveland, Ohio</b> | Registered: <b>Feb 2002</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000000">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#f7f7f7" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#f7f7f7">
+<TD width="18%" valign="top"><a name="000001"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Porter
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 2503
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-03-2002 02:32 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00002503" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Porter"></a>&nbsp;
+ &nbsp;<a href="http://home.sprintmail.com/~brandtfamily/titlepage.html" target=_new><img src="http://nice.purrsia.com/ubb/homepage.gif" border="0" alt="Author's Homepage"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00002503" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Porter"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00002503"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000001&u=00002503"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000001"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+Porter smiles. "Nope, not Fantasy. How about Icefox? Will he be next?"<p><img src="http://www.polyhedrongroup.com/mzdm/PorterCard.jpg"><p>--------------------</p><p>Regards,<br />Porter<br /><i>My<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002079&p=2#Porter" target="_blank">Avatar Profile</a></i> - My home at <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=51&t=000031" target="_blank">Porter's Landing</a>.</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>184</b> | From: <b>Austin, TX, USA</b> | Registered: <b>Mar 2002</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000001">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#CCCCCC" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#CCCCCC">
+<TD width="18%" valign="top"><a name="000002"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Hitomi Sagara
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 2414
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-03-2002 03:05 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00002414" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Hitomi Sagara"></a>&nbsp;
+ &nbsp;<a href="http://hometown.aol.com/aznladylordz/415.html" target=_new><img src="http://nice.purrsia.com/ubb/homepage.gif" border="0" alt="Author's Homepage"></a>&nbsp;
+&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00002414"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000002&u=00002414"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000002"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+*shakes her head* "Sorry again... Just Hit--" *A black hole forms around Hitomi and she falls in... Kahn enters in her place*<p>"Eh... sorry! Seems Hitomi-sama disapeared... anyways, .... hm... Is that cat-girl person around.. what was her name again... Nyu?"<p>--------------------</p><p>[profile] <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=001172&p=6&counterhit=no#Hitomi" target="_blank">Assassin? Me? ... *shrugs* what do you think?</a>  <p><img src="http://nyuslife.homestead.com/files/Hitomi.jpg"><br />Waiiii! Thank you Nyu! ^_^<p>"home is where the heart is..." and in the dream, deep in the woods where lost travelers may wander off to, one will find a large waterfall. And there, after entering a secret passage way  <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002060" target="_blank">Behind the waterfalls...</a> you will find Hitomi's home.</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>547</b> | Registered: <b>Mar 2002</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000002">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#f7f7f7" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#f7f7f7">
+<TD width="18%" valign="top"><a name="000003"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Nyu
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 1908
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-03-2002 03:31 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00001908" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Nyu"></a>&nbsp;
+ &nbsp;<a href="http://nekox2paradise.blogspot.com" target=_new><img src="http://nice.purrsia.com/ubb/homepage.gif" border="0" alt="Author's Homepage"></a>&nbsp;
+&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00001908"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000003&u=00001908"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000003"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+*Nyu appears*<p>Nyu is here! Eh...so...why the calling? Can Benor-chan explain?<p>--------------------</p><p><img src="http://www.masterzdm.com/pa-137-nyu.jpg"><br />Eyes of hills and sun<br />spirit as gentle as breeze<br />serves catnip with smile.<p>Kind in heart and soul<br />with good food and good service<br />mmm... everything good ^^<br />---------<br />-Haiku by Kyro-chan!<p><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=51&t=000008&p=" target="_blank">Neko Neko Paradise Coffee Shop</a><p><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=000213&p=8#nyu" target="_blank">Just me...</a></p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>1362</b> | From: <b>In my dorm.</b> | Registered: <b>Jan 2002</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000003">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#CCCCCC" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#CCCCCC">
+<TD width="18%" valign="top"><a name="000004"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Icefox
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 715
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-03-2002 04:50 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00000715" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Icefox"></a>&nbsp;
+
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00000715" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Icefox"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00000715"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000004&u=00000715"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000004"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+Mwahahahaa!  Sec... erm, Third-post rule!!<p>Okay, I'm a little strange.  That's what happens when you spend eight hours a day configuring your Linux computer.  I suspect Jeffery McLain can empathize.<p>--------------------</p><p><img src="http://www.masterzdm.com/pa-075-icefox.jpg"><br />Home is the space around your body.<p>Icefox, Adventure<br />they travel hand in hand.<br />Time, and he, march on <br />-Haiku by Methos</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>1301</b> | From: <b>Thither and Yon</b> | Registered: <b>May 2001</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000004">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#f7f7f7" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#f7f7f7">
+<TD width="18%" valign="top"><a name="000005"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Vanvanarmo
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 2633
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-03-2002 06:23 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00002633" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Vanvanarmo"></a>&nbsp;
+
+&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00002633"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000005&u=00002633"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000005"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+Not Jeffery, but posting this from my custom Linux box, my sympathy is heartfelt.<p>How about someone big... BanaGimm?<p>--------------------</p><p>Avatar Pog by May<br /><img src="http://mariposa.keenspace.com/pog007.gif"><p><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002079&p=2&counterhit=no#vanvanarmo" target="_blank">A searcher I am</a><br />looking for someone to follow<br />Trodding many paths<br />none for long<br />Shame<p>-----<br />Mom: "Finish your spinach already, child, or the big bad wolf will come to eat *<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=24&t=000145" target="_blank">you</a>*!"<br />Van: "You rang?"<br />*eats the mom*</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>213</b> | Registered: <b>Apr 2002</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000005">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#CCCCCC" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#CCCCCC">
+<TD width="18%" valign="top"><a name="000006"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+LionkingCMSL
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 26
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-03-2002 06:46 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00000026" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for LionkingCMSL"></a>&nbsp;
+ &nbsp;<a href="http://users.snip.net/~lionking" target=_new><img src="http://nice.purrsia.com/ubb/homepage.gif" border="0" alt="Author's Homepage"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00000026" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email LionkingCMSL"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00000026"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000006&u=00000026"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000006"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+I'm not 9 fet tall, but I'm very close at 8 feet 5 inches, not including my hat or mane "bulk".<p>I do think that Noisette will make an appearance.<p>--------------------</p><p>LionkingCMSL - the railroading lion :=3 <br /><img src="http://www.masterzdm.com/pa-148-lionkingcmsl.jpg"><br />Thanks Nezumi. :=3 The full image/painting is <a href="http://www.masterzdm.com/lionkingcmsl-big.jpg" target="_blank">here.</a><br />Thanks go out to Hitomi for the <a href="http://dirtdeninn.org/LionKingCMSL/LKPLUSHIE.jpg" target="_blank">plushie</a>  and to Zoe for the <a href="http://dirtdeninn.org/LionKingCMSL/MZDMLKChibi.gif" target="_blank">chibi</a>. :=3<br />My <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=001172&counterhit=no#LionkingCMSL" target="_blank">Napping Cat's Dream</a> and <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=35&t=000018&p=3#LionkingCMSL" target="_blank">Gaming Guardians</a> Avatar Profiles, and what ever you do, don't click <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=24&t=000103&counterhit=yes" target="_blank">Here</a>!!! :=3<br />When it's a tie at a grade crossing, <i>YOU</i> lose!<br />Please go to the <a href="http://www.oli.org" target="_blank">Operation Lifesaver's</a> home page for more information on rail/highway grade crossing safety.<br />To <a href="http://users.snip.net/~lionking" target="_blank">LionkingCMSL's</a> Home Page</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>387</b> | From: <b>South(ern New) Jersey, USA</b> | Registered: <b>Dec 2000</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000006">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#f7f7f7" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#f7f7f7">
+<TD width="18%" valign="top"><a name="000007"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Noisette
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 1379
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-03-2002 07:02 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00001379" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Noisette"></a>&nbsp;
+
+&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00001379"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000007&u=00001379"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000007"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+:: A point in the sky flashes a milky-white color, and a trampoline falls from the portal.  Then, Noisette drops in, hits the trampoline, and bounces off. ::<br />"......Gaaaaahhh!"<br />:: Bounce ::<br />"'K...."<br />:: Bounce ::<br />"....I'm....."<br />:: Bounce ::<br />".....here..."<br />:: Bounce ::<br />"....Zai?"<p>--------------------</p><p><img src="http://www.masterzdm.com/pa-106-noisette.jpg"><br /><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=000213&p=4&counterhit=no#noisette" target="_blank">Who is that, anyway</a><a href="http://www.vulpine.pp.se/cgi-bin/furcode?D=FFDsw5adr+A%2B+C-+D-+H+M%3F+P+R%2B%2B+T%2B%2B+W-+Z%3F+Sf--+RLU+a%3F+cmn%2B%2B%2B+d%3F+e-+f+h%2A+i%2B%2B+j%2B+p%2A%3E%2B+%21s" target="_blank">?</a><p>"The most exciting phrase to hear in science, the one that heralds new discoveries, is not 'Eureka!' but 'That's funny...'"<br />- Isaac Asimov<p>I wonder what happens if you click <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=24&t=000145" target="_blank">here</a>...</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>1332</b> | From: <b>Earth</b> | Registered: <b>Oct 2001</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000007">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#CCCCCC" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#CCCCCC">
+<TD width="18%" valign="top"><a name="000008"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Mist
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 583
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-04-2002 02:17 AM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00000583" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Mist"></a>&nbsp;
+ &nbsp;<a href="http:// " target=_new><img src="http://nice.purrsia.com/ubb/homepage.gif" border="0" alt="Author's Homepage"></a>&nbsp;
+&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00000583"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000008&u=00000583"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000008"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+nope just me stopping by for the night.  Perhaps Rhiann?<p>--------------------</p><p><img src="http://www.masterzdm.com/pa-025-mist.jpg"></p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>1085</b> | From: <b>Ordan, Northern Steppes</b> | Registered: <b>Apr 2001</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000008">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#f7f7f7" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#f7f7f7">
+<TD width="18%" valign="top"><a name="000009"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Fantasyforever
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 1900
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-04-2002 02:26 AM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00001900" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Fantasyforever"></a>&nbsp;
+
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00001900" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Fantasyforever"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00001900"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000009&u=00001900"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000009"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+Sorry my good Sir, just a late, winged feline responding to Jester's first post. >^^<;  Maybe Kei will pop up?<p>--------------------</p><p><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=000213&p=8&counterhit=no#Fantasy" target="_blank"><img src="http://www.masterzdm.com/pa-138-fantasyforever.jpg"></a><img src="http://www.eversummereve.com/MZDM/fantasyf.jpg"><br />((I LOVE IT SEBY!!!!!  And yours, Denise!!!)) <br /><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=001453" target="_blank">Fantasy's cabin</a><br />***************************<br />The cat with wings nyo!<br />Flying~ Flying~ in the sky~ Humming~ *BUMP!*<br />Ouch! Firefly! She also flies!!!<br />**************************<br />A Haiku by Nyu<br />**************************<br />Healing paws that help<br />Friend who aids with gentle laugh<br />This is Fantasy<p>Firefly flies about<br />With temper hotter than sun<br />and very loud voice.<br />**************************<br />Haikus by Kyro</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>3332</b> | From: <b>Guali, the land of portals</b> | Registered: <b>Jan 2002</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000009">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#CCCCCC" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#CCCCCC">
+<TD width="18%" valign="top"><a name="000010"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Ryn Kylainn
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 2465
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-04-2002 02:28 AM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00002465" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Ryn Kylainn"></a>&nbsp;
+
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00002465" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Ryn Kylainn"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00002465"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000010&u=00002465"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000010"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+I'm not Kei, sorry. But an avatar with a characterization problem has to post somewhere, hey?<p>Could we get Rusty in here? The lucky duck is about to get a bonus card...<p>--------------------</p><p><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=001172&p=7#kylainn" target="_blank">My Profile</a></p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>20</b> | From: <b>nowhere</b> | Registered: <b>Mar 2002</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000010">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#f7f7f7" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#f7f7f7">
+<TD width="18%" valign="top"><a name="000011"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Kabbalist
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 2602
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-04-2002 06:58 AM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00002602" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Kabbalist"></a>&nbsp;
+
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00002602" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Kabbalist"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00002602"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000011&u=00002602"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000011"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+Kabbalist appears in a flash of fire and brimstone. Unfortunately, the fire and brimstone were the result of an unplanned combustion. As he runs for the nearest body of water, he can be heard yelling:<p>"Help! Kosui! Put me out, please!"<p>--------------------</p><p>The arcane secrets of the ages are mine at last! Now, if I only knew how to translate them...<p><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002079#Kabbalist" target="_blank">My Profile</a><p>Come and visit me at <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=51&t=000021" target="_blank">Kabbalist's Cottage</a></p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>424</b> | From: <b>Dallas, Texas</b> | Registered: <b>Apr 2002</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000011">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#CCCCCC" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#CCCCCC">
+<TD width="18%" valign="top"><a name="000012"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Wind Wraith of the Wretched Wrags
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 2555
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-04-2002 02:10 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00002555" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Wind Wraith of the Wretched Wrags"></a>&nbsp;
+
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00002555" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Wind Wraith of the Wretched Wrags"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00002555"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000012&u=00002555"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000012"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+The Wraith<br />Materializes from a swirl of dust and hears the pleas of the Cat Kabbalist.<br />  <blockquote><font size="1" face="Arial, Verdana, Helvetica, sans-serif">quote:</font><hr>"Put me out, please!"<hr></blockquote><br />So as requested, Wraith picks up the cat by the scruff of the neck.<br />An additional swirl of dust forms into a door and jamb in the middle of the forest.<br />Wraith opens the door and steps out.  He places the cat on the step together with an empty milk bottle and then goes back inside and closes the door<br />The Cat Kabbalist is now out.<br />Maybe the collector would come get the Cat, how about Nachahmer<p>--------------------</p><p>Check out the <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002079#wraith2" target="_blank"><b>Index to Wraith's Activities</b></a><p><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002079#wraith" target="_blank"><img src="http://home.earthlink.net/~frtiger/MZDM/WW5.gif"></a>                <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002079&p=2#mariposastar" target="_blank">May Has Pogged Me !</a><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002079#wraith" target="_blank"><img src="http://home.earthlink.net/~frtiger/MZDM/CHIBI_wraith3.jpg"></a> <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002079#linyvette" target="_blank">Lin Has Chibified Me !</a><p>Who is that enigmatic robed fellow ?: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002079#wraith" target="_blank">profile</a><p>To follow Wraith on his Odyssey: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002045#wretched" target="_blank">intro/home</a><p>I carry the dust of a journey,<br />That cannot be shaken away.<br />It lives deep within me,<br />For I breathed it every day.<br />     from The Sage by Greg Lake, ELP, Pictures at an Exhibition</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>149</b> | From: <b>whispering shifting sands</b> | Registered: <b>Mar 2002</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000012">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#f7f7f7" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#f7f7f7">
+<TD width="18%" valign="top"><a name="000013"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Altaica Powell
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 2285
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-04-2002 02:22 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00002285" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Altaica Powell"></a>&nbsp;
+ &nbsp;<a href="http://users.snip.net/~lionking" target=_new><img src="http://nice.purrsia.com/ubb/homepage.gif" border="0" alt="Author's Homepage"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00002285" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Altaica Powell"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00002285"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000013&u=00002285"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000013"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+I'm not Nach, but I have to say that is funny, Wraith.<p>Now will Kabbalist do the saber tooth tiger routine, from the Flintstones, and jump through the open window? :=3<p>--------------------</p><p><img src="http://www.masterzdm.com/pa-198-altaicapowell.jpg"> <img src="http://dirtdeninn.org/LionKingCMSL/MZDMAltaicaChibi.gif"><br />Thanks Nezumi. :=3 You did it again.   Chibi by Zoe. Thanks. :=3<br />My <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=001172&p=5#Altaica" target="_blank">Napping Cat's Dream</a> and <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=35&t=000018&p=3#Altaica" target="_blank">Gaming Guardians</a> Avatar Profiles, and what ever you do, don't click <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=24&t=000103&counterhit=no" target="_blank">Here</a>!!! :=3<br /><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=51&t=000024" target="_blank">Tiger's Lair</a>, my home.</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>246</b> | From: <b>The Lion's Den</b> | Registered: <b>Feb 2002</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000013">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#CCCCCC" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#CCCCCC">
+<TD width="18%" valign="top"><a name="000014"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Quinch
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 710
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-04-2002 03:06 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00000710" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Quinch"></a>&nbsp;
+ &nbsp;<a href="http://members.fortunecity.com/retrograde" target=_new><img src="http://nice.purrsia.com/ubb/homepage.gif" border="0" alt="Author's Homepage"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00000710" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Quinch"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00000710"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000014&u=00000710"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000014"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+Perhaps I could do it instead, but I fail to see the need. Perhaps ser Squic might be so inclined, though it is likely we would need a larger window.<p>--------------------</p><p><img src="http://www.gamingguardians.com/avatar/avatarQuinch.JPG"><br /><img src="http://free-zg.hinet.hr/Quinch/Trajno/one.jpg"><p>Who am<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=001172&counterhit=no#Quinch" target="_blank"> <b>I?</a></b> Why should you care?</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>719</b> | From: <b>Someplace. Does it matter where?</b> | Registered: <b>May 2001</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000014">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#f7f7f7" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#f7f7f7">
+<TD width="18%" valign="top"><a name="000015"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Icefox
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 715
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-04-2002 04:02 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00000715" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Icefox"></a>&nbsp;
+
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00000715" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Icefox"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00000715"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000015&u=00000715"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000015"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+Eh?<p>*looks around*<p>Sorry, I don't see any windows here.  Maybe Porter can bring one or two?<p>--------------------</p><p><img src="http://www.masterzdm.com/pa-075-icefox.jpg"><br />Home is the space around your body.<p>Icefox, Adventure<br />they travel hand in hand.<br />Time, and he, march on <br />-Haiku by Methos</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>1301</b> | From: <b>Thither and Yon</b> | Registered: <b>May 2001</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000015">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+<tr><td bgcolor="#CCCCCC" colspan="2">
+
+<table width="100%" cellpadding=3 cellspacing=0>
+<TR bgcolor="#CCCCCC">
+<TD width="18%" valign="top"><a name="000016"></a>
+<FONT SIZE="2" face="Arial, Verdana, Helvetica, sans-serif"><B>
+Icefox
+</B></font>
+<BR><FONT SIZE="1" face="Arial, Verdana, Helvetica, sans-serif">
+Member
+<BR>
+Member # 715
+<P>
+
+</FONT>
+</TD>
+<TD>
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" border="0">
+<FONT SIZE="1" color="#a62a2a" face="Arial, Verdana, Helvetica, sans-serif">
+posted 05-04-2002 04:05 PM &nbsp;&nbsp;&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_profile&u=00000715" target=_blank><img src="http://nice.purrsia.com/ubb/profile_ubb6.gif" border="0" alt="Profile for Icefox"></a>&nbsp;
+
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=email&ToWhom=00000715" target="_blank"><img src="http://nice.purrsia.com/ubb/email_ubb6.gif" border="0" alt="Email Icefox"></a>&nbsp;
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=private_message&u=00000715"><img src="http://nice.purrsia.com/ubb/priv_message.gif" border='0' alt="Send New Private Message"></a>&nbsp;
+ &nbsp; &nbsp;
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=edit_post&f=23&t=002413&reply_num=000016&u=00000715"><img src="http://nice.purrsia.com/ubb/edit_ubb6.gif" border="0" alt="Edit/Delete Post"></a>
+ &nbsp;<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413&replyto=000016"><img src="http://nice.purrsia.com/ubb/quote_ubb6.gif" border="0" alt="Reply With Quote"></a>&nbsp;
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+Eh?<p>*looks around*<p>Sorry, I don't see any windows here.  Maybe Porter can bring one or two?<p>--------------------</p><p><img src="http://www.masterzdm.com/pa-075-icefox.jpg"><br />Home is the space around your body.<p>Icefox, Adventure<br />they travel hand in hand.<br />Time, and he, march on <br />-Haiku by Methos</p>
+</FONT>
+<HR size="1" color="#5d7790">
+<FONT SIZE="1"  face="Arial, Verdana, Helvetica, sans-serif">
+ Posts: <b>1301</b> | From: <b>Thither and Yon</b> | Registered: <b>May 2001</b> 
+ &nbsp;|&nbsp; IP: <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_ip&f=23&t=002413&reply_num=000016">Logged</a>
+</FONT>
+</td></tr>
+</table>
+</td></tr>
+
+
+</table></td></tr></table>
+</center>
+
+
+<P>
+<!-- Time Zone and Page Jumps -->
+
+<TABLE BORDER="0" width="85%">
+<TR>
+<TD align="left" valign="bottom">
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+All times are ET (US)
+</FONT>
+</TD>
+<TD valign="bottom" align="right">
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<b></b> &nbsp;
+</FONT>
+</TD>
+</TR>
+</TABLE>
+
+<!-- Bottom Navigation Table -->
+
+
+<center>
+<table border="0" cellpadding="2" cellspacing="0" width="85%">
+<tr bgcolor="#666666"><td>
+<table border="0" width="100%" cellpadding="4" cellspacing="1">
+
+
+<TR>
+
+<TD width="25%" bgcolor="#CCCCCC" NOWRAP valign="bottom" align="center">
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=newtopic&f=23"><img src="http://nice.purrsia.com/ubb/nice/newtopic.gif" alt="Post New Topic" border="0"></a>&nbsp;&nbsp;
+<!-- Here!! -->
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=reply&f=23&t=002413"><img src="http://nice.purrsia.com/ubb/nice/reply.gif" BORDER="0" alt="Post A Reply"></a>
+<!-- Here!! -->
+</FONT>
+</TD>
+
+<TD width="50%" bgcolor="#f7f7f7" valign="bottom" align="center">
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=close_topic&t=002413&f=23"><img src="http://nice.purrsia.com/ubb/close_topic.gif" border="0" alt="Close Topic"></a> &nbsp;&nbsp; <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=transfer&t=002413&f=23"><img src="http://nice.purrsia.com/ubb/move_topic.gif" border="0" alt="Move Topic"></a> &nbsp;&nbsp; <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=delete_topic&f=23&t=002413"><img src="http://nice.purrsia.com/ubb/delete_topic.gif" border="0" alt="Delete Topic"></a>
+</FONT>
+</TD>
+
+<TD width="25%" bgcolor="#CCCCCC" align="right" valign="middle">
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<A HREF="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=next_topic&f=23&t=002413&go=older"><img src="http://nice.purrsia.com/ubb/prev_topic.gif" border="0" alt="next oldest topic"></A> &nbsp; <A HREF="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=next_topic&f=23&t=002413&go=newer"><img src="http://nice.purrsia.com/ubb/next_topic.gif" border="0" alt="next newest topic"></A>
+</FONT>
+</TD>
+
+</TR>
+
+
+</table></td></tr></table>
+</center>
+
+
+<!-- Hop To Box -->
+
+<TABLE BORDER="0" width="85%">
+<TR>
+<TD align="right" valign="top" NOWRAP>
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+<FORM ACTION="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi" METHOD="GET">
+<INPUT TYPE="HIDDEN" NAME="ubb" VALUE="forum">
+<B>Hop To: </B><SELECT NAME="f">
+
+<option value=''>Select a Forum:</option>
+<option value=''></option>
+
+<option value=""></option>
+<option value="CAT:2">Category: Comic Strips</option>
+<option value="">--------------------</option>
+<option value="17">A Doemain of our Own</option>
+<option value="16">Acid Reflux</option>
+<option value="7">Algernon's Dilemma</option>
+<option value="36">Eversummer Eve</option>
+<option value="22">Faux Pas</option>
+<option value="21">Freefall</option>
+<option value="35">Gaming Guardians</option>
+<option value="4">Grootlore/Brinna Mooon</option>
+<option value="18">Innies and Outties</option>
+<option value="37">Lang Lang</option>
+<option value="33">Leon & Kay</option>
+<option value="9">Limpidity</option>
+<option value="8">Mynarski Forest</option>
+<option value="25">Namir Deiter</option>
+<option value="28">Narbonic</option>
+<option value="5">Pixelated</option>
+<option value="34">Roomies</option>
+<option value="10">Supermegatopia</option>
+<option value="30">The Adventures of Fifine</option>
+<option value="38">Undoubtedly Kawaii</option>
+<option value="2">Unlike Minerva</option>
+<option value="19">Wyldfire</option>
+<option value="39">Zortic</option>
+<option value="41">Jaitera: The Emerald World</option>
+<option value="60">Land of Lost Mythology</option>
+<option value="61">Not Gonna Take It</option>
+
+<option value=""></option>
+<option value="CAT:7">Category: Master Zen-Dao Meow</option>
+<option value="">--------------------</option>
+<option value="42">ENTER The Napping Cat's Dream</option>
+<option value="23" selected="selected">MEET The Psychedelic Avatars</option>
+<option value="44">FLIRT in The Lovers Lookout</option>
+<option value="45">LEARN at Research Central</option>
+<option value="46">CREATE for The Avatar Art Gallery</option>
+<option value="47">DEBATE in The Philosopher's Circle</option>
+<option value="48">PITCH in The Mystical Marketplace</option>
+<option value="49">REFLECT upon The Mind Mirrors</option>
+<option value="50">FIGHT in Elroar's Messageboard War</option>
+<option value="51">SETTLE into Avatar Home Threads</option>
+<option value="43">PERFORM in Avatar Adventure Threads</option>
+<option value="52">PONDER The Great American Comic Strip Koan</option>
+<option value="53">ESCAPE The Napping Cats Dream</option>
+<option value="59">SPY on The Forum Moderators</option>
+
+<option value=""></option>
+<option value="CAT:9">Category: Shivae Studios</option>
+<option value="">--------------------</option>
+<option value="27">Alien Dice</option>
+<option value="6">Cyantia Chronicles</option>
+<option value="32">Mars Academy RPG</option>
+<option value="62">Shivae!</option>
+<option value="63">Pure</option>
+<option value="64">Sink or Swim</option>
+
+<option value=""></option>
+<option value="CAT:1">Category: The Nice</option>
+<option value="">--------------------</option>
+<option value="29">Art Techniques and Critiques</option>
+<option value="24">The Nice MegaForum</option>
+<option value="1">The Nice</option>
+
+<option value=""></option>
+<option value="CAT:3">Category: Artists</option>
+<option value="">--------------------</option>
+<option value="15">Rachel's Board</option>
+
+<option value=""></option>
+<option value="CAT:4">Category: Inactive Strips</option>
+<option value="">--------------------</option>
+<option value="20">The Nice Corpse</option>
+
+<option value=""></option>
+<option value="CAT:5">Category: Servers and Hosting</option>
+<option value="">--------------------</option>
+<option value="26">The Purrsia Projects</option>
+
+<option value=""></option>
+<option value="CAT:6">Category: Other Comics</option>
+<option value="">--------------------</option>
+<option value="11">11 Will Die</option>
+<option value="12">Macropodia</option>
+
+</SELECT>
+<INPUT TYPE="SUBMIT" NAME="SUBMIT" VALUE="Go">
+</FORM></FONT>
+</TD>
+</TR>
+</TABLE>
+
+</center>
+<P>
+
+<P><center>
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+<A HREF="mailto:nice@nice.purrsia.com">Contact Us</A> | <A HREF="http://nice.purrsia.com/">The Nice</A> </FONT>
+<p>
+<FONT COLOR="#5d7790" size="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<P>
+Powered by <a href="http://www.infopop.com">Infopop Corporation</a><br />Ultimate Bulletin Board<font style='font-size: 8px' size='1'><sup><b>TM</b></sup></font> 6.1.0.3<!-- Release -->
+</FONT>
+</center>
+
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=3 COLS=1 WIDTH="85%" BGCOLOR="#666666" >
+<tr>
+<td ALIGN=CENTER>
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="100%" >
+<tr>
+<td ALIGN=CENTER BGCOLOR="#000000"><font face="Arial,Helvetica"><font color="#FFFFFF"><font size=-1>Artwork
+by <b>The Psychedelic Artists:</b></font></font></font></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER VALIGN=CENTER BGCOLOR="#CCCCCC"><font face="Arial,Helvetica"><font size=-2><font color="#000000"><a href="http://www.inniesandoutties.com/">Leonard
+Cachola</a>, </font><font color="#FFFFFF"><a href="http://www.side7.com/cgi-bin/S7SDB/Archive.pl?ANO=4">Meghan
+"Seby" Dombrowski</a></font><font color="#000000">, <a href="http://www.steelphoenix.com/projects/Jaitera/authors.html">Andrew
+Graham</a>, <a href="http://vcl.ctrl-c.liu.se/vcl/Artists/Melissa-Jewell/">Melissa
+A. Jewell "MAJ"</a>, <a href="http://www.eversummereve.com">Denise Jones</a>,
+</font><font color="#FFFFFF"><a href="http://www.side7.com/cgi-bin/S7SDB/Archive.pl?ANO=17">Stephanie
+"Oni" Kao</a></font><font color="#000000">, </font></font></font></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER BGCOLOR="#CCCCCC"><font face="Arial,Helvetica"><font size=-2><font color="#000000"><a href="http://us.vclart.net/vcl/Artists/Andrea-Koupal/">Andrea
+Koupal</a>, </font><font color="#FFFFFF"><a href="http://web.archive.org/web/20010724055737/http://members.tripod.com/skull_lee/">Rose
+Masidi</a></font><font color="#000000">,</font><font color="#FFFFFF"> </font><font color="#000000"><a href="http://vcl.ctrl-c.liu.se/vcl/Artists/1311/">Bill
+(13:11) McEvoy</a>,</font><font color="#FFFFFF"> </font><font color="#000000"><a href="http://nice.purrsia.com/zdm.php3">Patrick
+Schaefer</a>, <a href="http://nice.purrsia.com/zdm.php3">Bret Ward</a>,
+<a href="http://us.vclart.net/vcl/Artists/Corene-Werhane/index01-by-date.html">Corene
+"Nezumi" Werhane</a>, </font><font color="#FFFFFF"><a href="http://www.side7.com/cgi-bin/S7SDB/Bio.pl?ANO=875">Rachel
+Witter</a></font><font color="#000000">.</font></font></font></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER VALIGN=CENTER BGCOLOR="#CCCCCC"><font face="Arial,Helvetica"><font color="#000000"><font size=-2>Comics
+© 1999-2002 "Master Zen-Dao Meow" | Characters © by their respective
+players</font></font></font></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER BGCOLOR="#CCCCCC"><font face="Arial,Helvetica"><font color="#000000"><font size=-2><b><a href="mailto:webmaster@masterzdm.com">MZDM
+E-Mail</a></b> | <b><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=000436&counterhit=yes">Webcomics
+Plugs & Pitches</a></b></font></font></font></td>
+</tr>
+</table></center>
+<font face="Arial,Helvetica"><font color="#FF0000"></font></font></td>
+</tr>
+</table></center>
+
+<center><script language="javascript" src="http://nice.purrsia.com/forum_picturebox_wider.js"></script>
+
+</BODY>
+</HTML>

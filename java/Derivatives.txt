@@ -1,0 +1,31 @@
+Kay.
+I want methods that define each data type: constant, ax+b, ax^2+bx+c, u-v, u+v, etc.
+I want to be able to feed each of those data types in to a class that finds the derivitaves.
+The type of derivative depends on the input of the data type.
+This is fuckin' HARD, because an object could consist of more than one data type; id est:
+   x^2+3x
+---------------
+   sqrt(x)
+
+This would be three data types:  an x^2+bx+c, a sqrt(x), and a u/v
+
+So.  Any data type has to be able to take other data types as arguments.  That means they have to extend from the same superclass.  What does the superclass need?  Just to have all the variables that need to be defined.  Except that the variables often aren't defined; worry about that later.
+
+kay.  Say I have a method Deriv.  Say I have all the data types defined.  What would it look like?
+
+// Constructer?
+public Deriv ( NumberObject a )
+   // Kay, I have to have a different Deriv method for each data type.
+  a.getType ()
+
+  if ( a.getType = u/v )
+      DerivU/V ( a );
+  else if ... ... ...
+
+public NumberObject DerivU/V ( NumberObject a )
+  NumberObject u = new NumberObject ( a.getU () );
+  NumberObject v = new NumberObject ( a.getV () );
+
+  NumberObject y = Deriv ( u ) * v - Deriv ( v ) * u;
+  // BUT I can't do +-*/ on objects... I'll have to define methods in them to account for that.
+  // And then it just gets waywayway too complex for now, 'cause I'd have to make methods to treat groups of numbers like numbers, and perform algebraic operations on them, and arrrgh.  Maybe I should start by trying algebraic functions, teaching it that x/2x = 1/2.  And I'd also have to figure out some way to make it accept that x can be a number or just a variable, but can still be treated as a number... arrrgh.  Maybe Java isn't the best language to do this in; probably FORTRAN or LISP or something would be better.  But Java's object-orientation means that it IS possible to treat a group of numbers as a single object, which is what this kind of math calls for!  You can't do that with structured programs!  ARRRGH!!!!!!

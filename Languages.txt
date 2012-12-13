@@ -1,0 +1,85 @@
+JAVA
+	Over-engineered.  Object-oriented is a useful paradigm, but not as useful as it's advocates make it out to be.  Insanely slow.  Don't use it if you can use something else instead.
+
+C
+	Neat, but too low-level to be very practical for much.  Makes you pay attention to the irrelevent.  You learn a lot more about debugging than you ever do about programming.  Don't use it if you can use something else instead.  It was designed for building OS's, and dammit, it is GOOD at it though!
+
+LISP
+	Nifty syntax, powerful.  A little baroque though, libs are hard to find/use, incompatibility of implementations is a problem.  Not great for things you're gonna give away, but pretty damn kicky for things you're gonna use yourself.
+
+PYTHON
+	Very clear, very powerful, good graphics.  Wonderful stuff.  Pity about the speed.
+
+SCHEME
+	Very clean... TOO clean maybe.  Sacrifices a few things that are rather necessary, maybe.  Not very powerful libs?  Extensions are icky to mess with.  Good for extension languages!
+
+TCL/TK
+	Too Unix-shell-like, rather ugly block-y structure.  I don't like it.  Over-contrived.
+
+EIFFEL
+	Rockin'.  What Java wants to be.  Rather under-supported though.  Takes a lot of micro-management.  Not too useful in the end.
+
+PROLOG
+	Kicky idea.  Strength of practicality has yet to be seen.  Great for data manipulation and logic, at least.  Slightly silly otherwise, it seems.
+
+PHP
+	Web design as it should be, 'nuff said.  Bitch to configure though.
+
+POSTSCRIPT
+	M4d vector-graphics skillz.
+
+OCAML
+	Shibby but a tad over-designed.  Bitchy compiler, but very able language.  VERY able language.  Nice.
+
+FORTH
+	Low-level.  Very nice idea.  Twists your brain in interesting ways.  Useful and flexible, but it'd be nice if it was wholly compiled.  Educational.  Gives a neat perspective.
+
+SMALLTALK
+	Twisted functional-ish OO.  Rockin', especially Squeak.  'Tis somewhat a big system to plow through and try to understand though.  Still rockin' though.
+
+HASKELL
+	Nifty.  Like Ocaml but cleaner.  Bit tricky for actual stuff though.  Wonderfully designed.  It has no iteration and you don't even notice, it's so natural.  Practicality is slightly questionable though.
+
+ASSEMBLER (X86 NASM)
+	It's kind of neat knowing that you're working on the absolute lowest level.  It's hell for large systems though.  Even worse to read.
+
+LUA
+	Ooooh, neat.  Simple, portable, easy.  Not too powerful by itself, but very embeddable.  Perfect for scripting and configs.
+        
+
+RUBY
+        More m4d OO shibbyness.  The syntax is rather too perl-y for me though.  Too many irregularities and inconsistincies, too much data is implicit.
+
+XML
+        It's a pretty darn good document format.  It seems to be a decent description format for some things also (GUI's, SVG?).  As a data-interchange language it's utterly laughable.
+
+
+
+Erlang		Multitasking, baby!
+Dylan		Functional OO.  Or possibly OO functional.  ^_^
+Arc		Lisp remake.  Let's check it out.
+
+D		Cleaner than C++, more useful than Java.  Nice.  Alpha and closed-source though.  Possibly a bit over-designed; we'll see.
+
+
+Modula-2	Looks neat, but somewhat out of date?  Over-verbose?
+		Has potential, though...
+Oberon		Like Miranda, somewhat hard to find info on.
+
+
+To Learn:
+Erlang
+Icon
+Self
+Smalltalk --system design
+
+
+
+Things I Don't Particularly Want To Learn
+C++		Popular OO language, great portability, over-complex.
+Perl		Good to know, powerful, text-processor.  Learning the basics would be good.
+
+
+Asides (things I can do bit by bit):
+XML		Data storage and interaction
+SGML?		Basis of XML and HTML, powerful.

@@ -1,0 +1,3 @@
+INTERFACE A;
+   PROCEDURE DoIt();
+END A.

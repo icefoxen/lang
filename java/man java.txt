@@ -1,0 +1,416 @@
+java(1)                                                   java(1)
+
+
+
+NNAAMMEE
+       java - Java interpreter
+
+SSYYNNOOPSIISS
+       jjaavvaa [ _o_p_t_i_o_n_s ] _c_l_a_s_s [ _a_r_g_u_m_e_n_t _._._.  ]
+
+       jjaavvaa [ _o_p_t_i_o_n_s ] --jjaarr _f_i_l_e_._j_a_r
+            [ _a_r_g_u_m_e_n_t _._._.  ]
+
+PPAARRAAMMEETTEERRSS
+       Options  may be in any order.  For a discussion of parame­
+       ters which apply to a specific option, see OOPPTTIIOONNSS  below.
+
+       _o_p_t_i_o_n_s        Command-line options.  See OOPPTTIIOONNSS below.
+
+       _c_l_a_s_s          Name of the class to be invoked.
+
+       _f_i_l_e_._j_a_r       Name  of  the jar file to be invoked.  Used
+                      only with the --jjaarr option.
+
+DDEESSCCRRIIPPTTIIOONN
+       The jjaavvaa utility launches a  Java  application.   It  does
+       this  by  starting  a  Java runtime environment, loading a
+       specified class, and invoking that  class's  mmaaiinn  method.
+       The method must have the following signature:
+
+          ppuubblliicc ssttaattiicc vvooiidd mmaaiinn((SSttrriinngg aarrggss[[]]))
+
+       The method must be declared ppuubblliicc and ssttaattiicc, it must not
+       return any value, and it must accept a SSttrriinngg array  as  a
+       parameter.   By  default, the first non-option argument is
+       the name of the class to be  invoked.   A  fully-qualified
+       class  name  should be used.  If the --jjaarr option is speci­
+       fied, the first non-option argument is the name of  a  JAR
+       archive containing class and resource files for the appli­
+       cation, with the startup class indicated by the Main-Class
+       manifest header.
+
+       The Java runtime searches for the startup class, and other
+       classes used, in three sets of  locations:  the  bootstrap
+       class  path,  the installed extensions, and the user class
+       path.
+
+       Non-option arguments after the class name or JAR file name
+       are passed to the main function.
+
+OOPPTTIIOONNSS
+       The  launcher  has a set of standard options that are sup­
+       ported on the current runtime environment and will be sup­
+       ported  in  future  releases.  However, options below that
+       are described as having been replaced by another  one  are
+       obsolete and may be removed in a future release.  An addi­
+       tional set of non-standard options  are  specific  to  the
+       current  virtual machine implementation and are subject to
+       change in the future.  Non-standard options begin with --XX.
+
+   SSttaannddaarrdd OOppttiioonnss
+       --cclliieenntt             Selects  the  Java  HotSpot Client VM.
+                           This is the default.
+
+       --sseerrvveerr             Selects the Java HotSpot Server VM.
+
+       --ccllaassssppaatthh _c_l_a_s_s_p_a_t_h
+       --ccpp _c_l_a_s_s_p_a_t_h       Specifies a list of  directories,  JAR
+                           archives,  and  ZIP archives to search
+                           for class files.  Class  path  entries
+                           are  separated by colons (:). Specify­
+                           ing --ccllaassssppaatthh or  --ccpp  overrides  any
+                           setting  of  the CCLLAASSSSPPAATTHH environment
+                           variable.
+
+                           Used with jjaavvaa, the --ccllaassssppaatthh or  --ccpp
+                           options  only  specify  the class path
+                           for user classes.  Used  with  --ccllaassss­­
+                           ppaatthh r -ccpp specify the class path for
+                           both  user   classes   and   bootstrap
+                           classes.
+
+                           If --ccllaassssppaatthh and --ccpp are not used and
+                           CCLLAASSSSPPAATTHH is not set, the  user  class
+                           path consists of the current directory
+                           (.).
+
+       --ddeebbuugg              This has been replaced by --XXddeebbuugg.
+
+       --DD_p_r_o_p_e_r_t_y_=_v_a_l_u_e    Sets a system property value.
+
+       --eennaabblleeaasssseerrttiioonnss :<package name>... |:<class name>
+       --eeaa :<package name>... |:<class name>
+                           Enable assertions. Assertions are dis­
+                           abled by default.
+
+                           With no arguments, eennaabblleeaasssseerrttiioonnss or
+                           --eeaa enable assertions. With one  argu­
+                           ment   ending  in  "...",  the  switch
+                           enables assertions  in  the  specified
+                           package  and  any  subpackages. If the
+                           argument is simply "...",  the  switch
+                           enables   assertions  in  the  unnamed
+                           package in the current working  direc­
+                           tory.  With one argument not ending in
+                           "...", the switch  enables  assertions
+                           in the specified class.
+
+                           If a single command line contains mul­
+                           tiple  instances  of  these  switches,
+                           they  are  processed  in  order before
+                           loading any classes. So, for  example,
+                           to   run  a  program  with  assertions
+                           enabled   only   in    ppaacckkaaggeecom.wom­
+                           bat.fruitbat  (and  any  subpackages),
+                           the following command could be used:
+
+                           java -ea:com.wombat.fruitbat...  <Main
+                           Class>
+
+                           The --eennaabblleeaasssseerrttiioonnss and --eeaa switches
+                           apply to all ss loaders and  to  system
+                           classes  (which  do  not  have a class
+                           loader). There  is  one  exception  to
+                           this  rule: in their no-argument form,
+                           the switches do not apply  to  system.
+                           This  makes it easy to turn on asserts
+                           in  all  classes  except  for   system
+                           classes. A separate switch is provided
+                           to  enable  asserts  in   all   system
+                           classes;  see  --eennaabblleessyysstteemmaasssseerrttiioonnss
+                           below.
+
+       --ddiissaabblleeaasssseerrttiioonnss :<package name>... |:<class;
+       --ddaa :<package name>... |:<class name>
+                           Disable  assertions.   This   is   the
+                           default.
+
+                           With  no  arguments, ddiissaabblleeaasssseerrttiioonnss
+                           or --ddaa disables assertions.  With  one
+                           argument  ending  in "...", the switch
+                           disables assertions in  the  specified
+                           package  and  any  subpackages. If the
+                           argument is simply "...",  the  switch
+                           disables  assertions  in  the  unnamed
+                           package in the rent working directory.
+                           With one argument not ending in "...",
+                           the switch disables assertions in  the
+                           specified class.
+
+                           To   run  a  program  with  assertions
+                           enabled in package ccoomm..wwoommbbaatt..ffrruuiittbbaatt
+                           but   disabled   in   class   ccoomm..wwoomm­­
+                           bbaatt..ffrruuiittbbaatt..BBrriicckkbbaatt,  the  following
+                           command could be used:
+
+                           java        -ea:com.wombat.fruitbat...
+                           -da:com.wombat.fruitbat.Brickbat <Main
+                           Class>
+
+                           The    --ddiissaabblleeaasssseerrttiioonnss    and   --ddaa
+                           switches apply to all ssss  loaders  and
+                           to system classes (which do not have a
+                           class loader).  There is one exception
+                           to  this  rule:  in  their no-argument
+                           form, the switches  do  not  apply  to
+                           system.  This makes it easy to turn on
+                           asserts in all classes except for sys­
+                           tem classes. A separate switch is pro­
+                           vided to enable asserts in all  system
+                           classes;  see --ddiissaabblleessyysstteemmaasssseerrttiioonnss
+                           below.
+
+       --eennaabblleessyysstteemmaasssseerrttiioonnss
+       --eessaa                Enable asserts in all  system  classes
+                           (sets the default assertion status for
+                           system classes to true).
+
+       --ddiissaabblleessyysstteemmaasssseerrttiioonnss
+       --ddssaa                Disables asserts in all system classes
+
+       --jjaarr                Executes  a  program encapsulated in a
+                           JAR archive.  The  first  argument  is
+                           the  name  of  a JAR file instead of a
+                           startup class name.  In order for this
+                           option  to  work,  the manifest of the
+                           JAR file must contain a  line  of  the
+                           form    MMaaiinn--CCllaassss::_c_l_a_s_s_n_a_m_e.    Here,
+                           _c_l_a_s_s_n_a_m_e identifies the class  having
+                           the  ppuubblliicc  ssttaattiicc vvooiidd mmaaiinn((SSttrriinngg[[]]
+                           aarrggss))  method  that  serves  as   your
+                           application's starting point.  See the
+                           Jar tool reference page  and  the  Jar
+                           trail  of the Java Tutorial for infor­
+                           mation about working  with  Jar  files
+                           and  Jar-file manifests.  When you use
+                           this  option,  the  JAR  file  is  the
+                           source  of all user classes, and other
+                           user class path settings are  ignored.
+
+       --nnooccllaassssggcc          This has been replaced by --XXnnooccllaassssggcc.
+       --mmss_n                This has been replaced by --XXmmss _n.
+       --mmxx_n                This has been replaced by --XXmmxx _n.
+       --ssss_n                This has been replaced by --XXssss _n.
+       --vveerrbboossee
+       --vveerrbboossee::_c_l_a_s_s      Displays information about each  class
+                           loaded.
+
+       --vveerrbboosseeggcc          This has been replaced by --vveerrbboossee::ggcc.
+
+       --vveerrbboossee::ggcc         Reports  on  each  garbage  collection
+                           event.
+
+       --vveerrbboossee::jjnnii        Reports   information   about  use  of
+                           native methods and other  Java  Native
+                           Interface activity.
+
+       --vveerrssiioonn            Displays version information and exit.
+
+       --sshhoowwvveerrssiioonn        Displays version information and  con­
+                           tinues.
+
+       --??
+       --hheellpp               Displays usage information and exit.
+
+       --XX                  Displays  information  about non-stan­
+                           dard options and exit.
+
+   NNoonn--SSttaannddaarrdd OOppttiioonnss
+       --XXiinntt               Operates  in  interpreted-only   mode.
+                           Compilation  to  native  code  is dis­
+                           abled, and all bytecodes are  executed
+                           by  the  interpreter.  The performance
+                           benefits offered by the  Java  HotSpot
+                           VMs'  adaptive  compiler  will  not be
+                           present in this mode.
+
+       --XXbboooottccllaassssppaatthh::_b_o_o_t_c_l_a_s_s_p_a_t_h
+                           Specifies a  colon-separated  list  of
+                           directories,  JAR  archives,  and  ZIP
+                           archives  to  search  for  boot  class
+                           files.  These are used in place of the
+                           boot class files included in the  Java
+                           2  SDK and Java 2 Runtime Environment.
+
+       --XXbboooottccllaassssppaatthh//aa::_p_a_t_h
+                           Specifies a  colon-separated  _p_a_t_h  of
+                           directories,  JAR  archives,  and  ZIP
+                           archives  to  append  to  the  default
+                           bootstrap class path.
+
+       --XXbboooottccllaassssppaatthh//pp::_p_a_t_h
+                           Specifies  a  colon-separated  _p_a_t_h of
+                           directories,  JAR  archives,  and  ZIP
+                           archives  to  prepend  in front of the
+                           default bootstrap class  path.   Note:
+                           Applications  that use this option for
+                           the purpose of overriding a  class  in
+                           rrtt..jjaarr  should  not  be  deployed,  as
+                           doing so would contravene the  Java  2
+                           Runtime    Environment   binary   code
+                           license.
+
+       --XXddeebbuugg             Starts with the debugger enabled.
+
+       --XXcchheecckk::jjnnii         Perform  additional  check  for   Java
+                           Native Interface functions.
+
+       --XXffuuttuurree            Performs   strict   class-file  format
+                           checks.   For  purposes  of  backwards
+                           compatibility,   the   default  format
+                           checks performed by the Java  2  SDK's
+                           virtual  machine  are no stricter than
+                           the checks performed by 1.1.x versions
+                           of  the  JDK  software.   The --XXffuuttuurree
+                           flag turns on stricter class-file for­
+                           mat checks that enforce closer confor­
+                           mance to the class-file format  speci­
+                           fication.   Developers  are encouraged
+                           to use this flag when  developing  new
+                           code  because the stricter checks will
+                           become the default in future  releases
+                           of the Java application launcher.
+
+       --XXnnooccllaassssggcc         Disables class garbage collection
+
+       --XXiinnccggcc             Enable the incremental garbage collec­
+                           tor. The incremental  garbage  collec­
+                           tor,  which  is  off  by default, will
+                           eliminate  occasional  garbage-collec­
+                           tion  pauses during program execution.
+                           However, it can lead to a roughly  10%
+                           decrease in overall GC performance.
+
+       --XXllooggggcc:: _f_i_l_e       Report   on  each  garbage  collection
+                           event, as with  --vveerrbboossee::ggcc,  but  log
+                           this  data  to  _f_i_l_e _.  In addition to
+                           the  information  --vveerrbboossee::ggcc   gives,
+                           each  reported event will be preceeded
+                           by the time  (in  seconds)  since  the
+                           first garbage-collection event.
+
+                           Always  use  a  local  file system for
+                           storage of this file to avoid stalling
+                           the  JVM  due to network latency.  The
+                           file may be truncated in the case of a
+                           full file system and logging will con­
+                           tinue on  the  truncated  file.   This
+                           option  overrides  --vveerrbboossee::ggcc if both
+                           are given on the command line.
+
+       --XXmmss_n               Specifies the initial size of the mem­
+                           ory  allocation pool.  This value must
+                           be greater than 1000.  To  modify  the
+                           meaning of _n, append either the letter
+                           kk for kilobytes or the  letter  mm  for
+                           megabytes.  The default value is 2m.
+
+       --XXmmxx_n               Specifies the maximum size of the mem­
+                           ory allocation pool.  This value  must
+                           be  greater  than 1000.  To modify the
+                           meaning of _n, append either the letter
+                           kk  for  kilobytes  or the letter mm for
+                           megabytes.  The default value is  64m.
+                           The  uppoer  limit for this value will
+                           be approximately 4000m on SPARC  plat­
+                           forms  and  2000m  on  x86  platforms,
+                           minus overhead amounts.
+
+       --XXpprrooff              Profiles  the  running  program,   and
+                           sends  profiling data to standard out­
+                           put.  This option  is  provided  as  a
+                           utility  that  is  useful  in  program
+                           development and is not intended to  be
+                           be used in production systems.
+
+       --XXrruunnhhpprrooff[[::hheellpp]][[::_s_u_b_o_p_t_i_o_n==_v_a_l_u_e,...]
+                           Enables  cpu, heap, or monitor profil­
+                           ing.  This option  is  typically  fol­
+                           lowed  by  a  list  of comma-separated
+                           _s_u_b_o_p_t_i_o_n=_v_a_l_u_e pairs.  Run  the  com­
+                           mand  jjaavvaa --XXrruunnhhpprrooff::hheellpp to obtain a
+                           list of suboptions and  their  default
+                           values.
+
+       --XXssss_n               Each  Java  thread has two stacks: one
+                           for Java code and one for C code.  The
+                           --XXssss  option  sets  the  maximum stack
+                           size that can be used by C code  in  a
+                           thread  to  _n.   Every  thread that is
+                           spawned during the  execution  of  the
+                           program  passed to jjaavvaa has _n as its C
+                           stack size.  The default units  for  _n
+                           are  bytes and _n must be > 1000 bytes.
+
+                           To modify the  meaning  of  _n,  append
+                           either  the  letter kk for kilobytes or
+                           the  letter  mm  for  megabytes.    The
+                           default  stack  size  is determined by
+                           the Linux operating system upon  which
+                           the Java platform is running.
+
+       --XXrrss                Reduce  usage of operating-system sig­
+                           nals by Java virtual machine (JVM).
+
+                           Sun's JVM catches signals to implement
+                           shutdown hooks for abnormal JVM termi­
+                           nation. The JVM uses  SIGHUP,  SIGINT,
+                           and SIGTERM to initiate the running of
+                           shutdown hooks. The JVM  uses  SIGQUIT
+                           to perform thread dumps.
+
+                           Applications  that  embed the JVM fre­
+                           quently need to trap signals like SIG­
+                           INT  or  SIGTERM,  and  in  such cases
+                           there is the possibility of  interfer­
+                           ence  between the applications' signal
+                           handlers and  the  JVM  shutdown-hooks
+                           facility.
+
+                           To  avoid  such interference, the --XXrrss
+                           option can be used to turn off the JVM
+                           shutdown-hooks  feature.  When --XXrrss is
+                           used, the  signal  masks  for  SIGINT,
+                           SIGTERM,  SIGHUP,  and SIGQUIT are not
+                           changed by the JVM,  and  signal  han­
+                           dlers   for   these  signals  are  not
+                           installed.
+
+EENNVVIIRROONNMMEENNTT VVAARRIIAABBLLEESS
+       CCLLAASSSSPPAATTHH           Used to provide the system with a path
+                           to  user-defined classes.  Directories
+                           are separated by colons.  For example:
+
+                      ..:://hhoommee//aavvhh//ccllaasssseess:://uussrr//llooccaall//jjaavvaa//ccllaasssseess
+
+
+SSEEEE AALLSSOO
+       jjaavvaacc(1), jjddbb(1), jjaavvaacc(1), jjaarr(1), sseett(1)
+
+       See (or search jjaavvaa..ssuunn..ccoomm) for the following:
+
+       JJDDKK FFiillee SSttrruuccttuurree @@
+         http://java.sun.com/j2se/1.4/docs/tooldocs/linux/jdk­
+         files.html
+
+       JJAARR FFiilleess @@
+         http://java.sun.com/docs/books/tutorial/jar/
+
+NNOOTTEESS
+       All  the --XX options are unstable.  As noted in the OOPPTTIIOONNSS
+       section, some of the "standard" options are obsolete.
+
+
+
+                           23 Apr 2001                    java(1)

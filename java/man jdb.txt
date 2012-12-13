@@ -1,0 +1,276 @@
+jdb(1)                                                     jdb(1)
+
+
+
+NNAAMMEE
+       jdb - Java debugger
+
+SSYYNNOOPPSSIISS
+       jjddbb [ _o_p_t_i_o_n_s ] [ _c_l_a_s_s ] [ _a_r_g_u_m_e_n_t_s ]
+
+PPAARRAAMMEETTEERRSS
+       _o_p_t_i_o_n_s        Command-line options.
+
+       _c_l_a_s_s          Name of the class to begin debugging.
+
+       _a_r_g_u_m_e_n_t_s      Arguments  passed  to  the mmaaiinn(()) method of
+                      _c_l_a_s_s.
+
+DDEESSCCRRIIPPTTIIOONN
+       The Java debugger, jjddbb, is a simple command-line  debugger
+       for Java classes.  It is a demonstration of the JJaavvaa PPllaatt­­
+       ffoorrmm DDeebbuuggggeerr AArrcchhiitteeccttuurree that  provides  inspection  and
+       debugging of a local or remote Java Virtual Machine.
+
+   SSttaarrttiinngg aa jjddbb SSeessssiioonn
+       There are many ways to start a jdb session.  The most fre­
+       quently used way is to have jjddbb launch a new Java  Virtual
+       Machine  (VM) with the main class of the application to be
+       debugged.  This is done by substituting  the  command  jjddbb
+       for  jjaavvaa(1)  in  the  command line.  For example, if your
+       application's main class is MMyyCCllaassss, you use the following
+       command to debug it under jjddbb:
+
+              eexxaammppllee%% jjddbb MMyyCCllaassss
+
+       When  started  this way, jjddbb invokes a second Java VM with
+       any specified parameters, loads the specified  class,  and
+       stops  the VM before executing that class's first instruc­
+       tion.
+
+       Another way to use jjddbb is by attaching it  to  a  Java  VM
+       that is already running.  A VM that is to be debugged with
+       jjddbb must be started with the following options:
+
+       +-------------------+--------------------------------------+
+       |      ooppttiioonn       |               ppuurrppoossee                |
+       +-------------------+--------------------------------------+
+       |--XXddeebbuugg            | Enables debugging support in the VM. |
+       +-------------------+--------------------------------------+
+       |--XXrruunnjjddwwpp::ttrraannss­­   | Loads in-process debugging libraries |
+       |ppoorrtt==ddtt__ssoocckkeett,,    | and specifies the kind of connection |
+       |sseerrvveerr==yy,,ssuussppeenndd==nn | to be made.                          |
+       +-------------------+--------------------------------------+
+       For example, the following command will  run  the  MMyyCCllaassss
+       application  and  allow  jjddbb  to  connect to it at a later
+       time:
+
+              eexxaammppllee%% jjddbb --XXddeebbuugg \\
+                 --XXrruunnjjddwwpp::ttrraannssppoorrtt==ddtt__ssoocckkeett,,aaddddrreessss==88000000,,sseerrvveerr==yy,,ssuussppeenndd==nn
+
+       You can then attach jjddbb to the VM with the following comm­
+       mand:
+
+              eexxaammppllee%% jjddbb --aattttaacchh 88000000
+
+       Note that MMyyCCllaassss is not specified in the jjddbb command line
+       in this case because jjddbb is connecting to an  existing  VM
+       instead of launching a new one.
+
+       There are many other ways to connect the debugger to a VM,
+       and all of them are supported by jjddbb.  The  Java  Platform
+       Debugger  Architecture  has  additional  documentation  on
+       these connection options.
+
+   BBaassiicc jjddbb CCoommmmaannddss
+       The following is a list of the basic  jjddbb  commands.   The
+       Java debugger supports other commands listed with the hheellpp
+       command.
+
+       Notice that to display local (stack) variables, the  class
+       must have been compiled with the jjaavvaacc --gg option.
+
+       ccoonntt           Continues  execution of the debugged appli­
+                      cation after a  breakpoint,  exception,  or
+                      step.
+
+       dduummpp           For primitive values, this command is iden­
+                      tical to pprriinntt.  For objects, it prints the
+                      current  value of each field defined in the
+                      object.  Static  and  instance  fields  are
+                      included.
+
+                      The  dduummpp  command supports the same set of
+                      expressions as the pprriinntt command.
+
+       hheellpp, or ??     As the most  important  jjddbb  command,  hheellpp
+                      displays  the  list  of recognized commands
+                      with a brief description.
+
+       pprriinntt          Displays Java objects and primitive values.
+                      For variables or fields of primitive types,
+                      the actual value is printed.  For  objects,
+                      a  short  description  is printed.  See the
+                      dduummpp command for getting  more  information
+                      about an object.
+
+                      pprriinntt supports many simple Java expressions
+                      including those  with  method  invocations.
+                      For example:
+
+                      ·  pprriinntt MMyyCCllaassss..mmyySSttaattiiccFFiieelldd
+                      ·  pprriinntt mmyyOObbjj..mmyyIInnssttaanncceeFFiieelldd
+                      ·  pprriinntt  _i  ++ _j ++ _k  ... where _i, _j, and _k
+                         are  primitives  and  either  fields  or
+                         local variables.
+                      ·  pprriinntt  mmyyOObbjj..mmyyMMeetthhoodd(())  ... if mmyyMMeetthhoodd
+                         returns a non-null.
+                      ·  pprriinntt                                nneeww
+                         jjaavvaa..llaanngg..SSttrriinngg((""HHeelllloo""))..lleennggtthh(())
+
+       tthhrreeaadd         Selects  a thread to be the current thread.
+                      Many jjddbb commands are based on the  setting
+                      of the current thread.  The thread is spec­
+                      ified with the thread  index  described  in
+                      the tthhrreeaaddss ccoommmmaanndd..
+
+       tthhrreeaaddss        Lists  the  threads that are currently run­
+                      ning.  For each thread, its name  and  cur­
+                      rent  status  are  printed,  as  well as an
+                      index that can be used for other  commands.
+                      For example:
+
+                           44.. ((jjaavvaa..llaanngg..TThhrreeaadd))00xx11 mmaaiinn rruunnnniinngg
+
+                      In this example, the thread index is 44, the
+                      thread is an instance of  jjaavvaa..llaanngg..TThhrreeaadd,
+                      the  thread  name  is  mmaaiinn, and it is cur­
+                      rently running
+
+       rruunn            After starting jjddbb, and setting any  neces­
+                      sary breakpoints, use this command to start
+                      the execution of the debugged  application.
+                      This  command  is  available  only when jjddbb
+                      launches  the  debugged   application   (as
+                      opposed to attaching to an existing VM).
+
+       wwhheerree          The  wwhheerree  subcommand  with  no  arguments
+                      dumps  the  stack  of  the  current  thread
+                      (which  is  set  with  the tthhrreeaadd command).
+                      Using wwhheerree aallll  dumps  the  stack  of  all
+                      threads in the current thread group.  Using
+                      wwhheerree _t_h_r_e_a_d_i_n_d_e_x dumps the  stack  of  the
+                      specified thread.  If the current thread is
+                      suspended (either through an event such  as
+                      a  breakpoint  or  through the ssuussppeenndd com­
+                      mand), local variables and  fields  can  be
+                      displayed with the pprriinntt and dduummpp commands.
+                      The uupp and ddoowwnn commands select which stack
+                      frame is current.
+
+   BBrreeaakkppooiinntt CCoommmmaannddss
+       Breakpoints are set in jjddbb at line numbers or at the first
+       instruction of a method.  For example:
+
+       ssttoopp aatt MMyyCCllaassss::2222       Sets a breakpoint  at  the  first
+                                instruction  for  line  2222 of the
+                                source file containing MMyyCCllaassss.
+
+       ssttoopp iinn jjaavvaa..llaanngg..SSttrriinngg..lleennggtthh
+                                Sets a breakpoint at  the  begin­
+                                ning      of      the      method
+                                jjaavvaa..llaanngg..SSttrriinngg..lleennggtthh.
+
+       ssttoopp iinn MMyyCCllaassss.._i_n_i_t     _i_n_i_t identifies the MMyyCCllaassss  con­
+                                structor.
+
+       ssttoopp iinn MMyyCCllaassss.._c_l_i_n_i_t   _c_l_i_n_i_t identifies the static ini­
+                                tialization code for MMyyCCllaassss.
+
+       If a method is overloaded, you must also specify its argu­
+       ment types so that the proper method can be selected for a
+       breakpoint.  For example,
+
+                      MMyyCCllaassss..mmyyMMeetthhoodd((iinntt,,jjaavvaa..llaanngg..SSttrriinngg))
+
+       or
+
+                      MMyyCCllaassss..mmyyMMeetthhoodd(())
+
+       The cclleeaarr command removes breakpoints using a syntax as in
+       cclleeaarrMyClass:45..  Using the cclleeaarr command with no argument
+       displays a list of all  breakpoints  currently  set.   The
+       ccoonntt command continues execution.
+
+   SStteeppppiinngg CCoommmmaannddss
+       The  sstteepp  command  advances  execution  to the next line,
+       whether it is in the  current  stack  frame  or  a  called
+       method.   The  nneexxtt command advances execution to the next
+       line in the current stack frame.
+
+   EExxcceeppttiioonn CCoommmmaannddss
+       When an exception occurs  for  which  there  is  no  catch
+       statement  anywhere  in  the throwing thread's call stack,
+       the VM normally prints an exception trace and exits.  When
+       running  under jjddbb, however, control returns to jjddbb at the
+       offending throw.  Use jjddbb to determine the  cause  of  the
+       exception.
+
+       ccaattcchh          Causes  the debugged application to stop at
+                      other thrown exceptions.  For example:
+
+                           ccaattcchh jjaavvaa..iioo..FFiilleeNNoottFFoouunnddEExxcceeppttiioonn
+
+                      or
+
+                           ccaattcchh mmyyppaacckkaaggee..BBiiggTTrroouubblleeEExxcceeppttiioonn
+
+                      Any exception which is an instance  of  the
+                      specified  class  (or  of  a subclass) will
+                      stop the application at the point where  it
+                      is thrown.
+
+       iiggnnoorree         Negates the effect of a previous ccaattcchh com­
+                      mand.  Notice that the iiggnnoorree command  does
+                      not  cause  the  debugged VM to ignore spe­
+                      cific exceptions, only the debugger.
+
+OOPPTTIIOONNSS
+       When using jjddbb in place of the Java  application  launcher
+       on  the command line, jjddbb accepts many of the same options
+       as the jjaavvaa(1)  command,  including  --DD,  --ccllaassssppaatthh,  and
+       --XX_o_p_t_i_o_n.
+
+       The following additional options are accepted by jjddbb:
+
+       --ssoouurrcceeppaatthh _d_i_r_1:_d_i_r_2:...
+                      Uses the given path in searching for source
+                      files  in  the  specified  path.   If  this
+                      option  is  not specified, the default path
+                      of "." is used.
+
+       --aattttaacchh _a_d_d_r_e_s_s
+                      Attaches the debugger to previously running
+                      VM  using the default connection mechanism.
+
+       --llaauunncchh        Launches the debugged  application  immedi­
+                      ately  upon  startup  of  jjddbb.  This option
+                      removes the need for using the rruunn command.
+                      The  debuged  application  is  launched and
+                      then stopped just before the initial appli­
+                      cation class is loaded.  At that point, you
+                      can set any necessary breakpoints  and  use
+                      the ccoonntt command to continue execution.
+
+       --JJ  ooppttiioonn     Pass  _o_p_t_i_o_n  to  the Java virtual machine,
+                      where  _o_p_t_i_o_n  is  one   of   the   options
+                      described  on  the  man  page  for the java
+                      application launcher, java(1). For example,
+                      _-_J_-_X_m_s_4_8_m  sets  the  startup  memory to 48
+                      megabytes. It is a common convention for --JJ
+                      to  pass  options to the underlying virtual
+                      machine.
+
+
+       Other options are supported for alternate  mechanisms  for
+       connecting  the  debugger  and the VM it is to debug.  The
+       Java Platform Debugger Architecture has  additional  docu­
+       mentation on these connection alternatives.
+
+SSEEEE AALLSSOO
+       jjaavvaa(1), jjaavvaacc(1), jjaavvaaddoocc(1), jjaavvaahh(1), jjaavvaapp(1)
+
+
+
+
+                           13 June 2000                    jdb(1)

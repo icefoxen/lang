@@ -1,0 +1,23 @@
+LOOPS
+
+Endless:
+begin ... again
+
+Run-Conditional:
+begin <condition> while ... repeat
+
+End-Conditional:
+begin ... <condition> until
+
+Counted Loops (the iteration number can be accessed w/ var 'i')
+do ... loop
+: foo
+  do
+    i . cr
+  loop ;
+
+Breaking Loops:
+(needs an 'unloop' for each nested loop)
+do ... unloop exit ... loop
+(breaks the innermost loop)
+do ... leave ... loop

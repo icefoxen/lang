@@ -1,0 +1,27 @@
+# Project: Pong
+# Makefile created by Dev-C++ 4.9.7.0
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = pong.o $(RES)
+LIBS =  -L"D:/SYS/DEV/DEV-CPP/lib" "D:/sys/dev/Dev-Cpp/lib/liballeg.a"
+INCS =  -I"D:/SYS/DEV/DEV-CPP/include"  -I"D:/SYS/DEV/DEV-CPP/include/c++"  -I"D:/SYS/DEV/DEV-CPP/include" 
+BIN  = pong.exe
+CXXFLAGS = $(INCS)  -Wall
+CFLAGS = $(INCS)  -Wall
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before pong.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(OBJ) -o "pong.exe" $(LIBS) $(CXXFLAGS)
+
+pong.o: pong.c 
+	$(CC) -c pong.c -o pong.o $(CFLAGS)

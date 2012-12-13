@@ -1,0 +1,502 @@
+javac(1)                                                 javac(1)
+
+
+
+NNAAMMEE
+       javac - Java compiler
+
+SSYYNNOOPPSSIISS
+       jjaavvaacc [ --bboooottccllaassssppaatthh _b_o_o_t_c_l_a_s_s_p_a_t_h ]
+            [ --ccllaassssppaatthh _c_l_a_s_s_p_a_t_h ] [ --dd _d_i_r_e_c_t_o_r_y ]
+            [ --ddeepprreeccaattiioonn ] [ --eennccooddiinngg _e_n_c_o_d_i_n_g ]
+            [ --eexxttddiirrss _d_i_r_e_c_t_o_r_i_e_s ]
+            [ --gg | --gg::nnoonnee | --gg::_k_e_y_w_o_r_d_-_l_i_s_t ] [ --JJ_o_p_t_i_o_n ]
+            [ --nnoowwaarrnn ] [ --OO ] [ --ssoouurrcceeppaatthh _s_o_u_r_c_e_p_a_t_h ]
+            [ --ttaarrggeett _v_e_r_s_i_o_n ] [ --vveerrbboossee ] [ --XX ]
+            [ --XXssttddoouutt _f_i_l_e_n_a_m_e ] [ _s_o_u_r_c_e_f_i_l_e_s ] [ _@_f_i_l_e_s ]
+
+PPAARRAAMMEETTEERRSS
+       Options  may be in any order.  For a discussion of parame­
+       ters which apply to a specific option, see below.
+
+       _s_o_u_r_c_e_f_i_l_e_s    One or more source  files  to  be  compiled
+                      (such as MMyyCCllaassss..jjaavvaa).
+
+       @@_f_i_l_e_s         One or more files that list source files.
+
+DDEESSCCRRIIPPTTIIOONN
+       The  jjaavvaacc  tool  reads  class  and interface definitions,
+       written in the Java  programming  language,  and  compiles
+       them into bytecode class files.
+
+       There  are  two  ways  to  pass  source code file names to
+       jjaavvaacc:
+
+       · For a small number of source files, simply list the file
+         names on the command line.
+
+       · For  a  large  number of source files, list the the file
+         names in a file, separated by  blanks  or  line  breaks.
+         Then  use  the list file name on the jjaavvaacc command line,
+         preceded by an @ character.
+
+       Source code file names must  have  ..jjaavvaa  suffixes,  class
+       file  names must have ..ccllaassss suffixes, and both source and
+       class files must have root names that identify the  class.
+       For  example, a class called MMyyCCllaassss would be written in a
+       source file called MMyyCCllaassss..jjaavvaa and compiled into a  byte­
+       code class file called MMyyCCllaassss..ccllaassss.
+
+       Inner  class  definitions  produce additional class files.
+       These class files have names combining the inner and outer
+       class names, such as MMyyCCllaassss$$MMyyIInnnneerrCCllaassss..ccllaassss.
+
+       You  should  arrange source files in a directory tree that
+       reflects their package tree.  For example, if you keep all
+       your  source  files  in  //wwoorrkkssppaaccee,  the  source code for
+       ccoomm..mmyyssoofftt..mmyyppaacckk..MMyyCCllaassss       should        be        in
+       //wwoorrkkssppaaccee//ccoomm//mmyyssoofftt//mmyyppaacckk//MMyyCCllaassss..jjaavvaa.
+
+       By  default, the compiler puts each class file in the same
+       directory as its source file.  You can specify a  separate
+       destination directory with --dd (see OOPPTTIIOONNSS, below).
+
+   SSeeaarrcchhiinngg ffoorr TTyyppeess
+       When  compiling  a  source  file, the compiler often needs
+       information about a type it does not yet  recognize.   The
+       compiler  needs type information for every class or inter­
+       face used, extended, or implemented in  the  source  file.
+       This  includes  classes and interfaces not explicitly men­
+       tioned in the source file but  which  provide  information
+       through inheritance.
+
+       For example, when you subclass jjaavvaa..aapppplleett..AApppplleett, you are
+       also  using  Applet's  ancestor  classes:  jjaavvaa..aawwtt..PPaanneell,
+       jjaavvaa..aawwtt..CCoonnttaaiinneerr,         jjaavvaa..aawwtt..CCoommppoonneenntt,        and
+       jjaavvaa..aawwtt..OObbjjeecctt.
+
+       When the compiler needs type information, it looks  for  a
+       source  file  or  class  file which defines the type.  The
+       compiler searches first in  the  bootstrap  and  extension
+       classes, then in the user class path.  The user class path
+       is defined by setting the CCLLAASSSSPPAATTHH  environment  variable
+       or  by  using  the  --ccllaassssppaatthh  command line option.  (For
+       details, see SSeettttiinngg tthhee CCllaassss  PPaatthh.)   If  you  use  the
+       --ssoouurrcceeppaatthh  option,  the  compiler searches the indicated
+       path for source files; otherwise the compiler searches the
+       user  class  path  both  for class files and source files.
+       You can specify different bootstrap or  extension  classes
+       with  the  --bboooottccllaassssppaatthh and --eexxttddiirrss options; see CCrroossss--
+       CCoommppiillaattiioonn OOppttiioonnss below.
+
+       A successful type search  may  produce  a  class  file,  a
+       source file, or both.  Here is how jjaavvaacc handles each sit­
+       uation:
+
+       · Search produces a class file but no source  file:  jjaavvaacc
+         uses the class file.
+
+       · Search  produces  a source file but no class file: jjaavvaacc
+         compiles the source file and uses  the  resulting  class
+         file.
+
+       · Search  produces  both  a  source file and a class file:
+         jjaavvaacc determines whether the class file is out of  date.
+         If  the  class file is out of date, jjaavvaacc recompiles the
+         source file and uses the updated class file.  Otherwise,
+         jjaavvaacc just uses the class file.
+
+         By  default,  jjaavvaacc  considers  a class file out of date
+         only if it is older than the source file.
+
+       Note that jjaavvaacc can silently compile source files not men­
+       tioned  on  the  command line.  Use the --vveerrbboossee option to
+       trace automatic compilation.
+
+OOPPTTIIOONNSS
+       The compiler has a set of standard options that  are  sup­
+       ported  on the current development environment and will be
+       supported in future releases.  An additional set  of  non-
+       standard  options  are  specific  to  the  current virtual
+       machine implementation and are subject to  change  in  the
+       future.  Non-standard options begin with --XX.
+
+   SSttaannddaarrdd OOppttiioonnss
+       --ccllaassssppaatthh _c_l_a_s_s_p_a_t_h
+              Sets the user class path, overriding the user class
+              path in the  CCLLAASSSSPPAATTHH  environment  variable.   If
+              neither  CCLLAASSSSPPAATTHH  or --ccllaassssppaatthh is specified, the
+              user class path consists of the current  directory.
+              See SSeettttiinngg tthhee CCllaassss PPaatthh for more details.
+
+              If  the  --ssoouurrcceeppaatthh  option  is not specified, the
+              user class path is searched  for  source  files  as
+              well as class files.
+
+       --dd _d_i_r_e_c_t_o_r_y
+              Sets the destination directory for class files.  If
+              a class is part of a package, jjaavvaacc puts the  class
+              file in a subdirectory reflecting the package name,
+              creating directories as needed.   For  example,  if
+              you  specify  --dd  //hhoommee//mmyyccllaasssseess  and the class is
+              called ccoomm..mmyyppaacckkaaggee..MMyyCCllaassss, then the  class  file
+              is        called        //hhoommee//mmyyccllaasssseess//ccoomm//mmyyppaacckk­­
+              aaggee//MMyyCCllaassss..ccllaassss.
+
+              If --dd is not specified, jjaavvaacc puts the  class  file
+              in the same directory as the source file.
+
+              Note  that  the  directory  specified  by --dd is not
+              automatically added to your user class path.
+
+       --ddeepprreeccaattiioonn
+              Shows a description of each use or  override  of  a
+              deprecated  member or class.  Without --ddeepprreeccaattiioonn,
+              jjaavvaacc shows the names of source files that  use  or
+              override deprecated members or classes.
+
+       --eennccooddiinngg _e_n_c_o_d_i_n_g
+              Sets   the  source  file  encoding  name,  such  as
+              EUCJIS/SJIS.  If --eennccooddiinngg is  not  specified,  the
+              platform default converter is used.
+
+       --gg     Generates   all  debugging  information,  including
+              local variables.  By default, only line number  and
+              source file information is generated.
+
+       --gg::nnoonnee
+              Does not generate any debugging information.
+
+       --gg::_k_e_y_w_o_r_d_-_l_i_s_t
+              Generates only some kinds of debugging information,
+              specified by a comma separated  list  of  keywords.
+              Valid keywords are:
+
+              ssoouurrccee    Source file debugging information
+
+              lliinneess     Line number debugging information
+
+              vvaarrss      Local variable debugging information
+
+       --hheellpp  Prints a synopsis of standard options.
+
+       --nnoowwaarrnn
+              Disables warning messages.
+
+       --ssoouurrccee _r_e_l_e_a_s_e
+              Enables  support for compiling source code contain­
+              ing assertions.
+
+              When release is set to 1.4,  the  compiler  accepts
+              code containing assertions.  Assertions were intro­
+              duced in J2SE 1.4.
+
+              When release is set to 1.3, the compiler  does  _n_o_t
+              support  assertions.  The  compiler defaults to the
+              1.3-behavior if the --ssoouurrccee flag is not used.
+
+       --ssoouurrcceeppaatthh _s_o_u_r_c_e_p_a_t_h
+              Specifies the source code path to search for  class
+              or  interface  definitions.  As with the user class
+              path, source path entries are separated  by  colons
+              (::)  and  can  be directories, JAR archives, or ZIP
+              archives.  If packages are  used,  the  local  path
+              name  within  the directory or archive must reflect
+              the package name.
+
+              Note that classes found through the  classpath  are
+              subject to automatic recompilation if their sources
+              are found.
+
+       --vveerrbboossee
+              Verbose output.  This  includes  information  about
+              each class loaded and each source file compiled.
+
+   CCrroossss--CCoommppiillaattiioonn OOppttiioonnss
+       By default, classes are compiled against the bootstrap and
+       extension classes of the JDK that jjaavvaacc shipped with.  But
+       jjaavvaacc  also  supports  cross-compiling,  where classes are
+       compiled against a bootstrap and extension  classes  of  a
+       different  Java  platform implementation.  It is important
+       to use --bboooottccllaassssppaatthh and --eexxttddiirrss  when  cross-compiling;
+       see CCrroossss--CCoommppiillaattiioonn EExxaammppllee below.
+
+       --bboooottccllaassssppaatthh _b_o_o_t_c_l_a_s_s_p_a_t_h
+              Cross-compiles  against  the  specified set of boot
+              classes.  As with the user class path,  boot  class
+              path entries are separated by colons (::) and can be
+              directories, JAR archives, or ZIP archives.
+
+       --eexxttddiirrss _d_i_r_e_c_t_o_r_i_e_s
+              Cross-compiles  against  the  specified   extension
+              directories.   Directories  are  a  colon-separated
+              list of directories.  Each JAR archive in the spec­
+              ified directories is searched for class files.
+
+       --ttaarrggeett _v_e_r_s_i_o_n
+              Generates  class  files  that will work on VMs with
+              the specified version.  The default is to  generate
+              class files to be compatible with 1.2 VMs, with one
+              exception. When the --ssoouurrccee 1.4 option is used, the
+              default target is 1.4.  The versions supported are:
+
+              1.1    Ensures that generated class files  will  be
+                     compatible with 1.1 and 1.2 VMs.
+
+              1.2    Generates  class  files that will run on 1.2
+                     VMs, but will not run on 1.1 VMs.   This  is
+                     the default.
+
+              1.3    Generates class files that run on VMs in the
+                     Java 2 SDK, v1.3 and later, but will not run
+                     on 1.1 or 1.2 VMs.
+
+              1.4    Generates  class  files  that are compatible
+                     only with 1.4 VMs.
+
+   NNoonn--SSttaannddaarrdd OOppttiioonnss
+       --JJ_o_p_t_i_o_n
+              Passes option to the java launcher called by jjaavvaacc.
+              For  example,  --JJ--XXmmss4488mm sets the startup memory to
+              48 megabytes.  Although it does not begin with  --XX,
+              it  is  not  a `standard option' of jjaavvaacc.  It is a
+              common convention for --JJ to  pass  options  to  the
+              underlying  VM  executing  applications  written in
+              Java.
+
+              Note that  CCLLAASSSSPPAATTHH,  --ccllaassssppaatthh,  --bboooottccllaassssppaatthh,
+              and --eexxttddiirrss do not specify the classes used to run
+              jjaavvaacc.  Fiddling with  the  implementation  of  the
+              compiler  in  this  way  is  usually  pointless and
+              always risky. If you do need to do this, use the --JJ
+              option  to  pass  through options to the underlying
+              java launcher.
+
+       --XX     Displays information about non-standard options and
+              exit.
+
+       --XXssttddoouutt  ffiilleennaammee
+              Send  compiler  messages  to  the  named  file.  By
+              default, compiler messages go to SSyysstteemm..eerrrr.
+
+       --XXsswwiittcchhcchheecckk
+              Checks sswwiittcchh blocks  for  fall-through  cases  and
+              provides  a warning message for any that are found.
+              Fall-through cases are cases  in  a  sswwiittcchh  block,
+              other  than  the last case in the block, whose code
+              does not include a bbrreeaakk statement,  allowing  code
+              execution  to  "fall through" from that case to the
+              next case. For example, the code following the ccaassee
+              1  label  in  this  sswwiittcchh block does not contain a
+              bbrreeaakk statement:
+
+                switch (x) {
+                case 1:
+                       System.out.println("1");
+                       //  No  break;  statement here.
+                case 2:
+                       System.out.println("2");
+                }
+
+              If the --XXsswwttiicchhcchheecckk flag were used when  compiling
+              this  code, the compiler would emit a warning about
+              "possible fall-through into case," along  with  the
+              line number of the case in question.
+
+CCOOMMMMAANNDD LLIINNEE AARRGGUUMMEENNTT FFIILLEESS
+       To  shorten  or  simplify  the javac command line, you can
+       specify one or more files that  themselves  contain  argu­
+       ments  to  the  jjaavvaacc  command. This enables you to create
+       javac commands of any length on any operating system.
+
+       An argument file can  include  javac  options  and  source
+       filenames in any combination.  The arguments within a file
+       can be space-separated  or  newline-separated.   Filenames
+       within an argument file are relative to the current direc­
+       tory, not the location of the  argument  file.   Wildcards
+       (*) are not allowed in these lists (such as for specifying
+       **..jjaavvaa).  Use of the @@ character to recursively  interpret
+       files is not supported.
+
+       When  executing  javac,  pass in the path and name of each
+       argument file with the @@ leading  character.   When  javac
+       encounters  an argument beginning with the character @@, it
+       expands the contents of that file into the argument  list.
+
+   EExxaammppllee -- SSiinnggllee AArrgg FFiillee
+       You could use a single argument file named aarrggffiillee to hold
+       all javac arguments:
+
+                CC::>> jjaavvaacc @@aarrggffiillee
+
+       This argument file could  contain  the  contents  of  both
+       files shown in the next example.
+
+   EExxaammppllee -- TTwwoo AArrgg FFiilleess
+       You  can  create  two  argument files -- one for the javac
+       options and the other for the  source  filenames:  (Notice
+       the following lists have no line-continuation characters.)
+
+       Create a file named ooppttiioonnss containing:
+
+              --dd ccllaasssseess
+              --gg
+              --ssoouurrcceeppaatthh \\jjaavvaa\\ppuubbss\\wwss\\11..33\\ssrrcc\\sshhaarree\\ccllaasssseess
+
+       Create a file named
+              ccllaasssseess containing:
+
+              MMyyCCllaassss11..jjaavvaa
+              MMyyCCllaassss22..jjaavvaa
+              MMyyCCllaassss33..jjaavvaa
+
+       You would then run javac with:
+
+              CC::>> jjaavvaacc @@ooppttiioonnss @@ccllaasssseess
+
+
+          EExxaammppllee -- AArrgg FFiilleess wwiitthh PPaatthhss
+              The argument files can have paths,  but  any  file­
+              names  inside the files are relative to the current
+              working directory (not ppaatthh11 or ppaatthh22):
+
+              CC::>> jjaavvaacc @@ppaatthh11\\ooppttiioonnss @@ppaatthh22\\ccllaasssseess
+
+
+       EEXXAAMMPPLLEESS
+
+   CCoommppiilliinngg aa SSiimmppllee PPrrooggrraamm
+       One source file, HHeelllloo..jjaavvaa, defines a class called ggrreeeett­­
+       iinnggss..HHeelllloo.  The greetings directory is the package direc­
+       tory both for the source file and the class  file  and  is
+       off  the  current  directory.   This  allows us to use the
+       default user class path. It also makes it  unnecessary  to
+       specify a separate destination directory with --dd.
+
+          eexxaammppllee%% llss
+             ggrreeeettiinnggss//
+          eexxaammppllee%% llss ggrreeeettiinnggss
+             HHeelllloo..jjaavvaa
+          eexxaammppllee%% ccaatt ggrreeeettiinnggss//HHeelllloo..jjaavvaa
+             ppaacckkaaggee ggrreeeettiinnggss;;
+
+             ppuubblliicc ccllaassss HHeelllloo {{
+                  ppuubblliicc ssttaattiicc vvooiidd mmaaiinn((SSttrriinngg[[]] aarrggss)) {{
+                     ffoorr ((iinntt ii==00;; ii << aarrggss..lleennggtthh;; ii++++)) {{
+                         SSyysstteemm..oouutt..pprriinnttllnn((""HHeelllloo "" ++ aarrggss[[ii]]));;
+                     }}
+                  }}
+             }}
+          eexxaammppllee%% jjaavvaacc ggrreeeettiinnggss//HHeelllloo..jjaavvaa
+          eexxaammppllee%% llss ggrreeeettiinnggss
+             HHeelllloo..ccllaassss   HHeelllloo..jjaavvaa
+          eexxaammppllee%% jjaavvaa ggrreeeettiinnggss..HHeelllloo WWoorrlldd UUnniivveerrssee EEvveerryyoonnee
+             HHeelllloo WWoorrlldd
+             HHeelllloo UUnniivveerrssee
+             HHeelllloo EEvveerryyoonnee
+
+   CCoommppiilliinngg MMuullttiippllee SSoouurrccee FFiilleess
+       This  example compiles all the source files in the package
+       greetings.
+
+          eexxaammppllee%% llss
+             ggrreeeettiinnggss//
+          eexxaammppllee%% llss ggrreeeettiinnggss
+             AAlloohhaa..jjaavvaa     GGuutteennTTaagg..jjaavvaa     HHeelllloo..jjaavvaa      HHii..jjaavvaa
+          eexxaammppllee%% jjaavvaacc ggrreeeettiinnggss//**..jjaavvaa
+          eexxaammppllee%% llss ggrreeeettiinnggss
+             AAlloohhaa..ccllaassss    GGuutteennTTaagg..ccllaassss    HHeelllloo..ccllaassss     HHii..ccllaassss
+             AAlloohhaa..jjaavvaa     GGuutteennTTaagg..jjaavvaa     HHeelllloo..jjaavvaa      HHii..jjaavvaa
+
+   SSppeecciiffyyiinngg aa UUsseerr CCllaassss PPaatthh
+       Having changed one of the source  files  in  the  previous
+       example, we recompile it:
+
+          eexxaammppllee%% ppwwdd
+             //eexxaammpplleess
+          eexxaammppllee%% jjaavvaacc ggrreeeettiinnggss//HHii..jjaavvaa
+
+       Since  ggrreeeettiinnggss..HHii  refers to other classes in the greet­
+       ings package, the  compiler  needs  to  find  these  other
+       classes.   The  example  above  works, because our default
+       user class path happens to be the directory containing the
+       package  directory.  But suppose we want to recompile this
+       file and not worry about which directory we're  in?   Then
+       we  need  to add //eexxaammpplleess to the user class path.  We can
+       do this by setting  CCLLAASSSSPPAATTHH,  but  here  we'll  use  the
+       --ccllaassssppaatthh option.
+
+          eexxaammppllee%% jjaavvaacc --ccllaassssppaatthh \\eexxaammpplleess //eexxaammpplleess//ggrreeeettiinnggss//HHii..jjaavvaa
+
+       If  we change ggrreeeettiinnggss..HHii again, to use a banner utility,
+       that utility also needs to be accessible through the  user
+       class path.
+
+          eexxaammppllee%% jjaavvaacc --ccllaassssppaatthh //eexxaammpplleess:://lliibb//BBaannnneerrss..jjaarr \\
+                            //eexxaammpplleess//ggrreeeettiinnggss//HHii..jjaavvaa
+
+       To  execute  a  class in greetings, we need access both to
+       greetings and to the classes it uses.
+
+          eexxaammppllee%% jjaavvaa --ccllaassssppaatthh //eexxaammpplleess:://lliibb//BBaannnneerrss..jjaarr ggrreeeettiinnggss..HHii
+
+   SSeeppaarraattiinngg SSoouurrccee FFiilleess aanndd CCllaassss FFiilleess
+       It often makes sense to keep source files and class  files
+       in separate directories, especially on large projects.  We
+       use --dd to indicate the separate  class  file  destination.
+       Since  the source files are not in the user class path, we
+       use --ssoouurrcceeppaatthh to help the compiler find them.
+
+          eexxaammppllee%% llss
+             ccllaasssseess//  lliibb//      ssrrcc//
+          eexxaammppllee%% llss ssrrcc
+             ffaarreewweellllss//
+          eexxaammppllee%% llss ssrrcc//ffaarreewweellllss
+             BBaassee..jjaavvaa      GGooooddBByyee..jjaavvaa
+          eexxaammppllee%% llss lliibb
+             BBaannnneerrss..jjaarr
+          eexxaammppllee%% llss ccllaasssseess
+          eexxaammppllee%% jjaavvaacc --ssoouurrcceeppaatthh ssrrcc --ccllaassssppaatthh ccllaasssseess::lliibb//BBaannnneerrss..jjaarr \\
+             ssrrcc//ffaarreewweellllss//GGooooddBByyee..jjaavvaa --dd ccllaasssseess
+          eexxaammppllee%% llss ccllaasssseess
+             ffaarreewweellllss//
+          eexxaammppllee%% llss ccllaasssseess//ffaarreewweellllss
+             BBaassee..ccllaassss      GGooooddBByyee..ccllaassss
+
+       Note that the compiler  compiled  src/farewells/Base.java,
+       even  though we didn't specify it on the command line.  To
+       trace automatic compiles, use the --vveerrbboossee option.
+
+   CCrroossss--CCoommppiillaattiioonn EExxaammppllee
+       Here we use the JDK 1.2 jjaavvaacc to compile  code  that  will
+       run on a 1.1 VM.
+
+          eexxaammppllee%% jjaavvaacc --ttaarrggeett 11..11 --bboooottccllaassssppaatthh jjddkk11..11..77//lliibb//ccllaasssseess..zziipp \\
+               --eexxttddiirrss """" OOllddCCooddee..jjaavvaa
+
+       The  --ttaarrggeett  11..11  option ensures that the generated class
+       files will be compatible with 1.1 VMs.  In  JDK1.2,  jjaavvaacc
+       compiles  for  1.1  by  default,  so  this  option  is not
+       strictly required.  However, it is good form because other
+       compilers may have other defaults.
+
+       The  JDK  1.2  jjaavvaacc would also by default compile against
+       its own 1.2 bootstrap classes, so we need to tell jjaavvaacc to
+       compile  against JDK 1.1 bootstrap classes instead.  We do
+       this with --bboooottccllaassssppaatthh and --eexxttddiirrss.  Failing to do this
+       might  allow  compilation against a 1.2 API that would not
+       be present on a 1.1 VM and fail at runtime.
+
+SSEEEE AALLSSOO
+       jjaarr(1), jjaavvaa(1), jjaavvaaddoocc(1), jjaavvaahh(1), jjaavvaapp(1), jjddbb(1)
+
+       See or search the Java web site for the following:
+
+       TThhee JJaavvaa EExxtteennssiioonnss MMeecchhaanniissmm @@
+                 http://java.sun.com/j2se/1.4/docs/guide/exten­
+                 sions/index.html
+
+
+
+
+                           11 June 2001                  javac(1)

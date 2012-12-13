@@ -1,0 +1,59 @@
+Bad use of command `compile'.
+Usage: compile [options] <RootClass> <RootProcedure> ...
+   or: compile [options] <ACEfileName>.ace
+For information about and examples of ACE files, have a look
+in the SmallEiffel/tutorial/ace directory.
+
+Most of the following options are not available when using
+an ACE file.
+
+Option summary:
+
+Information:
+  -help               Display this help information
+  -version            Display SmallEiffel version information
+  -verbose            Display detailed information about what the
+                       compiler is doing
+
+Warning levels:
+  -case_insensitive   Make class and feature names case-insensitive
+  -no_style_warning   Don't print warnings about style violations
+  -no_warning         Don't print any warnings (implies -no_style_warning)
+
+Optimization and debugging levels (specify at most one; default is -all_check):
+  -boost              Enable all optimizations,
+                       but disable all run-time checks
+  -no_check           Enable Void target and system-level checking
+  -require_check      Enable precondition checking (implies -no_check)
+  -ensure_check       Enable postcondition checking (implies -require_check)
+  -invariant_check    Enable class invariant checking (implies -ensure_check)
+  -loop_check         Enable loop variant and invariant checking
+                       (implies -invariant_check)
+  -all_check          Enable 'check' blocks (implies -loop_check)
+  -debug_check        Enable 'debug' blocks (implies -all_check)
+
+C compilation and run-time system:
+  -cc <command>       Specify the C compiler to use
+  -cecil <file>       Take CECIL information from <file>
+                       (may be used more than once)
+  -o <file>           Put the executable program into <file>
+  -no_main            Don't include a main() in the generated executable
+  -no_gc              Disable garbage collection
+  -gc_info            Enable status messages from the garbage collector
+  -no_strip           Don't run 'strip' on the generated executable
+  -no_split           Generate only one C file
+  -trace              Enable sedb, the internal debugger
+  -manifest_string_trace
+                      Enable the trace support to track non-once
+                      manifest string creation
+  -wedit              Include support for the Wedit debugger
+  -clean              Run the 'clean' command at the end
+
+Miscellaneous:
+  -high_memory_compiler
+                      Allow the compile_to_c to use more memory; if you
+                      have enough physical memory, compilation should
+                      be faster (note: generated C code is not affected)
+If SmallEiffel is correctly installed, you should find
+more information in file: "D:\sys\dev\elj-win32\SmallEiffel\man\compile.txt".
+You can also have a look at http://SmallEiffel.loria.fr

@@ -1,0 +1,10 @@
+SDL initialized.
+Set 800x600 at 16 bits-per-pixel mode
+Shiplist init'ed
+setting up ConfigParser
+file config/TestShip.cfg opened
+Config file config/TestShip.cfg read --1 entries
+New shipList node made
+Image ShatteredWater.png loaded
+Sprites loaded
+Running mainloop

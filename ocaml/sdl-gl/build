@@ -1,0 +1,6 @@
+#!/bin/sh
+echo "Compiling..."
+./compile $1
+echo "Linking..."
+./link $1
+echo "Done!"

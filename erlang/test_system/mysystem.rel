@@ -1,0 +1,8 @@
+%% mysystem.rel
+{release,
+ {"MYSYSTEM", "FIRST"},
+ {erts, "5.1"},
+ [{kernel, "2.7"},
+  {stdlib, "1.10"},
+%  {sasl, "1.9.3"},
+  {hello, "1.0"}]}.  

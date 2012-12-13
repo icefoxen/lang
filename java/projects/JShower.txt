@@ -1,0 +1,3 @@
+Simple program that shows jpg and gifs.  Need to learn more about IO and the FileChooser first, but after that it should be dead easy.
+
+Maybe multimedia and soundplayer also?  Harder, because you need to make buttons to start/stop/pause/rewind and junk.

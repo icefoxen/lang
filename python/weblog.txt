@@ -1,0 +1,15 @@
+This is a fake weblog.  Woopty doopty doodle doodle doo!
+host1 name1 user1 thistime +0100 req? place1 1.1 t 1000
+host1 name1 user1 thistime +0100 req? place1 1.1 t 1000
+host2 name1 user1 thistime +0100 req? place1 1.1 t 1000
+host2 name1 user1 thistime +0100 req? place1 1.1 t 1000
+host2 name1 user1 thistime +0100 req? place1 1.1 t 1000
+host1 name1 user1 thistime +0100 req? place2 1.1 t 1000
+host1 name1 user1 thistime +0100 req? place2 1.1 t 1000
+host1 name1 user1 thistime +0100 req? place2 1.1 t 1000
+host1 name1 user1 thistime +0100 req? place2 1.1 t 1000
+host2 name1 user1 thistime +0100 req? place2 1.1 t 1000
+host2 name1 user1 thistime +0100 req? place2 1.1 t 1000
+host2 name1 user1 thistime +0100 req? place2 1.1 t 1000
+host2 name1 user1 thistime +0100 req? place2 1.1 t 1000
+host2 name1 user1 thistime +0100 req? place2 1.1 t 1000

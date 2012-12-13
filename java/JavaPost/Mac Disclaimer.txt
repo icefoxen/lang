@@ -1,0 +1,8 @@
+
+Java is platform independent, so if you have the needed virtual machine, and components, you can run JavaPoster. The problem is the MRJ that is available for OS 9 isn't new enough for some of the functions used in JavaPoster.
+Apple stopped active development of the classic (OS 9) MRJ when they released OS X. A side effect of the freeze is that the OS 9 JVM isn't Java 2 compatible. It lacks the swing libraries and some methods in the StringBuffer class (deleteCharAt and substring). However, at one time Sun had a download of Swing 1.1.1 available for the Mac. I downloaded it then, but I believe that it has since been EOLed and is no longer available for download. If you have the swing libraries and MRJ SKD you are close to being able to compile (and run) JavaPoster.
+
+Another note is that another download is required to get the library used for cookies. This library has additional problems compiling under OS 9. This should be noted on the downlaod page for JavaPoster but isn't
+
+In summary, JavaPoster doesn't function under OS 9, and won't without some rewriting (which I don't have time to do at the moment). However, it should function under OS X without any problems.
+--Andy Black (AKA Centaur Prime or Theodore Prasm)

@@ -1,0 +1,209 @@
+The time for (fib 40) in various programming languages.
+This is NOT a clean test, nor is it intended to be, especially since
+it does not symbol-manipulation or anything.  But it does give you
+an order-of-magnitude guess of the cost of math and function calls.
+Note that this is for writing (fib) the DUMB WAY.
+...And this is REALLY not a good benchmark.
+Regardless:
+Fast languages (~5 seconds):
+corman lisp
+ocaml
+c
+java
+d
+objective-c
+modula-3
+mit-scheme
+C#/mono
+
+Pretty fast languages (< 1 minute):
+sbcl
+cmucl
+optimized dylan
+erlang
+
+Kinda fast languages (> 1 minute):
+bigloo scheme
+Smalltalk
+
+Slow languages (> 2 minutes):
+python
+ruby
+rexx
+most other lisps and schemes
+
+
+clisp:
+(compile 'fib)
+(time (fib 40))
+Real time: 123.633446 sec.
+Run time: 103.04 sec.
+Space: 144 Bytes
+
+
+sbcl:
+(time (fib 40))
+Evaluation took:
+  18.555 seconds of real time
+  18.14 seconds of user run time
+  0.02 seconds of system run time
+  0 page faults and
+  0 bytes consed
+(time (fib 40))
+
+
+cmucl:
+(compile 'fib)
+(time (fib 40))
+; Evaluation took:
+;   21.3 seconds of real time
+;   17.92 seconds of user run time
+;   0.11 seconds of system run time
+;   0 page faults and
+;   0 bytes consed.
+
+
+corman lisp:
+(time (fib 40))
+Total Execution time: 4.470834 seconds
+Time spent garbage collecting: 0.0 seconds
+
+
+ocaml:
+ocamlopt fib.ml
+time ./a.out 40
+real    0m2.804s
+user    0m2.190s
+sys     0m0.020s
+
+
+c:
+gcc fib1.c
+time ./a.out
+real    0m4.507s
+user    0m4.460s
+sys     0m0.040s
+
+
+python:
+python fib.py
+Many minutes (>3 min)
+
+bigloo scheme:
+bigloo fib.scm
+time ./a.out
+real    1m7.737s
+user    1m6.190s
+sys     0m0.520s
+
+java (?!):
+time java Fib
+real    0m4.136s
+user    0m3.480s
+sys     0m0.030s
+
+gcj:
+time ./a.out
+real    0m4.325s
+user    0m3.640s
+sys     0m0.030s
+
+d:
+time ./fib
+real    0m5.511s
+user    0m5.310s
+sys     0m0.030s
+
+smalltalk (squeak):
+$ xclock &
+Squeak> y := x fib: 40.
+~55 seconds
+
+Objective c:
+time ./a.out
+real    0m8.907s
+user    0m8.780s
+sys     0m0.000s
+
+OCS Scheme:
+time ocscm.opt fib.scm
+real    3m16.113s
+user    3m15.640s
+sys     0m0.010s
+
+Ruby:
+time ruby fib.rb
+Whatever it is, it's slower than OCS Scheme
+
+Lua (nice!):
+time lua fib.lua
+real    1m5.174s
+user    1m4.860s
+sys     0m0.000s
+
+ELisp
+
+Newlisp:
+time newlisp fib.scm 
+real    2m57.218s
+user    2m57.210s
+sys     0m0.010s
+
+Modula-3 (cm3):
+time LINUXLIBC6/prog
+real    0m3.407s
+user    0m3.320s
+sys     0m0.020s
+
+Erlang:
+time(). fib( 40 ). time().
+~9 seconds total
+
+MIT Scheme:
+(cf "mitfib")
+(load "mitfib")
+(runtime)
+;Value: 6.8
+
+Chicken Scheme-to-C:
+~2 minutes 4 seconds
+
+scheme48:
+time scheme48 -i fib.image 
+real    1m10.400s
+user    1m8.960s
+sys     0m0.180s
+
+regina rexx:
+time rexx fib.rexx
+Over 12 minutes
+
+guile:
+time guile -s fib.scm
+real    2m56.884s
+user    2m41.120s
+sys     0m0.830s
+
+Dylan (no type decls):
+time ./fib
+real    1m17.412s
+user    1m13.340s
+sys     0m0.040s
+
+Dylan (w/ type decls):
+time ./fib
+real    0m16.460s
+user    0m14.880s
+sys     0m0.030s
+
+
+C# (mono)
+time mono Fib.exe
+real    0m3.232s
+user    0m3.224s
+sys     0m0.004s
+
+DrScheme (compiled scheme executable)
+./testy 
+cpu time: 150309 real time: 170956 gc time: 0
+(2 minutes, 30 seconds CPU, 2 minutes, 50 seconds real)

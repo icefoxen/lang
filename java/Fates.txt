@@ -1,0 +1,6 @@
+A multithreaded program.  Three thread-handling methods:
+Clotho,
+Atropos,
+and Lachesis.
+
+Spinner, Weaver, and Cutter of Threads.

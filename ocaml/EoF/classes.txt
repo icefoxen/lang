@@ -1,0 +1,13 @@
+
+Sprite
+Vector
+
+
+Area (ISA vector or HASA vector?  The latter makes more sense, but...)
+ DynamicObj
+  Ship
+  Rock
+  Item
+  Shot
+   GuidedShot
+ StaticObj

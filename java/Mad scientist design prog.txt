@@ -1,0 +1,16 @@
+Simon Harper's 2010 edition- Mad Scientist Design Program
+
+*Calculator -windows calc type AND linux stack-based dc type
+   With pre-programmed physics equations
+
+*drawing prog -how good could I make it?
+   Graph co-ords -3d?
+
+*net connection/server/ftp/database
+   Bare-metal server?  plus scripts/macros.
+
+*Note-taking program
+
+*Text editor -programming?
+
+*Spreadsheet for totaling up componants?

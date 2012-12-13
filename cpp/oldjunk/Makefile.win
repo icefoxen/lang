@@ -1,0 +1,30 @@
+# Project: Koolb
+# Makefile created by Dev-C++ 4.9.7.0
+
+CPP  = g++.exe
+CC   = gcc.exe
+WINDRES = windres.exe
+RES  = 
+OBJ  = main.o Reading.o $(RES)
+LIBS =  -L"D:/SYS/DEV/DEV-CPP/lib" 
+INCS =  -I"D:/SYS/DEV/DEV-CPP/include"  -I"D:/SYS/DEV/DEV-CPP/include/c++"  -I"D:/SYS/DEV/DEV-CPP/include" 
+BIN  = Koolb.exe
+CXXFLAGS = $(INCS)  -Wall
+CFLAGS = $(INCS)  -Wall
+
+.PHONY: all all-before all-after clean clean-custom
+
+all: all-before Koolb.exe all-after
+
+
+clean: clean-custom
+	rm -f $(OBJ) $(BIN)
+
+$(BIN): $(OBJ)
+	$(CPP) $(OBJ) -o "Koolb.exe" $(LIBS) $(CXXFLAGS)
+
+main.o: main.cpp 
+	$(CPP) -c main.cpp -o main.o $(CXXFLAGS)
+
+Reading.o: Reading.cpp Reading.h D:/SYS/DEV/DEV-CPP/include/c++/iostream
+	$(CPP) -c Reading.cpp -o Reading.o $(CXXFLAGS)

@@ -1,0 +1,7 @@
+#!/bin/sh
+LIBPATH="-L./ -Ld:/sys/dev/dev-cpp/lib"
+LIBS="-lmingw32 -lSDLmain -lSDL -lSDL_image -lSDL_gfx -lobjc"
+CC="/cygdrive/d/sys/dev/Dev-Cpp/bin/gcc.exe"
+
+$CC $LIBPATH -o EoF.exe *.o $LIBS 
+#  -Dmain=SDL_main -mwindows

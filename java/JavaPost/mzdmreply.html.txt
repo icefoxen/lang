@@ -1,0 +1,680 @@
+
+<html >
+<HEAD>
+
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+
+<script language="JavaScript1.1">
+<!--
+
+var session_cookie = getCookie('session2452040.2359');
+if (session_cookie == null) {
+	var session_dt = "0";
+	var session_j = "0";
+}  else {
+	var session_array = session_cookie.split("&");
+	var session_dt = session_array[0];
+	var session_j = session_array[1];
+}
+
+function getCookie(name) {
+     var cname = name + "=";
+        var dc = document.cookie;
+
+        if (dc.length > 0) {
+
+             begin = dc.indexOf(cname);
+
+        	 if (begin != -1) {
+                begin += cname.length;
+        		end = dc.indexOf(";", begin);
+
+                    if (end == -1) end = dc.length;
+
+                    return (dc.substring(begin, end));
+             }
+        }
+        return null;
+    }
+
+//-->
+</script>
+
+<TITLE>The Nice</TITLE>
+
+<META HTTP-EQUIV="Pragma" CONTENT="no-cache" />
+
+	
+<base href="http://nice.purrsia.com/ubb/" />
+
+<script language="JavaScript">
+<!--
+function x () {
+return;
+}
+
+function DoSmilie(addSmilie) {
+	var revisedMessage;
+	var currentMessage = document.REPLIER.message.value;
+	revisedMessage = currentMessage+addSmilie;
+	document.REPLIER.message.value=revisedMessage;
+	document.REPLIER.message.focus();
+	return;
+}
+
+	function DoPrompt(action) {
+		var currentMessage = document.REPLIER.message.value;
+
+		if (action == "url") {
+			var thisURL = prompt("Enter the complete URL for the link you wish to add.", "http://");
+			if (thisURL == null){return;}
+
+			var thisTitle = prompt("Now enter the title of the web page you wish to reference.  For instance, if you are linking to the URL for infopop, you might use the title Infopop Homepage.", "web page");
+			if (thisTitle == null){return;}
+
+			document.REPLIER.message.value = currentMessage+"[URL="+thisURL+"]"+thisTitle+"[/URL]";
+			document.REPLIER.message.focus();
+			return;
+		}
+
+		if (action == "email") {
+			var thisEmail = prompt("Enter the complete email address that you wish to add.", "");
+			if (thisEmail == null){return;}
+
+			document.REPLIER.message.value = currentMessage + "[EMAIL]"+thisEmail+"[/EMAIL]";
+			document.REPLIER.message.focus();
+			return;
+		}
+
+		if (action == "bold") {
+			var thisBold = prompt("Enter the text that you wish to make bold.", "");
+			if (thisBold == null){return;}
+
+			document.REPLIER.message.value = currentMessage + "[B]"+thisBold+"[/B]";
+			document.REPLIER.message.focus();
+			return;
+		}
+
+		if (action == "italics") {
+			var thisItal = prompt("Enter the text that you wish to italicize.", "");
+			if (thisItal == null){return;}
+
+			document.REPLIER.message.value = currentMessage + "[I]"+thisItal+"[/I]";
+			document.REPLIER.message.focus();
+			return;
+		}
+
+		if (action == "image") {
+			var thisImage = prompt("Enter the complete URL for the image you wish to display.", "http://");
+			if (thisImage == null){return;}
+
+			document.REPLIER.message.value = currentMessage + "[IMG]"+thisImage+"[/IMG]";
+			document.REPLIER.message.focus();
+			return;
+		}
+
+		if (action == "quote") {
+			document.REPLIER.message.value = currentMessage + "[QUOTE]  [/QUOTE]";
+			document.REPLIER.message.focus();
+			return;
+		}
+
+		if (action == "code") {
+			document.REPLIER.message.value = currentMessage + "[CODE]  [/CODE]";
+			document.REPLIER.message.focus();
+			return;
+		}
+
+		if (action == "liststart") {
+			document.REPLIER.message.value = currentMessage + "[LIST]";
+			document.REPLIER.message.focus();
+			return;
+		}
+
+		if (action == "listend") {
+			document.REPLIER.message.value = currentMessage + "[/LIST]";
+			document.REPLIER.message.focus();
+			return;
+		}
+
+		if (action == "listitem") {
+			var thisItem = prompt("Enter the new list item.  Note that each list group must be preceded by a List Start and the entire list group must end with a List End (in order to display properly).", "");
+			if (thisItem == null){return;}
+
+			document.REPLIER.message.value = currentMessage + "[*]" + thisItem;
+			document.REPLIER.message.focus();
+			return;
+		}
+
+	}
+//-->
+</script>
+
+
+	<style type="text/css">
+
+<!--
+
+A:visited {text-decoration: none;}
+
+A:hover {text-decoration: underline;}
+
+A:link {text-decoration: none;}
+
+A:active {text-decoration: none;}
+
+-->
+
+</style>
+
+</HEAD>
+
+<BODY background="http://nice.purrsia.com/ubb/nice/zen-dao-bg-blk.jpg" BGCOLOR="#000000" topmargin="0" bottommargin="0" leftmargin="0" rightmargin="0" text="#000000" link="#3366ff" vlink="#9a21e2" alink = "#33ccff" marginwidth="0" marginheight="0"  >
+
+
+
+
+
+<FORM NAME="REPLIER" METHOD="POST" ACTION="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi">
+<INPUT TYPE="HIDDEN" NAME="ubb" VALUE="submit_new_reply">
+<INPUT TYPE="HIDDEN" NAME="f" VALUE="23">
+<INPUT TYPE="HIDDEN" NAME="t" VALUE="002413">
+
+<CENTER>
+<TABLE border="0" width="85%">
+<TR><TD>
+<A href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi"><IMG src="http://nice.purrsia.com/ubb/nice/mzdmforum-header-01.jpg" border="0"></A>
+</TD>
+<TD align="center">
+<B><FONT size="2" face="Arial, Verdana, Helvetica, sans-serif">Post A Reply</FONT></B>
+<P>
+<FONT size="1" face="Arial, Verdana, Helvetica, sans-serif">
+
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=my_profile">
+<acronym title="View your profile.">my profile</acronym></a> | 
+
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=agree">
+<acronym title="Registration is free!">register</acronym></a> | 
+
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=search&search_forum=23">
+<acronym title="Search">search</acronym></a> | 
+
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=faq">
+<acronym title="Frequently Asked Questions">faq</acronym></a> | 
+
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi">
+<acronym title="Forum Home">forum home</acronym></a>
+
+</FONT>
+</TD></TR></TABLE>
+
+<P>
+
+
+<center>
+<table border="0" cellpadding="2" cellspacing="0" width="85%">
+<tr bgcolor="#666666"><td>
+<table border="0" width="100%" cellpadding="4" cellspacing="1">
+
+
+<TR bgcolor="#CCCCCC">
+<TD valign="bottom" align="left">
+<FONT size="1" face="Arial, Verdana, Helvetica, sans-serif">
+<B>&#187;
+ 
+<script language="JavaScript">
+<!--
+var user_cookie = getCookie('ubber2452040.2359');
+if(''==user_cookie ||  null==user_cookie) {
+document.writeln('You are not logged in.' , ' <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=login">Login</a> or <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=agree">register</a>')
+} else {
+
+var user_array=user_cookie.split("&");
+user_array[2] = unescape(user_array[2]);
+document.writeln('Hello, ', user_array[2]);
+document.writeln('[ <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=logoff">'
+,'<acronym title="Click here to log out.">'
+,'log out</acronym></a> ]');
+
+}
+//-->
+</script>
+
+</B>
+</font>
+</TD>
+<TD valign="bottom" align="right">
+<FONT size="1" face="Arial, Verdana, Helvetica, sans-serif"><B>
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi">The Nice</a> 
+&raquo; 
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?category=7">
+<b>Master Zen-Dao Meow</b>
+</a>
+
+ &raquo; 
+
+<A HREF="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=forum&f=23">
+MEET The Psychedelic Avatars</A> &raquo; 
+<A HREF="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002413">
+L. Miners game: Don't feed the squirrels.</A> &raquo; 
+Post A Reply
+</B></font>
+</TD>
+</TR>
+
+
+</table></td></tr></table>
+</center>
+
+<P>
+</CENTER>
+
+
+<center>
+<table border="0" cellpadding="2" cellspacing="0" width="85%">
+<tr bgcolor="#666666"><td>
+<table border="0" width="100%" cellpadding="4" cellspacing="1">
+
+
+<tr bgcolor="#000000">
+<td colspan="2">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif" COLOR="#ffffff">
+<B>Post A Reply</B>
+</FONT>
+</td></tr>
+
+
+<tr bgcolor="#CCCCCC">
+<td align="top"  width="33%">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif"><B>
+Displayed Name:
+</B></FONT></td>
+<td valign="top" width="67%">
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif"><B>
+Icefox &nbsp;&nbsp;&nbsp;&nbsp;[<A HREF="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=logoff">log out</A>]
+</B></FONT>
+</td>
+</tr>
+
+
+<TR bgcolor="#CCCCCC">
+<td NOWRAP valign="top" >
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif"><B>
+Message Icon:
+</B></FONT></td>
+<!-- Title Icon Radio Buttons -->
+<td valign="top">
+<input type="radio" name="msg_icon" value="1" checked="checked">&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon1.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="10" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon10.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="11" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon11.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="12" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon12.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="13" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon13.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="14" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon14.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="2" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon2.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<br /><input type="radio" name="msg_icon" value="3" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon3.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="4" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon4.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="5" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon5.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="6" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon6.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="7" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon7.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="8" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon8.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<input type="radio" name="msg_icon" value="9" >&nbsp;&nbsp;
+<img src="http://nice.purrsia.com/ubb/icons/icon9.gif" align="ABSCENTER">&nbsp;&nbsp;&nbsp;&nbsp;<br />
+</td>
+</tr>
+
+
+<tr bgcolor="#CCCCCC">
+<td valign="top" NOWRAP >
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif"><B>Message:</B>
+<p><BR>
+<FONT SIZE="1" COLOR="#9a21e2">
+HTML is enabled.
+<BR>
+<A HREF="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=ubb_code_page" target=_blank>
+UBB Code is enabled.</A>
+<BR></FONT></FONT>
+</td>
+<td>
+
+<!-- The Actual Submit Form -->
+<TEXTAREA NAME="message" ROWS=12 COLS=50 WRAP="VIRTUAL"></TEXTAREA>
+<p> <input type="SUBMIT" name="submit" value="Add Reply">
+<!-- End of submit form.  That was quick!! -->
+
+</p></td></tr>
+
+
+</table></td></tr></table>
+</center>
+
+
+
+<center>
+<table border="0" cellpadding="2" cellspacing="0" width="85%">
+<tr bgcolor="#666666"><td>
+<table border="0" width="100%" cellpadding="4" cellspacing="1">
+
+
+<TR  bgcolor="#000000">
+<TD valign="top" width="33%">
+<font face="Arial, Verdana, Helvetica, sans-serif" size="2" color="#ffffff"><b>
+Instant Graemlins
+</b></font></TD>
+<TD valign="top" width="67%">
+<font face="Arial, Verdana, Helvetica, sans-serif" size="2" color="#ffffff"><b>
+Instant UBB Code
+</b></font></TD>
+</TR>
+
+<!-- Smilies -->
+<TR bgcolor="#CCCCCC">
+<TD valign="top" align="left" width="33%">
+ <a href="javascript: x()" onClick="DoSmilie(' :) ');"><img src="http://nice.purrsia.com/ubb/smile.gif" border="0" alt="Smile"></a>  &nbsp; 
+ <a href="javascript: x()" onClick="DoSmilie(' :( ');"><img src="http://nice.purrsia.com/ubb/frown.gif" border="0" alt="Frown"></a>  &nbsp; 
+ <a href="javascript: x()" onClick="DoSmilie(' :o ');"><img src="http://nice.purrsia.com/ubb/redface.gif" border="0" alt="Embarrassed"></a>  &nbsp; 
+ <a href="javascript: x()" onClick="DoSmilie(' :D ');"><img src="http://nice.purrsia.com/ubb/biggrin.gif" border="0" alt="Big Grin"></a>  &nbsp; 
+ <a href="javascript: x()" onClick="DoSmilie(' ;) ');"><img src="http://nice.purrsia.com/ubb/wink.gif" border="0" alt="Wink"></a>  &nbsp; 
+ <a href="javascript: x()" onClick="DoSmilie(' :p ');"><img src="http://nice.purrsia.com/ubb/tongue.gif" border="0" alt="Razz"></a>  &nbsp; <br />
+ <a href="javascript: x()" onClick="DoSmilie(' :cool: ');"><img src="http://nice.purrsia.com/ubb/cool.gif" border="0" alt="Cool"></a>  &nbsp; 
+ <a href="javascript: x()" onClick="DoSmilie(' :rolleyes: ');"><img src="http://nice.purrsia.com/ubb/rolleyes.gif" border="0" alt="Roll Eyes"></a>  &nbsp; 
+ <a href="javascript: x()" onClick="DoSmilie(' :mad: ');"><img src="http://nice.purrsia.com/ubb/mad.gif" border="0" alt="Mad"></a>  &nbsp; 
+ <a href="javascript: x()" onClick="DoSmilie(' :eek: ');"><img src="http://nice.purrsia.com/ubb/eek.gif" border="0" alt="Eek!"></a>  &nbsp; 
+ <a href="javascript: x()" onClick="DoSmilie(' :confused: ');"><img src="http://nice.purrsia.com/ubb/confused.gif" border="0" alt="Confused"></a>  &nbsp; 
+
+</TD>
+<TD valign="top" align="left" width="67%">
+<font face="Arial, Verdana, Helvetica, sans-serif" size="1">
+
+<!-- UBB Quickies -->
+
+<a href="javascript: x()" onClick="DoPrompt('url');"><img src="http://nice.purrsia.com/ubb/url.gif" width="72" height="16" border="0" alt="Insert URL Hyperlink - UBB Code"></a>
+ &nbsp;
+ <a href="javascript: x()" onClick="DoPrompt('email');"><img src="http://nice.purrsia.com/ubb/email_url.gif" width="72" height="16" border="0" alt="Insert Email Address - UBB Code"></a>
+<br>
+<a href="javascript: x()" onClick="DoPrompt('bold');"><img src="http://nice.purrsia.com/ubb/bold.gif" width="72" height="16" border="0" alt="Bold - UBB Code"></a>
+  &nbsp;
+  <a href="javascript: x()" onClick="DoPrompt('italics');"><img src="http://nice.purrsia.com/ubb/italics.gif" width="72" height="16" border="0" alt="Italics - UBB Code"></a>
+<br>
+<a href="javascript: x()" onClick="DoPrompt('quote');"><img src="http://nice.purrsia.com/ubb/ubb_quote.gif" width="72" height="16" border="0" alt="Quote - UBB Code"></a>
+  &nbsp;
+  <a href="javascript: x()" onClick="DoPrompt('code');"><img src="http://nice.purrsia.com/ubb/code.gif" width="72" height="16" border="0" alt="Code Tag - UBB Code"></a>
+<br>
+<a href="javascript: x()" onClick="DoPrompt('liststart');"><img src="http://nice.purrsia.com/ubb/list-start.gif" width="72" height="16" border="0" alt="List Start - UBB Code"></a>
+ &nbsp;
+  <a href="javascript: x()" onClick="DoPrompt('listitem');"><img src="http://nice.purrsia.com/ubb/list-item.gif" width="72" height="16" border="0" alt="List Item - UBB Code"></a>
+<br>
+<a href="javascript: x()" onClick="DoPrompt('listend');"><img src="http://nice.purrsia.com/ubb/list-end.gif" width="72" height="16" border="0" alt="List End - UBB Code"></a>
+ &nbsp;
+ 
+<a href="javascript: x()" onClick="DoPrompt('image');"><img src="http://nice.purrsia.com/ubb/image.gif" width="72" height="16" border="0" alt="Image - UBB Code"></a>
+
+<p></p>
+<a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=ubb_code_page" target="_new">What is UBB Code?</a>
+
+</font>
+</TD>
+</TR>
+
+
+</table></td></tr></table>
+</center>
+
+
+
+<center>
+<table border="0" cellpadding="2" cellspacing="0" width="85%">
+<tr bgcolor="#666666"><td>
+<table border="0" width="100%" cellpadding="4" cellspacing="1">
+
+
+<tr bgcolor="#000000">
+<td>
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif" COLOR="#ffffff">
+<B>Options</B>
+</FONT>
+</td></tr>
+
+<!-- Signature and Smilies checkboxes -->
+
+<TR bgcolor="#CCCCCC">
+<td valign=top>
+<FONT SIZE="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<br /><input type="CHECKBOX" name="Signature" id="Signature" value="yes" checked="checked" /> <B>Show Signature:</B> include your profile signature.
+<BR>
+<br /><input type="CHECKBOX" id="disable_smilies" name="disable_smilies" value="yes" /> <B>Disable smilies in this post.</B>
+<BR>
+
+</FONT>
+</td></tr>
+
+</table></td></tr></table>
+</center>
+
+<!-- Another Submit button -->
+<P>
+<CENTER>
+<INPUT TYPE="SUBMIT" NAME="submit" VALUE="Add Reply">
+</CENTER>
+</FORM>
+<P>
+
+<!-- Topic Review Frame -this goes on for a while -->
+
+<CENTER>
+<iframe frameborder="1" align="center" width="85%" height="200" scrolling="YES" src="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002413">
+
+
+<center>
+<table border="0" cellpadding="2" cellspacing="0" width="85%">
+<tr bgcolor="#666666"><td>
+<table border="0" width="100%" cellpadding="4" cellspacing="1">
+
+<tr bgcolor="#000000">
+<td colspan="2" align="left">
+<font size="2" color="#ffffff" face="Arial, Verdana, Helvetica, sans-serif">
+<b>T O P I C     R E V I E W</b>
+</font></td></tr>
+
+<tr bgcolor="#f7f7f7">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Jester Scythe
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">Continuing <a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=002361" target="_blank">the tradition</a> with all the madness and insanity you'd expect from the Dream! Fantasy, would you care to show our home viewers what they're in for?</font>
+</td></tr>
+
+<tr bgcolor="#CCCCCC">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Porter
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">Porter smiles. "Nope, not Fantasy. How about Icefox? Will he be next?"<p><img src="http://www.polyhedrongroup.com/mzdm/PorterCard.jpg"></font>
+</td></tr>
+
+<tr bgcolor="#f7f7f7">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Hitomi Sagara
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">*shakes her head* "Sorry again... Just Hit--" *A black hole forms around Hitomi and she falls in... Kahn enters in her place*<p>"Eh... sorry! Seems Hitomi-sama disapeared... anyways, .... hm... Is that cat-girl person around.. what was her name again... Nyu?"</font>
+</td></tr>
+
+<tr bgcolor="#CCCCCC">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Nyu
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">*Nyu appears*<p>Nyu is here! Eh...so...why the calling? Can Benor-chan explain?</font>
+</td></tr>
+
+<tr bgcolor="#f7f7f7">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Icefox
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">Mwahahahaa!  Sec... erm, Third-post rule!!<p>Okay, I'm a little strange.  That's what happens when you spend eight hours a day configuring your Linux computer.  I suspect Jeffery McLain can empathize.</font>
+</td></tr>
+
+<tr bgcolor="#CCCCCC">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Vanvanarmo
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">Not Jeffery, but posting this from my custom Linux box, my sympathy is heartfelt.<p>How about someone big... BanaGimm?</font>
+</td></tr>
+
+<tr bgcolor="#f7f7f7">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+LionkingCMSL
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">I'm not 9 fet tall, but I'm very close at 8 feet 5 inches, not including my hat or mane "bulk".<p>I do think that Noisette will make an appearance.</font>
+</td></tr>
+
+<tr bgcolor="#CCCCCC">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Noisette
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">:: A point in the sky flashes a milky-white color, and a trampoline falls from the portal.  Then, Noisette drops in, hits the trampoline, and bounces off. ::<br />"......Gaaaaahhh!"<br />:: Bounce ::<br />"'K...."<br />:: Bounce ::<br />"....I'm....."<br />:: Bounce ::<br />".....here..."<br />:: Bounce ::<br />"....Zai?"</font>
+</td></tr>
+
+<tr bgcolor="#f7f7f7">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Mist
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">nope just me stopping by for the night.  Perhaps Rhiann?</font>
+</td></tr>
+
+<tr bgcolor="#CCCCCC">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Fantasyforever
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">Sorry my good Sir, just a late, winged feline responding to Jester's first post. >^^<;  Maybe Kei will pop up?</font>
+</td></tr>
+
+<tr bgcolor="#f7f7f7">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Ryn Kylainn
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">I'm not Kei, sorry. But an avatar with a characterization problem has to post somewhere, hey?<p>Could we get Rusty in here? The lucky duck is about to get a bonus card...</font>
+</td></tr>
+
+<tr bgcolor="#CCCCCC">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Kabbalist
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">Kabbalist appears in a flash of fire and brimstone. Unfortunately, the fire and brimstone were the result of an unplanned combustion. As he runs for the nearest body of water, he can be heard yelling:<p>"Help! Kosui! Put me out, please!"</font>
+</td></tr>
+
+<tr bgcolor="#f7f7f7">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Wind Wraith of the Wretched Wrags
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">The Wraith<br />Materializes from a swirl of dust and hears the pleas of the Cat Kabbalist.<br />  <blockquote><font size="1" face="Arial, Verdana, Helvetica, sans-serif">quote:</font><hr>"Put me out, please!"<hr></blockquote><br />So as requested, Wraith picks up the cat by the scruff of the neck.<br />An additional swirl of dust forms into a door and jamb in the middle of the forest.<br />Wraith opens the door and steps out.  He places the cat on the step together with an empty milk bottle and then goes back inside and closes the door<br />The Cat Kabbalist is now out.<br />Maybe the collector would come get the Cat, how about Nachahmer</font>
+</td></tr>
+
+<tr bgcolor="#CCCCCC">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Altaica Powell
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">I'm not Nach, but I have to say that is funny, Wraith.<p>Now will Kabbalist do the saber tooth tiger routine, from the Flintstones, and jump through the open window? :=3</font>
+</td></tr>
+
+<tr bgcolor="#f7f7f7">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Quinch
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">Perhaps I could do it instead, but I fail to see the need. Perhaps ser Squic might be so inclined, though it is likely we would need a larger window.</font>
+</td></tr>
+
+<tr bgcolor="#CCCCCC">
+<td valign="top">
+<font size="2" face="Arial, Verdana, Helvetica, sans-serif">
+Icefox
+</font></td>
+<td><font size="2" face="Arial, Verdana, Helvetica, sans-serif">Eh?<p>*looks around*<p>Sorry, I don't see any windows here.  Maybe Porter can bring one or two?</font>
+</td></tr>
+
+</table></td></tr></table>
+</center>
+ <p> </p>
+</iframe>
+</CENTER>
+<P>
+
+<!-- Footer -->
+
+<P><center>
+<FONT SIZE="2" FACE="Arial, Verdana, Helvetica, sans-serif">
+<A HREF="mailto:nice@nice.purrsia.com">Contact Us</A> | 
+<A HREF="http://nice.purrsia.com/">The Nice</A> </FONT>
+<p>
+<FONT COLOR="#5d7790" size="1" FACE="Arial, Verdana, Helvetica, sans-serif">
+<P>
+Powered by <a href="http://www.infopop.com">Infopop Corporation</a><br />Ultimate Bulletin Board<font style='font-size: 8px' size='1'><sup><b>TM</b></sup></font> 6.1.0.3<!-- Release -->
+</FONT>
+</center>
+
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=3 COLS=1 WIDTH="85%" BGCOLOR="#666666" >
+<tr>
+<td ALIGN=CENTER>
+
+<!-- Artist Credits -->
+
+<center><table BORDER=0 CELLSPACING=0 CELLPADDING=0 COLS=1 WIDTH="100%" >
+<tr>
+<td ALIGN=CENTER BGCOLOR="#000000"><font face="Arial,Helvetica"><font color="#FFFFFF"><font size=-1>Artwork
+by <b>The Psychedelic Artists:</b></font></font></font></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER VALIGN=CENTER BGCOLOR="#CCCCCC"><font face="Arial,Helvetica"><font size=-2><font color="#000000"><a href="http://www.inniesandoutties.com/">Leonard
+Cachola</a>, </font><font color="#FFFFFF"><a href="http://www.side7.com/cgi-bin/S7SDB/Archive.pl?ANO=4">Meghan
+"Seby" Dombrowski</a></font><font color="#000000">, <a href="http://www.steelphoenix.com/projects/Jaitera/authors.html">Andrew
+Graham</a>, <a href="http://vcl.ctrl-c.liu.se/vcl/Artists/Melissa-Jewell/">Melissa
+A. Jewell "MAJ"</a>, <a href="http://www.eversummereve.com">Denise Jones</a>,
+</font><font color="#FFFFFF"><a href="http://www.side7.com/cgi-bin/S7SDB/Archive.pl?ANO=17">Stephanie
+"Oni" Kao</a></font><font color="#000000">, </font></font></font></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER BGCOLOR="#CCCCCC"><font face="Arial,Helvetica"><font size=-2><font color="#000000"><a href="http://us.vclart.net/vcl/Artists/Andrea-Koupal/">Andrea
+Koupal</a>, </font><font color="#FFFFFF"><a href="http://web.archive.org/web/20010724055737/http://members.tripod.com/skull_lee/">Rose
+Masidi</a></font><font color="#000000">,</font><font color="#FFFFFF"> </font><font color="#000000"><a href="http://vcl.ctrl-c.liu.se/vcl/Artists/1311/">Bill
+(13:11) McEvoy</a>,</font><font color="#FFFFFF"> </font><font color="#000000"><a href="http://nice.purrsia.com/zdm.php3">Patrick
+Schaefer</a>, <a href="http://nice.purrsia.com/zdm.php3">Bret Ward</a>,
+<a href="http://us.vclart.net/vcl/Artists/Corene-Werhane/index01-by-date.html">Corene
+"Nezumi" Werhane</a>, </font><font color="#FFFFFF"><a href="http://www.side7.com/cgi-bin/S7SDB/Bio.pl?ANO=875">Rachel
+Witter</a></font><font color="#000000">.</font></font></font></td>
+</tr>
+
+<!-- Copyrights -->
+
+<tr>
+<td ALIGN=CENTER VALIGN=CENTER BGCOLOR="#CCCCCC"><font face="Arial,Helvetica"><font color="#000000"><font size=-2>Comics
+© 1999-2002 "Master Zen-Dao Meow" | Characters © by their respective
+players</font></font></font></td>
+</tr>
+
+<tr>
+<td ALIGN=CENTER BGCOLOR="#CCCCCC"><font face="Arial,Helvetica"><font color="#000000"><font size=-2><b><a href="mailto:webmaster@masterzdm.com">MZDM
+E-Mail</a></b> | <b><a href="http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=get_topic&f=23&t=000436&counterhit=yes">Webcomics
+Plugs & Pitches</a></b></font></font></font></td>
+</tr>
+</table></center>
+<font face="Arial,Helvetica"><font color="#FF0000"></font></font></td>
+</tr>
+</table></center>
+
+<center><script language="javascript" src="http://nice.purrsia.com/forum_picturebox_wider.js"></script>
+
+</BODY>
+</HTML>

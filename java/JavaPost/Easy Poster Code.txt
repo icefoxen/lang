@@ -1,0 +1,414 @@
+frmMain
+
+Private Sub cmdLogin_Click()
+    Turn = 6
+    fncPostAsName
+    If UsrName = "" Or PassWrd = "" Then
+        Exit Sub
+    End If
+    fncLogin
+End Sub
+
+Private Sub cmdPost_Click()
+
+If Timer1.Enabled = True Then
+    MsgBox "This is flood control to help prevent against spamming.  Please wait until the 60 seconds are up to post again.", vbOKOnly, "Flood Control"
+    Exit Sub
+ElseIf lstScreenNames.ListIndex = -1 Then
+    MsgBox "Please choose a screen name to post with.", vbOKOnly, "Screen Name Required"
+    Exit Sub
+ElseIf txtPost.Text = "" Then
+    MsgBox "Please enter something to post.", vbOKOnly, "Enter Your Message"
+    Exit Sub
+End If
+
+    If optNewTopic.Value = False Then
+    
+    fncParseURL
+    
+        If BoardNum = "" Then
+            Exit Sub
+        ElseIf ThreadNum = "" Then
+            Exit Sub
+        End If
+        
+    End If
+    
+    fncPostAsName
+    
+If UsrName = "" Or PassWrd = "" Then
+    Exit Sub
+End If
+
+    fncParseText
+    
+    If optNewTopic.Value = True Then
+        Turn = 3
+    Else
+        Turn = 0
+    End If
+    
+    lblStatus.Caption = "Logging in..."
+    fncLogin
+End Sub
+
+Private Sub Form_Load()
+    fncLoadNamesList
+End Sub
+
+Private Sub mnuAddCharacter_Click()
+    Me.Hide
+    frmAddNew.Show
+    fncOpenForAdd
+End Sub
+
+Private Sub mnuEdit_Click()
+    Me.Hide
+    frmEdit.Show
+    fncOpenForEdit
+End Sub
+
+Private Sub netposter_StateChanged(ByVal State As Integer)
+    If State = 12 Then
+        Select Case Turn
+            Case 0
+                lblStatus.Caption = "Posting..."
+                fncPostReply
+            Case 1
+                lblStatus.Caption = "Logging off..."
+                fncLogoff
+            Case 3
+                lblStatus.Caption = "Posting new topic..."
+                fncPostNewTopic
+            Case 4
+                lblStatus.Caption = "Logging off..."
+                fncLogoff
+            Case 6
+                lblStatus.Caption = "Logged in!"
+            Case Else
+                lblStatus.Caption = "Done posting!"
+                txtPost.Text = ""
+                txtURL.Text = ""
+                Timer1.Enabled = True
+                Exit Sub
+        End Select
+    End If
+End Sub
+
+Private Sub optNewTopic_Click()
+    If optNewTopic.Value = True Then
+        If txtURL.Text = "" Or "Enter URL here" Then
+            txtURL.Text = "Enter Thread Title Here"
+        End If
+    End If
+End Sub
+
+Private Sub Timer1_Timer()
+    CountDown = CountDown + 1
+    If CountDown >= 60 Then
+        Timer1.Enabled = False
+        CountDown = 0
+        lblCountdown = "Safe to post"
+        lblStatus.Caption = ""
+        Exit Sub
+    End If
+    lblCountdown = "Seconds left: " & (60 - CountDown)
+End Sub
+
+frmEdit
+
+Private Sub cmdNext_Click()
+
+    If Not adoRecordset.EOF Then
+        adoRecordset.MoveNext
+    End If
+
+    If adoRecordset.EOF And adoRecordset.RecordCount > 0 Then
+        adoRecordset.MoveLast
+    End If
+End Sub
+
+Private Sub cmdPrev_Click()
+
+    If Not adoRecordset.BOF Then
+        adoRecordset.MovePrevious
+    End If
+
+    If adoRecordset.BOF And adoRecordset.RecordCount > 0 Then
+        adoRecordset.MoveFirst
+    End If
+End Sub
+
+Private Sub cmdUpdate_Click()
+    adoRecordset.Update
+    Me.Hide
+    adoRecordset.Close
+    db.Close
+    fncLoadNamesList
+    frmMain.Show
+End Sub
+
+Private Sub cmdDelete_Click()
+Dim setting As String
+
+    setting = MsgBox("Are you sure you wish to delete this character?", 36, "Confirm Character Delete")
+    
+    If setting = 6 Then
+        adoRecordset.Delete adAffectCurrent
+    Else
+        Exit Sub
+    End If
+
+    If adoRecordset.EOF And adoRecordset.RecordCount > 0 Then
+        adoRecordset.MovePrevious
+    ElseIf adoRecordset.RecordCount = 0 Then
+        Me.Hide
+        adoRecordset.Close
+        db.Close
+        fncLoadNamesList
+        frmMain.Show
+    Else
+        adoRecordset.MoveFirst
+    End If
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+    adoRecordset.Close
+    db.Close
+    End
+End Sub
+
+frmAddNew
+
+Private Sub cmdCreate_Click()
+On Error GoTo err
+
+If txtCharacter.Text = "" Or txtPasswrd.Text = "" Or txtUserNam.Text = "" Then
+    MsgBox "Please make sure you fill out all forms.", vbOKOnly, "Please Fill Out Forms"
+    Exit Sub
+End If
+
+    adoRecordset.Update
+    Me.Hide
+    adoRecordset.Close
+    db.Close
+    fncLoadNamesList
+    frmMain.Show
+    Exit Sub
+
+err:
+    If err.Number = -2147217887 Then
+        MsgBox "You have entered in a screen name or user name that already exists.  Please check to make sure that you haven't already entered this character and try again.", vbOKOnly, "Duplicate Character"
+    End If
+End Sub
+
+Private Sub Form_Unload(Cancel As Integer)
+    End
+End Sub
+
+Functions
+
+Public adoRecordset As New Recordset
+Public db As New Connection
+Public message, sSQL, UsrName, PassWrd As String
+Public BoardNum, ThreadNum, ParsedURL As String
+Public CountDown, Turn As Integer
+Public TurnYet As Boolean
+
+Public Function fncLoadNamesList()
+Dim strQ As String
+
+strQ = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & App.Path & "\ZDMTest.mdb"
+db.Open strQ
+
+sSQL = "select * from ZDM order by CharacterName"
+Set adoRecordset = db.Execute(sSQL)
+
+frmMain.lstScreenNames.Clear
+
+Do Until adoRecordset.EOF
+    frmMain.lstScreenNames.AddItem adoRecordset.Fields(0)
+    adoRecordset.MoveNext
+Loop
+
+If frmMain.lstScreenNames.ListCount <= 0 Then
+    frmMain.mnuEdit.Enabled = False
+Else
+    frmMain.mnuEdit.Enabled = True
+End If
+
+adoRecordset.Close
+db.Close
+End Function
+
+Public Function fncPostAsName()
+Dim strQ As String
+On Error GoTo err
+
+strQ = "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & App.Path & "\ZDMTest.mdb" & ";Mode=Read;Persist Security Info=False"
+db.Open strQ
+    
+sSQL = "select * from ZDM where CharacterName=" & "'" & frmMain.lstScreenNames.Text & "'"
+Set adoRecordset = db.Execute(sSQL)
+
+UsrName = adoRecordset.Fields(1)
+PassWrd = adoRecordset.Fields(2)
+
+adoRecordset.Close
+db.Close
+
+err:
+    If UsrName = "" Or PassWrd = "" Then
+        MsgBox "Please make sure that your user name and password are completely filled in and correct before attempting to post."
+        Exit Function
+    End If
+End Function
+
+Public Function fncParseURL()
+Dim stuff, stuff2, stuff3, stuff4 As String
+
+stuff = "&f="
+stuff3 = "&t="
+    If InStr(frmMain.txtURL, stuff) <> 0 Then
+      frmMain.txtURL.SelStart = InStr(frmMain.txtURL, stuff) + 2
+      frmMain.txtURL.SelLength = Len(stuff) - 1
+      stuff2 = frmMain.txtURL.SelText
+      If Right(frmMain.txtURL.SelText, 1) = "&" Then
+        frmMain.txtURL.SelLength = frmMain.txtURL.SelLength - 1
+        stuff2 = frmMain.txtURL.SelText
+      End If
+    Else
+      MsgBox "Please enter either the URL of the thread or the URL of the reply thread."
+      Exit Function
+    End If
+
+    If InStr(frmMain.txtURL, stuff3) <> 0 Then
+      frmMain.txtURL.SelStart = InStr(frmMain.txtURL, stuff3) + 2
+      frmMain.txtURL.SelLength = Len(stuff3) + 3
+      stuff4 = frmMain.txtURL.SelText
+      If Right(frmMain.txtURL.SelText, 1) = "&" Then
+        frmMain.txtURL.SelLength = frmMain.txtURL.SelLength - 1
+        stuff4 = frmMain.txtURL.SelText
+      End If
+    Else
+      MsgBox "Please enter either the URL of the thread or the URL of the reply thread."
+      Exit Function
+    End If
+
+BoardNum = stuff2
+ThreadNum = stuff4
+End Function
+
+Public Function fncParseText()
+Dim i As Long, Length As Long
+Dim temptext, temptext2, temptext3 As String
+
+Length = Len(frmMain.txtPost.Text)
+
+For i = 0 To (Length - 1)
+    frmMain.txtPost.SelStart = i
+    frmMain.txtPost.SelLength = 1
+    temptext = frmMain.txtPost.SelText
+    temptext2 = Asc(temptext)
+        If (temptext2 >= 48 And temptext2 <= 57) Or (temptext2 >= 64 And temptext2 <= 90) Or (temptext2 = 95) Or (temptext2 >= 97 And temptext2 <= 122) Or (temptext2 = 160) Then
+            temptext3 = temptext3 & temptext
+        Else
+            If temptext2 = 13 Then
+                temptext2 = "%0D%0A"
+            ElseIf temptext2 = 10 Then
+                temptext2 = ""
+            ElseIf temptext2 = 32 Then
+                temptext2 = "+"
+            Else
+                temptext2 = "%" & Hex$(temptext2)
+            End If
+            temptext3 = temptext3 & temptext2
+        End If
+Next i
+message = temptext3
+
+Length = Len(frmMain.txtURL.Text)
+temptext3 = ""
+For i = 0 To (Length - 1)
+    frmMain.txtURL.SelStart = i
+    frmMain.txtURL.SelLength = 1
+    temptext = frmMain.txtURL.SelText
+    temptext2 = Asc(temptext)
+        If (temptext2 >= 48 And temptext2 <= 57) Or (temptext2 >= 64 And temptext2 <= 90) Or (temptext2 = 95) Or (temptext2 >= 97 And temptext2 <= 122) Or (temptext2 = 160) Then
+            temptext3 = temptext3 & temptext
+        Else
+            If temptext2 = 13 Then
+                temptext2 = "%0D%0A"
+            ElseIf temptext2 = 10 Then
+                temptext2 = ""
+            ElseIf temptext2 = 32 Then
+                temptext2 = "+"
+            Else
+                temptext2 = "%" & Hex$(temptext2)
+            End If
+            temptext3 = temptext3 & temptext2
+        End If
+Next i
+ParsedURL = temptext3
+End Function
+
+Public Function fncLogin()
+Dim URL As String, uStuff As String
+
+URL = "http://nice.purrsia.com/cgi-bin/ultimatebb.cgi"
+uStuff = "ubb=do_login&refer=http://nice.purrsia.com/cgi-bin/ultimatebb.cgi?ubb=logoff&username=" & UsrName & "&password=" & PassWrd & "&submit=Login"
+frmMain.netPoster.Execute URL, "POST", uStuff
+End Function
+
+Public Function fncPostReply()
+Dim URL As String, uStuff As String
+
+URL = "http://nice.purrsia.com/cgi-bin/ultimatebb.cgi"
+uStuff = "ubb=submit_new_reply&f=" & BoardNum & "&t=" & ThreadNum & "&msg_icon=1&message=" & message & "&submit=Add+Reply&Signature=yes"
+frmMain.netPoster.Execute URL, "POST", uStuff
+Turn = Turn + 1
+End Function
+
+Public Function fncLogoff()
+frmMain.netPoster.Execute "http://nice.purrsia.com/cgi-bin/ultimatebb.cgi", "POST", "ubb=logoff"
+Turn = Turn + 1
+End Function
+
+Public Function fncOpenForEdit()
+    db.Open "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & App.Path & "\ZDMTest.mdb;Mode=ReadWrite;Persist Security Info=False"
+    Set adoRecordset = New Recordset
+    adoRecordset.Open "select * from ZDM order by CharacterName", db, adOpenStatic, adLockOptimistic
+    
+    Set frmEdit.txtCharacter.DataSource = adoRecordset
+        frmEdit.txtCharacter.DataField = "CharacterName"
+    Set frmEdit.txtUserNam.DataSource = adoRecordset
+        frmEdit.txtUserNam.DataField = "UserName"
+    Set frmEdit.txtPasswrd.DataSource = adoRecordset
+        frmEdit.txtPasswrd.DataField = "Password"
+End Function
+
+Public Function fncOpenForAdd()
+
+db.Open "Provider=Microsoft.Jet.OLEDB.4.0;Data Source=" & App.Path & "\ZDMTest.mdb;Mode=ReadWrite;Persist Security Info=False"
+Set adoRecordset = New Recordset
+adoRecordset.Open "select * from ZDM order by CharacterName", db, adOpenStatic, adLockOptimistic
+adoRecordset.AddNew
+    
+    Set frmAddNew.txtCharacter.DataSource = adoRecordset
+        frmAddNew.txtCharacter.DataField = "CharacterName"
+    Set frmAddNew.txtUserNam.DataSource = adoRecordset
+        frmAddNew.txtUserNam.DataField = "UserName"
+    Set frmAddNew.txtPasswrd.DataSource = adoRecordset
+        frmAddNew.txtPasswrd.DataField = "Password"
+
+End Function
+
+Public Function fncPostNewTopic()
+Dim URL2 As String
+Dim uStuff2 As String
+
+URL2 = "http://nice.purrsia.com/cgi-bin/ultimatebb.cgi"
+uStuff2 = "ubb=submit_new_topic&f=" & BoardNum & "&topic_subject=" & ParsedURL & "&msg_icon=1&message=" & message & "&email_notification=yes&Signature=yes&disable_smilies=yes&submit=Add+New+Topic"
+frmMain.netPoster.Execute URL2, "POST", uStuff2
+Turn = Turn + 1
+End Function

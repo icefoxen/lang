@@ -1,0 +1,10 @@
+#!/bin/sh
+#INCS="-I/sys/dev/dev-cpp/include -I/sys/dev/dev-cpp/include/SDL -I./include"
+INCS="-I/usr/include/SDL/"
+FILES="EoF.m LinkedList.m ConfigParser.m Sprite.m util.m"
+CC="gcc"
+
+$CC -c -Wall -Wno-import $INCS $FILES $@
+#-mwindows -Dmain=SDL_main
+# For some really weird wrong wrong reason, this version of GCC doesn't
+# recognize -Wno-import right...

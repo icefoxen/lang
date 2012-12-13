@@ -1,0 +1,7 @@
+#!/bin/sh
+/bin/rm -rf *.aux
+/bin/rm -rf *.log
+/bin/rm -rf *~
+/bin/rm -rf *.dvi
+/bin/rm -rf *.ps
+/bin/rm -rf *.pdf

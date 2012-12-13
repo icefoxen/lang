@@ -1,0 +1,4 @@
+#!/sys/djgpp/bin/sh
+cd ..
+cp -Rf EoF/ bak/
+cd EoF

@@ -1,0 +1,21 @@
+AIM client
+YIM client
+  *Servers that can be accessed by either of the above?
+
+FTP client
+
+Telnet client
+
+SSH client -czech net for references to reverse-engineer.
+
+Chat server
+
+simple http server?
+simple ftp server?
+  *Again, look for examples on both.
+
+Simple drawing program?  Save pics as bmps or objects?  EXAMPLES!
+
+Text-adventure game?  Parser would be hard.
+
+Music-player?!???
