@@ -17,4 +17,4 @@ fib n =
    fib (n - 1) + fib (n - 2)
 
 main =
-   print (fib 45)
+   print (fib 40)
