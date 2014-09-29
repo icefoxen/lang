@@ -6,4 +6,4 @@ def fib(x):
       return fib( x - 1 ) + fib (x - 2)
 
 if __name__ == "__main__":
-   print( fib( 35 ) )
+   print( fib( 40 ) )
