@@ -2,7 +2,7 @@ using System;
 
 class Fib {
   static void Main() {
-    fib( 45 );
+    fib( 40 );
   }
 
   static int fib( int i ) {
