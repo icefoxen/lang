@@ -1,0 +1,82 @@
+.assembly Compare {}
+/*
+            int x, y, z;
+            string s;
+            Console.WriteLine("Enter x:");
+            s = Console.ReadLine();
+            x = Int32.Parse(s);
+            Console.WriteLine("Enter y:");
+            s = Console.ReadLine();
+            y = Int32.Parse(s);
+            if ( x < y )
+                z = x;
+            else
+                z = y;
+            Console.WriteLine("{0:d}", z);
+*/
+
+.method static public void main() il managed
+{
+    .entrypoint
+    .maxstack 8
+    
+    .locals init ([0] int32 x,
+                  [1] int32 y,
+                  [2] int32 z,
+                  [3] string s)
+ 
+    // *****************************************************
+    // Console.WriteLine("Enter x:");
+    // *****************************************************
+    ldstr      "Enter x:"               // load string onto stack
+    call  void [mscorlib]System.Console::WriteLine(string)
+    
+    // *****************************************************
+    // s = Console.ReadLine();
+    // *****************************************************
+    call       string [mscorlib]System.Console::ReadLine()
+    stloc.3                             // store to var. 3
+    // *****************************************************
+    // x = Int32.Parse(s);
+    // *****************************************************
+    ldloc.3                             // load var. 3 onto stack
+    call       int32 [mscorlib]System.Int32::Parse(string)
+    stloc.0                             // store to var. 0
+    // The same operations for y ...
+    // *****************************************************
+    // branch
+    // if ( x >= y ) goto L_GR;
+    // *****************************************************
+    ldloc.0                     // load x onto stack (value 1)
+    ldloc.1                     // load y onto stack (value 2)
+    bge.s  L_GR                 // goto L_GR if value1 is greater
+                                // than or equal to value2
+    // *****************************************************
+    // z = x
+    // *****************************************************
+    ldloc.0                     // load variable 0 onto stack
+    stloc.2                     // store to variable 2
+ 
+    br.s       L_CONTINUE       // goto L_CONTINUE
+ 
+L_GR:
+ 
+    // *****************************************************
+    // z = y
+    // *****************************************************
+    ldloc.1             // load variable 1 onto stack
+    stloc.2             // store to variable 2
+ 
+L_CONTINUE:
+ 
+    // *****************************************************
+    // Console.WriteLine("{0:d}", z);
+    // NOTE: this line causes boxing.
+    // *****************************************************
+    ldstr      "{0:d}"  // load string onto stack
+    ldloc.2             // load variable 2 to stack (z)
+    box       [mscorlib]System.Int32   // convert Int32 to Object
+    call  void [mscorlib]System.Console::WriteLine(string, object)
+ 
+    ret
+}

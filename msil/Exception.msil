@@ -1,0 +1,74 @@
+.assembly Exception {}
+ 
+/*
+            int x, y, z;
+            string s;
+            Console.WriteLine("Enter x:");
+            s = Console.ReadLine();
+            x = Int32.Parse(s);
+            Console.WriteLine("Enter y:");
+            s = Console.ReadLine();
+            y = Int32.Parse(s);
+            try
+            {
+                z = x / y;
+                Console.WriteLine(z.ToString());
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
+*/
+ 
+ 
+.method static public void main() il managed
+{
+    .entrypoint
+    .maxstack 8
+ 
+    .locals ([0] int32 x,
+             [1] int32 y,
+             [2] int32 z,
+             [3] string s,
+             [4] class [mscorlib]System.Exception e)
+             
+    // Enter x, y ...
+ 
+    .try
+    {
+        // *************************************************
+        // z = x / y;
+        // *************************************************
+        ldloc.0                 // load var. 0
+        ldloc.1                 // load var. 1
+        div                     // divide
+        stloc.2                 // store in var. 2
+        // *************************************************
+        // Console.WriteLine(z.ToString());
+        // *************************************************
+        ldloca.s   z            // load address of z
+        call       instance string [mscorlib]System.Int32
+                                   ::ToString()
+        call       void [mscorlib]System.Console
+                                   ::WriteLine(string)
+        leave.s    END_TRY_CATCH        // exit try block
+    }
+    catch [mscorlib]System.Exception 
+    {
+        stloc.s    e        // store exception thrown on
+                            // the stack
+        // *************************************************
+        // Console.WriteLine(e.Message);
+        // *************************************************
+        ldloc.s    e                // load e
+        callvirt   instance string [mscorlib]System.Exception
+                                   ::get_Message()
+        call       void [mscorlib]System.Console
+                                   ::WriteLine(string)
+        leave.s    END_TRY_CATCH        // exit catch block
+    }
+ 
+    END_TRY_CATCH:
+ 
+    ret
+}
