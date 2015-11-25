@@ -1,0 +1,28 @@
+.assembly LocalVar {}
+ 
+// int x;
+// x = 7;
+// Console.WriteLine(x);
+ 
+.method static public void main() il managed
+{
+    .entrypoint
+ 
+    .maxstack 8
+ 
+    .locals init ([0] int32 x)  // Allocate local variable
+    // *****************************************************
+    // x = 7;
+    // *****************************************************
+    ldc.i4.7                    // load constant onto stack
+    stloc.0                     // store value from stack to
+                                // var. 0
+    
+    // *****************************************************
+    // Console.WriteLine(x);
+    // *****************************************************
+    ldloc.0                     // load var.0 onto stack
+    call void [mscorlib]System.Console::WriteLine(int32)
+ 
+    ret
+}
