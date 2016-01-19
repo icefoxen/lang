@@ -1,8 +1,10 @@
-#![feature(old_io)]
-use std::old_io;
+use std::io;
 
 fn main() {
-    println!("Type something!");
-    let input = old_io::stdin().read_line().ok().expect("Failed to read line?");
-    println!("You typed: {}", input);
+    println!("Guess a number!");
+    let mut guess = String::new();
+    io::stdin().read_line(&mut guess)
+    	.ok()
+    	.expect("Failed to read line?");
+    println!("You typed: {}", guess);
 }
