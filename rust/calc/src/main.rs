@@ -1,5 +1,6 @@
 
 use std::io;
+use std::io::Write;
 use std::collections::HashMap;
 
 type Operation = fn(&mut Vec<f64>) -> ();
@@ -31,10 +32,10 @@ fn div(stack: &mut Vec<f64>) {
 
 fn make_operations() -> OpMap {
 	let mut map : OpMap = HashMap::new();
-	map.insert("+".to_owned(), add);
-	map.insert("-".to_owned(), sub);
-	map.insert("*".to_owned(), mul);
-	map.insert("/".to_owned(), div);
+	map.insert("+".to_string(), add);
+	map.insert("-".to_string(), sub);
+	map.insert("*".to_string(), mul);
+	map.insert("/".to_string(), div);
 	map
 }
 
@@ -53,18 +54,24 @@ fn read_line() -> String {
 	// trim() returns a &str, but that's just a reference.
 	// So if we just return a &str then the String we allocated
 	// goes poof and it's invalid.  I think.
-	// to_owned() turns a &str into a String.
+	// to_string() turns a &str into a String.
 	// Possibly by copying.
-	buffer.trim().to_owned()
+	buffer.trim().to_string()
 }
 
 fn main() {
 	let mut stack : Vec<f64> = Vec::new();
 	let operations = make_operations();
+	println!("Stack calculator!  Enter numbers or operations, 'quit' to quit.");
 	loop {
 		println!("Stack is: {:?}", stack);
-		let res = read_line();
-			for item in res.split_whitespace() {
+		print!("> ");
+		io::stdout().flush().unwrap();
+		let input = read_line();
+			for item in input.split_whitespace() {
+			if item == "quit" || item == "exit" {
+				return;
+			}
 			if item != "" {
 				match item.parse::<f64>() {
 					Ok(num) => stack.push(num),
