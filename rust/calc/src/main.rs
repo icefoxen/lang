@@ -38,8 +38,8 @@ fn make_operations() -> OpMap {
 	map
 }
 
-fn do_operation(ops : &OpMap, stack: &mut Vec<f64>, op: String) {
-	match ops.get(&op) {
+fn do_operation(ops : &OpMap, stack: &mut Vec<f64>, op: &str) {
+	match ops.get(op) {
 		Some(func) => func(stack),
 		None => println!("Unknown operation: {}", op)
 
@@ -64,10 +64,12 @@ fn main() {
     loop {
 		println!("Stack is: {:?}", stack);
 		let res = read_line();
-		if res != "" {
-			match res.parse::<f64>() {
-				Ok(num) => stack.push(num),
-				Err(_) => do_operation(&operations, &mut stack, res)
+			for item in res.split_whitespace() {
+			if item != "" {
+				match item.parse::<f64>() {
+					Ok(num) => stack.push(num),
+					Err(_) => do_operation(&operations, &mut stack, item)
+				}
 			}
 		}
 	}
