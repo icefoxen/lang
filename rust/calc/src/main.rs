@@ -47,21 +47,21 @@ fn do_operation(ops : &OpMap, stack: &mut Vec<f64>, op: &str) {
 }
 
 fn read_line() -> String {
-    let mut buffer = String::new();
-    io::stdin().read_line(&mut buffer)
-    	.unwrap();
-    // trim() returns a &str, but that's just a reference.
-    // So if we just return a &str then the String we allocated
-    // goes poof and it's invalid.  I think.
-    // to_owned() turns a &str into a String.
-    // Possibly by copying.
-    buffer.trim().to_owned()
+	let mut buffer = String::new();
+	io::stdin().read_line(&mut buffer)
+		.unwrap();
+	// trim() returns a &str, but that's just a reference.
+	// So if we just return a &str then the String we allocated
+	// goes poof and it's invalid.  I think.
+	// to_owned() turns a &str into a String.
+	// Possibly by copying.
+	buffer.trim().to_owned()
 }
 
 fn main() {
 	let mut stack : Vec<f64> = Vec::new();
 	let operations = make_operations();
-    loop {
+	loop {
 		println!("Stack is: {:?}", stack);
 		let res = read_line();
 			for item in res.split_whitespace() {
