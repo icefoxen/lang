@@ -1,3 +1,5 @@
+extern crate core;
+use core::str::FromStr;
 use std::cmp::Ordering;
 use std::collections::HashMap;
 use std::fmt;
@@ -63,11 +65,11 @@ impl Dataset {
 		f.read_to_string(&mut s);
 		for line in s.lines() {
 			let mut chunk = line.split_whitespace();
-			let channel = chunk.next().unwrap();
 			let time = chunk.next().unwrap();
+			let channel = chunk.next().unwrap();
 			let value = chunk.next().unwrap();
 			dataset.add_item(channel, 
-				0.0, 
+				f32::from_str(time).unwrap(), 
 				String::from(value))
 		}
 		dataset
@@ -75,17 +77,18 @@ impl Dataset {
 
 	fn add_item(&mut self, name : &str, time : f32, value : String) {
 		//let mut cs = self.channels;
-		let x = self.channels.get(name);
+		let x = self.channels.get_mut(name);
 		match x {
 			None => {
 				let c = Channel::new(String::from(name));
+				println!("Tried to add {} but it didn't exist", name);
 				//self.channels.insert(String::from(name), c);
 				//cs.insert(String::from(name), c);
 				//self.add_item(name, time, value)
 			},
 			Some(c) => {
 				println!("Adding item {}, {}, {}", name, time, value);
-				//c.add_value(time, value)
+				c.add_value(time, value)
 			}
 		}
 	}
