@@ -72,26 +72,12 @@ impl Dataset {
 	}
 
 	fn add_item(&mut self, name : String, time : f32, value : String) {
-		//let mut cs = self.channels;
-		
+		// XXX: FIX THIS... somehow.
+		let mut argl = String::new();
+		argl.push_str(&name);
 		let entry = self.channels.entry(name).or_insert_with(
-			|| Channel::new(name));
+			|| Channel::new(argl));
 		entry.add_value(time, value)
-
-		// let cref = &self.channels;
-		// let x = cref.get_mut(name);
-		// match x {
-		// 	None => {
-		// 		let c = Channel::new(String::from(name));
-		// 		println!("Tried to add {} but it didn't exist", name);
-		// 		self.channels.insert(String::from(name), c);
-		// 		//cs.insert(String::from(name), c);
-		// 		//self.add_item(name, time, value)
-		// 	},
-		// 	Some(c) => {
-		// 		println!("Adding item {}, {}, {}", name, time, value);
-		// 		c.add_value(time, value)
-		// 	}
 	}
 
 	fn channel_names(&self) -> String {
