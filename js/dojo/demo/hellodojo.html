@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Hello Dojo Tutorial</title>
+  </head>
+  <body>
+    <h1 id="greeting">Hello world!</h1>
+
+    <!-- Configure Dojo -->
+    <script>
+      // This way we load our desired module from the local website,
+      // while still loading Dojo itself from the CDN.
+      var dojoConfig = {
+      async: true,
+      packages: [{
+      name: "demo",
+      location: location.pathname.replace(/\/[^/]*$/, '') // + '/demo'
+      }]
+      };
+    </script>
+    <script src="//ajax.googleapis.com/ajax/libs/dojo/1.10.4/dojo/dojo.js"></script>
+    <script>
+      require([
+      'demo/myModule'
+      ], function (myModule) {
+         myModule.setText('greeting', 'Hello dojo!');
+         setTimeout(function() {
+            myModule.restoreText('greeting');
+         }, 3000);
+      });
+    </script>
+  </body>
+</html>
